@@ -34,7 +34,35 @@ const Header = ({ activeSection }) => {
 
     return (
         <>
-            <AppBar sx={{ backgroundColor: 'black', height: 100 }} position="fixed">
+            {/* Header for Logo and Trailer Button */}
+            <AppBar sx={{ backgroundColor: 'black', height: 80 }} position="fixed">
+                <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
+                    {/* Centered Logo */}
+                    <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}>
+                        <img src="/public/assets/logo.png" alt="Logo" style={{ height: '50px' }} />
+                    </Box>
+
+                    {/* Right-aligned Trailer Button */}
+                    <Box sx={{ flexShrink: 0 }}>
+                        <Button
+                            sx={{
+                                color: '#f11cf1',
+                                border: '1px solid #f46cf4',
+                                '&:hover': {
+                                    backgroundColor: 'transparent',
+                                    borderColor: '#f11cf1',
+                                }
+                            }}
+                            onClick={handleOpen}
+                        >
+                            Trailer Anschauen
+                        </Button>
+                    </Box>
+                </Toolbar>
+            </AppBar>
+
+            {/* Header for Tabs */}
+            <AppBar sx={{ backgroundColor: 'black', height: 60, marginTop: 7 }} position="fixed">
                 <Toolbar sx={{ justifyContent: 'space-between' }}>
                     {/* Left-aligned Tabs */}
                     <Box sx={{ position: 'relative', display: 'flex', alignItems: 'center', flexGrow: 1 }}>
@@ -72,6 +100,7 @@ const Header = ({ activeSection }) => {
                                 <Button
                                     sx={{
                                         color: getButtonColor(section), // Custom color for active/inactive
+                                        fontSize: '0.875rem', // Smaller font size for tabs
                                         '&:hover': {
                                             backgroundColor: 'transparent',
                                         }
@@ -83,29 +112,6 @@ const Header = ({ activeSection }) => {
                             </Box>
                         ))}
                     </Box>
-
-                    {/* Centered Logo */}
-                    <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}>
-                        <Typography variant="h6" sx={{ textAlign: 'center' }}>
-                            {/* Replace with your logo */}
-                            <img src="/public/assets/logo.png" alt="Logo" style={{ height: '60px' }} />
-                        </Typography>
-                    </Box>
-
-                    {/* Right-aligned Trailer Button */}
-                    <Button
-                        sx={{
-                            color: '#f11cf1', // Darker color for the text
-                            border: '1px solid #f46cf4', // Outline with the dimmer color
-                            '&:hover': {
-                                backgroundColor: 'transparent',
-                                borderColor: '#f11cf1', // Optional: change border color on hover
-                            }
-                        }}
-                        onClick={handleOpen}
-                    >
-                        Trailer Anschauen
-                    </Button>
                 </Toolbar>
             </AppBar>
 

@@ -28,6 +28,7 @@ const TrailerModal: React.FC<ModalComponentProps> = ({ open, handleClose }) => {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
+                    borderRadius: '4px', // Rounded corners
                 }}
             >
                 {/* Close Icon (X) */}
@@ -37,7 +38,7 @@ const TrailerModal: React.FC<ModalComponentProps> = ({ open, handleClose }) => {
                         position: 'absolute',
                         top: 8,
                         right: 8,
-                        color: 'white', // Purple-pink color for the X icon
+                        color: 'white', // Color for the X icon
                     }}
                 >
                     <CloseIcon />
