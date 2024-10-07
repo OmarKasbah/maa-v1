@@ -1,6 +1,7 @@
 import React from 'react';
 import { Modal, Box, Typography, Button } from '@mui/material';
-import {ModalComponentProps} from "../../utils/props.ts";
+import { ModalComponentProps } from "../../utils/props.ts";
+import VideoHandling from "../video/VideoHandling.tsx";
 
 const TrailerModal: React.FC<ModalComponentProps> = ({ open, handleClose }) => {
     return (
@@ -29,10 +30,7 @@ const TrailerModal: React.FC<ModalComponentProps> = ({ open, handleClose }) => {
                     Video Modal
                 </Typography>
 
-                <video width="320" height="240" controls>
-                    <source src="/src/assets/sample.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                </video>
+                <VideoHandling />
 
                 <Button onClick={handleClose} sx={{ mt: 2 }}>
                     Close
