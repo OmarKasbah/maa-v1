@@ -1,7 +1,8 @@
 import React from 'react';
-import { Modal, Box, Typography, Button } from '@mui/material';
+import { Modal, Box, IconButton } from '@mui/material';
+import { Close as CloseIcon } from '@mui/icons-material'; // Ensure '@mui/icons-material' is installed
 import { ModalComponentProps } from "../../utils/props.ts";
-import VideoHandling from "../core/video/VideoHandling.tsx";
+import VideoHandling from "../core/video/VideoHandling.tsx"; // Assuming VideoHandling is the video player component
 
 const TrailerModal: React.FC<ModalComponentProps> = ({ open, handleClose }) => {
     return (
@@ -18,23 +19,43 @@ const TrailerModal: React.FC<ModalComponentProps> = ({ open, handleClose }) => {
         >
             <Box
                 sx={{
-                    bgcolor: 'background.paper',
-                    border: '2px solid #000',
+                    position: 'relative',
+                    backgroundColor: 'black', // Modal background is black
+                    border: '2px solid #f11cf1', // Purple-pink border color
                     boxShadow: 24,
-                    p: 4,
-                    width: '400px',
-                    textAlign: 'center',
+                    width: '90%',  // Same as background video width
+                    height: '80%', // Same as background video height
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
                 }}
             >
-                <Typography id="modal-title" variant="h6" component="h2">
-                    Video Modal
-                </Typography>
+                {/* Close Icon (X) */}
+                <IconButton
+                    onClick={handleClose}
+                    sx={{
+                        position: 'absolute',
+                        top: 8,
+                        right: 8,
+                        color: 'white', // Purple-pink color for the X icon
+                    }}
+                >
+                    <CloseIcon />
+                </IconButton>
 
-                <VideoHandling />
-
-                <Button onClick={handleClose} sx={{ mt: 2 }}>
-                    Close
-                </Button>
+                {/* Video Player */}
+                <Box
+                    sx={{
+                        width: '90%',  // Make the video larger
+                        height: '80%', // Make the video almost fill the modal
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                    }}
+                >
+                    {/* Assuming VideoHandling is your custom video component */}
+                    <VideoHandling autoplay /> {/* Add autoplay to VideoHandling */}
+                </Box>
             </Box>
         </Modal>
     );

@@ -1,12 +1,20 @@
-import React from "react";
+import React from 'react';
 
-const VideoHandling: React.FC = () => {
+const VideoHandling: React.FC<{ autoplay?: boolean; sx?: any }> = ({ autoplay, sx }) => {
     return (
-        <video width="320" height="240" controls>
-            <source src="/src/assets/sample.mp4" type="video/mp4" />
+        <video
+            src="/public/assets/sample.mp4"
+            autoPlay={autoplay}
+            controls
+            style={{
+                width: '100%', // Ensure the video fills the parent container
+                height: '100%', // Ensure the video fills the parent container
+                ...sx, // Apply any additional styles passed via props
+            }}
+        >
             Your browser does not support the video tag.
         </video>
     );
-}
+};
 
 export default VideoHandling;
