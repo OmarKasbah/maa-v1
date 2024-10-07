@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { AppBar, Toolbar, Button, Box } from '@mui/material';
-import TrailerModal from "../modals/TrailerModal.tsx";
+import TrailerModal from "../../modals/TrailerModal.tsx";
 
 const Header: React.FC = () => {
     const [open, setOpen] = useState(false);

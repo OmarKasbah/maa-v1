@@ -1,7 +1,7 @@
 import React from 'react';
 import { Modal, Box, Typography, Button } from '@mui/material';
 import { ModalComponentProps } from "../../utils/props.ts";
-import VideoHandling from "../video/VideoHandling.tsx";
+import VideoHandling from "../core/video/VideoHandling.tsx";
 
 const TrailerModal: React.FC<ModalComponentProps> = ({ open, handleClose }) => {
     return (
