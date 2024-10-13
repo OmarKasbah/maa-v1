@@ -45,24 +45,42 @@ const ContactSection: React.FC = () => {
             <Grid container spacing={4}>
                 {/* Left side: Information and Imprint */}
                 <Grid item xs={12} md={6}>
-                    <Box sx={{ padding: '20px', color: 'white' }}>
-                        <Typography variant="h5" gutterBottom sx={{ color: 'white' }}>
-                            Information
-                        </Typography>
-                        <Typography variant="body1" sx={{ color: 'white' }}>
-                            Plot, Synopsis, Regie, Produzenten, Entstehung, Cast, Stabsliste
-                        </Typography>
+                    <Grid container spacing={4}>
 
-                        <Typography variant="h5" gutterBottom sx={{ color: 'white', marginTop: '20px' }}>
-                            Imprint
-                        </Typography>
-                        <Typography variant="body1" sx={{ color: 'white' }}>
-                            Example Company <br />
-                            Address: 1234 Fictional St, Berlin, DE <br />
-                            Email: contact@example.com <br />
-                            Phone: +49 123 456 789
-                        </Typography>
-                    </Box>
+                        {/* Information Section */}
+                        <Grid item xs={12} md={6}>
+                            <Box sx={{ padding: '20px', color: 'white', textAlign: 'left' }}>
+                                <Typography variant="h5" gutterBottom sx={{ color: 'white' }}>
+                                    Information
+                                </Typography>
+                                <Typography variant="body1" sx={{ color: 'white' }}>
+                                    Plot,<br />
+                                    Synopsis,<br />
+                                    Regie,<br />
+                                    Produzenten,<br />
+                                    Entstehung,<br />
+                                    Cast,<br />
+                                    Stabsliste
+                                </Typography>
+                            </Box>
+                        </Grid>
+
+                        {/* Imprint Section */}
+                        <Grid item xs={12} md={6}>
+                            <Box sx={{ padding: '20px', color: 'white', textAlign: 'left' }}>
+                                <Typography variant="h5" gutterBottom sx={{ color: 'white' }}>
+                                    Imprint
+                                </Typography>
+                                <Typography variant="body1" sx={{ color: 'white' }}>
+                                    Example Company <br />
+                                    Address: 1234 Fictional St, Berlin, DE <br />
+                                    Email: contact@example.com <br />
+                                    Phone: +49 123 456 789
+                                </Typography>
+                            </Box>
+                        </Grid>
+
+                    </Grid>
                 </Grid>
 
                 {/* Right side: Contact form */}
