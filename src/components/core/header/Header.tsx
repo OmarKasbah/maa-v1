@@ -63,7 +63,7 @@ const Header = ({ activeSection }) => {
 
             {/* Header for Tabs */}
             <AppBar sx={{ backgroundColor: 'black', height: 60, marginTop: 7 }} position="fixed">
-                <Toolbar sx={{ justifyContent: 'space-between' }}>
+                <Toolbar>
                     {/* Left-aligned Tabs */}
                     <Box sx={{ position: 'relative', display: 'flex', alignItems: 'center', flexGrow: 1 }}>
                         {/* Connected line above the tabs */}

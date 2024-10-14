@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Header from "./components/core/header/Header";
 import './App.css';
+import ContactForm from "./components/modals/ContactForm.tsx";
+import Footer from "./components/core/footer/Footer.tsx";
 
 function App() {
     const [activeSection, setActiveSection] = useState('what');
@@ -68,7 +70,12 @@ function App() {
                     <h2>Stabsliste Section</h2>
                     <p>Content about the stabsliste...</p>
                 </section>
+                {/* Contact Form Section */}
+                <section id="contact" className="section">
+                    <ContactForm />
+                </section>
 
+                <Footer></Footer>
             </main>
         </>
     );

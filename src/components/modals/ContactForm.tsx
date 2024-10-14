@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import emailjs from 'emailjs-com';
 import { Grid, TextField, Button, Box, Typography } from '@mui/material';
+import emailjs from 'emailjs-com';
 
 const ContactSection: React.FC = () => {
     const [formData, setFormData] = useState({
@@ -37,50 +37,78 @@ const ContactSection: React.FC = () => {
     };
 
     return (
-        <Box sx={{ padding: '20px', backgroundColor: 'black', color: 'white' }}>
-            <Typography variant="h4" gutterBottom sx={{ color: 'white', textAlign: 'center' }}>
-                Contact Us
-            </Typography>
+        <Box
+            sx={{
+                padding: '20px',          // Padding inside the content area
+                marginX: 'auto',          // Center the content horizontally
+                maxWidth: '90%',          // Constrain the content width (similar to header behavior)
+                backgroundColor: 'black',
+                color: 'white',
+                position: 'relative',     // Ensure proper positioning for lines
+            }}
+        >
+            {/* White line on top */}
+            <Box
+                sx={{
+                    position: 'absolute',
+                    top: 0,
+                    left: '0%',            // Adds inset to match the header
+                    right: '0%',           // Adds inset to match the header
+                    height: '1px',         // Thickness of the line
+                    backgroundColor: 'white',
+                    zIndex: 1,             // Ensure the line is above the content
+                }}
+            />
+
+            {/* White line on bottom */}
+            <Box
+                sx={{
+                    position: 'absolute',
+                    bottom: 0,
+                    left: '0%',            // Adds inset to match the header
+                    right: '0%',           // Adds inset to match the header
+                    height: '1px',         // Thickness of the line
+                    backgroundColor: 'white',
+                    zIndex: 1,             // Ensure the line is above the content
+                }}
+            />
 
             <Grid container spacing={4}>
                 {/* Left side: Information and Imprint */}
                 <Grid item xs={12} md={6}>
-                    <Grid container spacing={4}>
-
+                    <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: '50px' }}>
                         {/* Information Section */}
-                        <Grid item xs={12} md={6}>
-                            <Box sx={{ padding: '20px', color: 'white', textAlign: 'left' }}>
-                                <Typography variant="h5" gutterBottom sx={{ color: 'white' }}>
-                                    Information
-                                </Typography>
-                                <Typography variant="body1" sx={{ color: 'white' }}>
-                                    Plot,<br />
-                                    Synopsis,<br />
-                                    Regie,<br />
-                                    Produzenten,<br />
-                                    Entstehung,<br />
-                                    Cast,<br />
-                                    Stabsliste
-                                </Typography>
-                            </Box>
-                        </Grid>
+                        <Box sx={{ color: 'white', textAlign: 'left' }}>
+                            <Typography variant="h6" gutterBottom sx={{ color: 'white', fontWeight: 'bold', paddingLeft: '20px',         fontFamily: 'Crimson Pro, serif', // Apply the Crimson Pro font
+                            }}>
+                                Information
+                            </Typography>
+                            <Typography variant="body1" sx={{ color: 'white', paddingLeft: '20px', fontFamily: 'Crimson Pro, serif', // Apply the Crimson Pro font
+                            }}>
+                                Plot,<br />
+                                Synopsis,<br />
+                                Regie,<br />
+                                Produzenten,<br />
+                                Entstehung,<br />
+                                Cast,<br />
+                                Stabsliste
+                            </Typography>
+                        </Box>
 
                         {/* Imprint Section */}
-                        <Grid item xs={12} md={6}>
-                            <Box sx={{ padding: '20px', color: 'white', textAlign: 'left' }}>
-                                <Typography variant="h5" gutterBottom sx={{ color: 'white' }}>
-                                    Imprint
-                                </Typography>
-                                <Typography variant="body1" sx={{ color: 'white' }}>
-                                    Example Company <br />
-                                    Address: 1234 Fictional St, Berlin, DE <br />
-                                    Email: contact@example.com <br />
-                                    Phone: +49 123 456 789
-                                </Typography>
-                            </Box>
-                        </Grid>
+                        <Box sx={{ color: 'white', textAlign: 'left' }}>
+                            <Typography variant="h6" gutterBottom sx={{ color: 'white', fontWeight: 'bold', paddingLeft: '20px', fontFamily: 'Crimson Pro, serif' }}>
+                                Imprint
+                            </Typography>
+                            <Typography variant="body1" sx={{ color: 'white', paddingLeft: '20px', fontFamily: 'Crimson Pro, serif' }}>
+                                Example Company <br />
+                                Address: 1234 Fictional St, Berlin, DE <br />
+                                Email: contact@example.com <br />
+                                Phone: +49 123 456 789
+                            </Typography>
+                        </Box>
 
-                    </Grid>
+                    </Box>
                 </Grid>
 
                 {/* Right side: Contact form */}
@@ -89,7 +117,7 @@ const ContactSection: React.FC = () => {
                         sx={{
                             padding: '20px',
                             backgroundColor: 'black',
-                            color: 'white',  // Set font color to white
+                            color: 'white',
                             borderRadius: '8px', // Rounded corners
                         }}
                     >
@@ -197,18 +225,20 @@ const ContactSection: React.FC = () => {
                                 </Grid>
 
                                 {/* Send button aligned to the right */}
-                                <Grid item xs={12}>
+                                <Grid item xs={12} display="flex" justifyContent="flex-end">
                                     <Button
                                         type="submit"
-                                        fullWidth
-                                        variant="contained"
+                                        variant="outlined"
                                         sx={{
-                                            backgroundColor: '#FF56FF',
-                                            color: 'white',
+                                            backgroundColor: 'black',
+                                            color: '#FF56FF',
+                                            borderColor: '#FF56FF',
+                                            borderWidth: '0.5',
                                             '&:hover': {
-                                                backgroundColor: '#E048E0',
+                                                borderColor: '#FF56FF',
                                             },
-                                            width: '100%' // Make the button the same width as the fields
+                                            width: '47%', // Allows the button to take its natural size
+                                            marginTop: '8px',  // Adds space from the text area
                                         }}
                                     >
                                         Send Message
