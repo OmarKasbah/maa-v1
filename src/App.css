@@ -1,11 +1,10 @@
 .section {
     padding-top: 140px; /* Adjust depending on the height of your header */
-    /* Removed the fixed height */
+    height: 100vh; /* Full screen for each section */
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    position: relative; /* To position the overlay and video */
 }
 
 .background-video {
@@ -13,19 +12,15 @@
     top: 50%;
     left: 50%;
     width: 90%;
-    height: auto; /* Maintain aspect ratio */
+    height: 80%;
     transform: translate(-50%, -50%);
     z-index: 0; /* Puts the video behind the content */
 }
+
 
 .overlay {
     position: absolute;
     z-index: 1;
     color: white;
     text-align: center;
-    width: 100%; /* Ensure overlay takes full width */
-    height: 100%; /* Ensure overlay takes full height */
-    display: flex; /* Flexbox for centering text */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
 }

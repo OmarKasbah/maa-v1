@@ -6,6 +6,7 @@ import Footer from "./components/core/footer/Footer.tsx";
 
 function App() {
     const [activeSection, setActiveSection] = useState('what');
+    const [isHeaderVisible, setHeaderVisible] = useState(false); // State for header visibility
 
     const handleScroll = () => {
         const sections = document.querySelectorAll('section');
@@ -15,6 +16,13 @@ function App() {
                 setActiveSection(section.id);
             }
         });
+
+        // Check if scrolled down to show the header
+        if (window.scrollY > 0) {
+            setHeaderVisible(true);
+        } else {
+            setHeaderVisible(false);
+        }
     };
 
     useEffect(() => {
@@ -24,18 +32,19 @@ function App() {
 
     return (
         <>
-            <Header activeSection={activeSection} />
+            <Header activeSection={activeSection} isVisible={isHeaderVisible} />
             <main>
-                <section id="what" className="section">
-                    {/* First section content (video background and title) */}
-                    <div className="overlay">
-                        <h1>Website Title</h1>
-                    </div>
+                <section id="video" className="section">
+                    {/* Video background with centered logo */}
                     <video autoPlay muted loop className="background-video">
                         <source src="/public/assets/sample.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
+                    <div className="overlay">
+                        <img src="/public/assets/logo.png" alt="Logo" className="logo" />
+                    </div>
                 </section>
+
                 <section id="plot" className="section">
                     <h2>Plot Section</h2>
                     <p>Content about the plot...</p>
@@ -75,7 +84,7 @@ function App() {
                     <ContactForm />
                 </section>
 
-                <Footer></Footer>
+                <Footer />
             </main>
         </>
     );

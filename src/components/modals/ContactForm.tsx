@@ -79,7 +79,7 @@ const ContactSection: React.FC = () => {
                     <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: '50px' }}>
                         {/* Information Section */}
                         <Box sx={{ color: 'white', textAlign: 'left' }}>
-                            <Typography variant="h6" gutterBottom sx={{ color: 'white', fontWeight: 'bold', paddingLeft: '20px',         fontFamily: 'Crimson Pro, serif', // Apply the Crimson Pro font
+                            <Typography variant="h6" gutterBottom sx={{ color: 'white', fontWeight: 'bold', paddingLeft: '20px',         // Apply the Crimson Pro font
                             }}>
                                 Information
                             </Typography>
