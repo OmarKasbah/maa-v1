@@ -3,6 +3,7 @@ import Header from "./components/core/header/Header";
 import './App.css';
 import ContactForm from "./components/modals/ContactForm.tsx";
 import Footer from "./components/core/footer/Footer.tsx";
+import PlotSection from "./components/sections/PlotSection.tsx";
 
 function App() {
     const [activeSection, setActiveSection] = useState('what');
@@ -62,10 +63,8 @@ function App() {
                     </div>
                 </section>
 
-                <section id="plot" className="section">
-                    <h2>Plot Section</h2>
-                    <p>Content about the plot...</p>
-                </section>
+                <PlotSection /> {/* Replace the plot section with the new component */}
+
 
                 <section id="synopsis" className="section">
                     <h2>Synopsis Section</h2>

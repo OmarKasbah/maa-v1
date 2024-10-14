@@ -1,0 +1,23 @@
+.plot-section {
+    position: relative;
+    height: 100vh; /* Full height to match the background image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white; /* Change text color for visibility */
+    overflow: hidden;
+
+    /* Set the background image properties */
+    background-image: url('/public/assets/plot.png'); /* Updated to plot.png */
+    background-size: 90% auto; /* Adjust width to 80% and auto height to maintain aspect ratio */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent repeating */
+}
+
+.text-container {
+    position: relative;
+    z-index: 1; /* Ensure text is on top of the background */
+    max-width: 800px; /* Adjust as necessary */
+    padding: 20px; /* Space around text */
+}
