@@ -70,7 +70,7 @@ const Header = ({ activeSection, isVisible }) => {
                         <img
                             src="/assets/logo.png" // Corrected path
                             alt="Logo"
-                            style={{ height: '50px', cursor: 'pointer', marginLeft: '60px' }}
+                            style={{ height: '50px', cursor: 'pointer', marginLeft: '140px' }}
                             onClick={() => scrollToSection('what')} // Scroll to top on logo click
                         />
                     </Box>

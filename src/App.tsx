@@ -35,13 +35,30 @@ function App() {
             <Header activeSection={activeSection} isVisible={isHeaderVisible} />
             <main>
                 <section id="video" className="section">
-                    {/* Video background with centered logo */}
-                    <video autoPlay muted loop className="background-video">
-                        <source src="/public/assets/sample.mp4" type="video/mp4" />
-                        Your browser does not support the video tag.
-                    </video>
-                    <div className="overlay">
-                        <img src="/public/assets/logo.png" alt="Logo" className="logo" />
+                    <div className="video-container">
+                        {/* Video background with centered logo */}
+                        <video autoPlay muted loop className="background-video">
+                            <source src="/public/assets/sample.mp4" type="video/mp4" />
+                            Your browser does not support the video tag.
+                        </video>
+                        <div className="overlay">
+                            <img src="/public/assets/logo.png" alt="Logo" className="logo" />
+                        </div>
+                    </div>
+
+                    {/* Logo container for logos under the video */}
+                    <div className="logo-container">
+                        <div className="logo-row">
+                            <img src="/public/assets/logo1.png" alt="Logo 1" className="small-logo" />
+                            <img src="/public/assets/logo2.png" alt="Logo 2" className="small-logo" />
+                            <img src="/public/assets/logo3.png" alt="Logo 3" className="small-logo" />
+                            <img src="/public/assets/logo4.png" alt="Logo 4" className="small-logo" />
+                        </div>
+                        <div className="logo-row">
+                            <img src="/public/assets/logo5.png" alt="Logo 5" className="small-logo" />
+                            <img src="/public/assets/logo6.png" alt="Logo 6" className="small-logo" />
+                            <img src="/public/assets/logo7.png" alt="Logo 7" className="small-logo" />
+                        </div>
                     </div>
                 </section>
 
