@@ -6,6 +6,7 @@ import Footer from "./components/core/footer/Footer.tsx";
 import PlotSection from "./components/sections/PlotSection.tsx";
 import { motion, useScroll, useTransform } from 'framer-motion';
 import SynopsisSection from "./components/sections/SynopsisSection.tsx";
+import ProduzentenSection from "./components/sections/ProduzentenSection.tsx";
 
 function App() {
     const [activeSection, setActiveSection] = useState('what');
@@ -111,10 +112,7 @@ function App() {
 
                 <SynopsisSection />
 
-                <section id="produzenten" className="section">
-                    <h2>Produzenten Section</h2>
-                    <p>Content about the produzenten...</p>
-                </section>
+                <ProduzentenSection />
 
                 <section id="entstehung" className="section">
                     <h2>Entstehung Section</h2>

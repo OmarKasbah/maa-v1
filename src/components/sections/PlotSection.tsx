@@ -20,9 +20,9 @@ const PlotSection: React.FC = () => {
         <section id="plot" className="plot-section">
             <div className="title-container">
                 <motion.h1
-                    initial={{ x: -100, opacity: 0 }} // Initial state
-                    whileInView={{ x: 0, opacity: 1 }} // Animate to visible
-                    transition={{ duration: 0.8 }} // Animation duration
+                    initial={{ scale: 0.8, opacity: 0 }} // Start with smaller size and invisible
+                    whileInView={{ scale: 1, opacity: 1 }} // Animate to full size and visible
+                    transition={{ duration: 0.8, ease: 'easeInOut' }} // Adjust duration and easing
                     className="plot-title"
                 >
                     —Plot—
@@ -30,7 +30,6 @@ const PlotSection: React.FC = () => {
             </div>
             <div className="text-container">
                 {lines.map((line, index) => {
-                    // Calculate stagger effect based on index
                     const delay = index * 0.1; // Delay for staggered effect
 
                     if (line === null) {

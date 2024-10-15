@@ -13,7 +13,7 @@
 }
 
 .title-container {
-    margin-bottom: 5px; /* Adjust space between title and text */
+    margin-bottom: 20px; /* Adjust space between title and text */
 }
 
 .plot-title {
@@ -22,14 +22,13 @@
     text-align: center; /* Center title text */
     color: white; /* Title color */
     width: 100%; /* Ensure title takes full width */
-    margin-top: -40px;
     font-weight: lighter;
+    margin: 0;
 }
 
 .text-container {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Align text to the start */
     width: 60%; /* Set width of the text container */
     max-width: 800px; /* Maximum width for larger screens */
 }
@@ -37,7 +36,7 @@
 .plot-text {
     font-family: 'Noto Sans', sans-serif; /* Font family for text */
     font-size: 1.8vw; /* Responsive font size */
-    text-align: left; /* Align text to the left */
+    text-align: justify; /* Align text to the left */
     color: white;
     margin: 0 0 0 0;
 }
