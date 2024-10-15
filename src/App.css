@@ -72,3 +72,41 @@
         height: auto;
     }
 }
+
+.arrow-container {
+    display: flex;
+    justify-content: center; /* Center the arrow */
+    align-items: center;     /* Center vertically */
+    margin: 40px 20px;         /* Space around the arrow */
+}
+
+.arrow {
+    transition: transform 0.2s; /* Optional: smooth transition */
+}
+
+.quote-text-container {
+    display: flex;
+    flex-direction: column; /* Stack lines vertically */
+    justify-content: center; /* Center the container */
+    align-items: center; /* Center content horizontally */
+    margin: 60px auto; /* Center the container horizontally with margin auto */
+    max-width: 640px; /* Limit max width */
+    width: 100%; /* Responsive width */
+}
+
+.quote-text {
+    font-family: 'Crimson Pro', serif; /* Set Crimson Pro as the font family */
+    font-size: 2.2rem; /* Adjust font size */
+    line-height: 1.5; /* Improve readability */
+    align-items: flex-start; /* Left-align the text */
+    width: 100%; /* Ensure the text takes up full width of the container */
+    margin: 0; /* Reset default margins */
+    color: #FF56FF; /* Set text color */
+}
+
+.outer-quote {
+    display: flex;
+    justify-content: center;
+}
+
+

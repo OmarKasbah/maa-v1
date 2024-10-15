@@ -4,10 +4,15 @@ import './App.css';
 import ContactForm from "./components/modals/ContactForm.tsx";
 import Footer from "./components/core/footer/Footer.tsx";
 import PlotSection from "./components/sections/PlotSection.tsx";
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 function App() {
     const [activeSection, setActiveSection] = useState('what');
     const [isHeaderVisible, setHeaderVisible] = useState(false); // State for header visibility
+
+    // Get scrollY progress for the arrow animation
+    const { scrollY } = useScroll();
+    const arrowScale = useTransform(scrollY, [700, 900], [1, 0.1]); // Scale down from 1 to 0.1
 
     const handleScroll = () => {
         const sections = document.querySelectorAll('section');
@@ -61,11 +66,49 @@ function App() {
                             <img src="/public/assets/logo7.png" alt="Logo 7" className="small-logo" />
                         </div>
                     </div>
+
+                    {/* Downward arrow icon */}
+                    <motion.div
+                        style={{ scale: arrowScale }} // Use transformed scale for the arrow
+                        className="arrow-container"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="#FF56FF"
+                            strokeWidth="1" // Very thin line
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            style={{ width: '16px', height: 'auto', transform: 'scaleY(8)', marginBottom: '20px', marginTop: '10px'}} // Extremely tall
+                        >
+                            <line x1="12" y1="2" x2="12" y2="24"></line>
+                            <polyline points="8 15 12 20 16 15"></polyline>
+                        </svg>
+                    </motion.div>
+
+                    {/* Centered Image */}
+                    <div className="image-container" style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
+                        <img
+                            src="/public/assets/zitat.png"
+                            alt="Centered"
+                            style={{
+                                width: '60%', // Make it responsive
+                                maxWidth: '640px', // Limit max width
+                                height: 'auto', // Maintain aspect ratio
+                            }}
+                        />
+                    </div>
+
+                    {/* Animated Quote Text */}
+                    <div className="quote-container" style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
+                        <QuoteText />
+                    </div>
                 </section>
 
                 <PlotSection /> {/* Replace the plot section with the new component */}
 
-
+                {/* Other sections */}
                 <section id="synopsis" className="section">
                     <h2>Synopsis Section</h2>
                     <p>Content about the synopsis...</p>
@@ -95,6 +138,7 @@ function App() {
                     <h2>Stabsliste Section</h2>
                     <p>Content about the stabsliste...</p>
                 </section>
+
                 {/* Contact Form Section */}
                 <section id="contact" className="section">
                     <ContactForm />
@@ -105,5 +149,43 @@ function App() {
         </>
     );
 }
+
+const QuoteText: React.FC = () => {
+    // Text lines to display
+    const lines: string[] = [
+        "“... wir wollten eigentlich",
+        "nur ein paar Szenen",
+        "für Roberts Showreel",
+        "drehen; wir konnten ja",
+        "nicht wissen, dass daraus",
+        "ein Spielfilm wird ...”" // Quotation marks added
+    ];
+
+    return (
+        <div className="outer-quote">
+        <div className="quote-text-container">
+            {lines.map((line, index) => {
+                // Calculate stagger effect based on index
+                const delay = index * 0.1; // Delay for staggered effect
+
+                return (
+                    <motion.p
+                        key={index}
+                        initial={{ opacity: 0, y: 20 }} // Start invisible and slightly lower
+                        whileInView={{ opacity: 1, y: 0 }} // Fade in and slide up
+                        transition={{ duration: 0.5, delay }} // Animation duration with staggered delay
+                        className="quote-text"
+                    >
+                        {line}
+                    </motion.p>
+                );
+            })}
+        </div>
+        </div>
+    );
+};
+
+
+
 
 export default App;

@@ -1,39 +1,57 @@
 import React from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import './PlotSection.css'; // Ensure this points to your CSS file
 
 const PlotSection: React.FC = () => {
-    // Get scrollY progress
-    const { scrollYProgress } = useScroll();
-
     // Text lines to display
-    const lines: string[] = [
-        "Once upon a time in a faraway land,",
-        "there lived a brave young girl.",
-        "She embarked on an adventure",
-        "to discover the secrets of her kingdom.",
-        "Along the way, she faced many challenges,",
-        "but her determination never wavered.",
-        "In the end, she uncovered a truth",
-        "that changed her life forever."
+    const lines: (string | null)[] = [
+        "Pink Puzzle ist ein Murder-Mystery Film (ca. 75 - 90min) im Neo-Noir-Stil.",
+        "Im Mittelpunkt stehen zwei Freunde (Matze und Nishaat),",
+        "die unter Verdacht stehen, eine Frau (Cateline) vergewaltigt und getötet zu haben.",
+        null, // This will create an empty line
+        "Die Themen des Films sind Verrat und Loyalität und das ambivalente Verhältnis",
+        "dieser beiden Begriffe, wenn es ums nackte Überleben geht.",
+        "“Wie stark ist eine langjährige Männerfreundschaft,",
+        "wie stark ist der eigene Überlebenswillen und",
+        "was ist man bereit, dafür zu opfern?”"
     ];
 
     return (
         <section id="plot" className="plot-section">
+            <div className="title-container">
+                <motion.h1
+                    initial={{ x: -100, opacity: 0 }} // Initial state
+                    whileInView={{ x: 0, opacity: 1 }} // Animate to visible
+                    transition={{ duration: 0.8 }} // Animation duration
+                    className="plot-title"
+                >
+                    —Plot—
+                </motion.h1>
+            </div>
             <div className="text-container">
                 {lines.map((line, index) => {
-                    // Calculate start and end points for opacity
-                    const start = (index * 0.5) / lines.length; // Start showing at each line's index, but at half the height
-                    const end = ((index + 1) * 0.5) / lines.length; // Finish showing just before the next line starts, at half the height
+                    // Calculate stagger effect based on index
+                    const delay = index * 0.1; // Delay for staggered effect
 
-                    // Use scrollYProgress to determine opacity
-                    const opacity = useTransform(scrollYProgress, [start, end], [0, 1]);
+                    if (line === null) {
+                        return (
+                            <motion.p
+                                key={index}
+                                initial={{ opacity: 0, y: 10 }} // Start invisible and slightly lower
+                                whileInView={{ opacity: 1, y: 0 }} // Fade in and slide up
+                                transition={{ duration: 0.3, delay }} // Animation duration with staggered delay
+                                style={{ height: '1rem', margin: '0' }} // Empty line with height
+                            />
+                        );
+                    }
 
                     return (
                         <motion.p
                             key={index}
-                            style={{ opacity }}
-                            transition={{ duration: 0.5 }} // Animation duration
+                            initial={{ opacity: 0, y: 20 }} // Start invisible and slightly lower
+                            whileInView={{ opacity: 1, y: 0 }} // Fade in and slide up
+                            transition={{ duration: 0.5, delay }} // Animation duration with staggered delay
+                            className="plot-text"
                         >
                             {line}
                         </motion.p>

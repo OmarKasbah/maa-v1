@@ -1,23 +1,74 @@
 .plot-section {
     position: relative;
-    height: 100vh; /* Full height to match the background image */
     display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the container */
     justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white; /* Change text color for visibility */
-    overflow: hidden;
-
-    /* Set the background image properties */
-    background-image: url('/public/assets/plot.png'); /* Updated to plot.png */
-    background-size: 90% auto; /* Adjust width to 80% and auto height to maintain aspect ratio */
+    background-image: url('/public/assets/plot.png'); /* Background image */
+    background-size: 90%; /* Resize the background image to 90% */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
     background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Prevent repeating */
+    height: 100vh; /* Full height of the viewport */
+    padding: 20px; /* Add padding */
+}
+
+.title-container {
+    margin-bottom: 5px; /* Adjust space between title and text */
+}
+
+.plot-title {
+    font-family: 'Playfair Display', serif; /* Font family for title */
+    font-size: 6vw; /* Font size for the title */
+    text-align: center; /* Center title text */
+    color: white; /* Title color */
+    width: 100%; /* Ensure title takes full width */
+    margin-top: -40px;
+    font-weight: lighter;
 }
 
 .text-container {
-    position: relative;
-    z-index: 1; /* Ensure text is on top of the background */
-    max-width: 800px; /* Adjust as necessary */
-    padding: 20px; /* Space around text */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align text to the start */
+    width: 60%; /* Set width of the text container */
+    max-width: 800px; /* Maximum width for larger screens */
+}
+
+.plot-text {
+    font-family: 'Noto Sans', sans-serif; /* Font family for text */
+    font-size: 1.8vw; /* Responsive font size */
+    text-align: left; /* Align text to the left */
+    color: white;
+    margin: 0 0 0 0;
+}
+
+/* Media queries for further responsiveness */
+@media (max-width: 768px) {
+    .plot-title {
+        font-size: 6vw; /* Slightly smaller title size for smaller screens */
+    }
+
+    .plot-text {
+        font-size: 2vw; /* Larger text size for smaller screens */
+    }
+
+    .plot-section {
+        margin-bottom: -100px;
+        margin-top: -100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .plot-title {
+        font-size: 6vw; /* Even smaller title size for extra small screens */
+    }
+
+    .plot-text {
+        font-size: 1.8vw; /* Larger text size for extra small screens */
+    }
+
+    .plot-section {
+        margin-bottom: -280px;
+        margin-top: -280px;
+    }
 }
