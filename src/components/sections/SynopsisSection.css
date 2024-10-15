@@ -1,0 +1,69 @@
+/* Synopsis section styling */
+.synopsis-section {
+    position: relative;
+    background-image: url('/public/assets/synopsis.png'); /* Add your background image */
+    background-size: 95%; /* Make sure the background covers most of the section */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-position: center bottom; /* Position the image at the bottom of the section */
+    padding-top: 100px; /* Add space at the top for the text */
+    padding-bottom: 480px; /* Increase padding at the bottom to push the image down */
+    color: white; /* Text color for the content */
+}
+
+/* Title container for the section */
+.title-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+/* Title styling */
+.synopsis-title {
+    font-family: 'Crimson Pro', serif;
+    font-size: 6rem;
+    color: #FF56FF; /* Title color as requested */
+    text-align: center;
+    margin-top: -5px;
+    margin-bottom: -2px;
+}
+
+/* Text container to hold the paragraph content */
+.text-container {
+    max-width: 1000px; /* Limit the width of the content */
+    margin: 0 auto; /* Center the text container */
+    text-align: center; /* Center-align the text */
+}
+
+/* Individual text lines */
+.synopsis-text {
+    font-family: 'Noto Sans', sans-serif; /* Font family for text */
+    font-size: 1.8rem;
+    margin: 10px 0; /* Adjust margin between the text lines */
+    line-height: 1.4; /* Adjust line height */
+    text-align: left;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .synopsis-title {
+        font-size: 5.5rem; /* Slightly smaller title on tablets */
+    }
+
+    .synopsis-text {
+        font-size: 1.2rem; /* Adjust text size for tablets */
+    }
+
+    .synopsis-section {
+        padding-bottom: 400px; /* Increase padding at the bottom to push the image down */
+    }
+}
+
+@media (max-width: 480px) {
+    .synopsis-title {
+        font-size: 3.0rem; /* Further reduce title size on mobile */
+    }
+
+    .synopsis-text {
+        font-size: 1.0rem; /* Adjust text size for mobile */
+    }
+}

@@ -5,6 +5,7 @@ import ContactForm from "./components/modals/ContactForm.tsx";
 import Footer from "./components/core/footer/Footer.tsx";
 import PlotSection from "./components/sections/PlotSection.tsx";
 import { motion, useScroll, useTransform } from 'framer-motion';
+import SynopsisSection from "./components/sections/SynopsisSection.tsx";
 
 function App() {
     const [activeSection, setActiveSection] = useState('what');
@@ -108,16 +109,7 @@ function App() {
 
                 <PlotSection /> {/* Replace the plot section with the new component */}
 
-                {/* Other sections */}
-                <section id="synopsis" className="section">
-                    <h2>Synopsis Section</h2>
-                    <p>Content about the synopsis...</p>
-                </section>
-
-                <section id="regie" className="section">
-                    <h2>Regie Section</h2>
-                    <p>Content about the regie...</p>
-                </section>
+                <SynopsisSection />
 
                 <section id="produzenten" className="section">
                     <h2>Produzenten Section</h2>

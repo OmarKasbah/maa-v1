@@ -7,7 +7,7 @@ const Header = ({ activeSection, isVisible }) => {
     const [open, setOpen] = useState(false); // For trailer modal
     const [drawerOpen, setDrawerOpen] = useState(false); // State for burger menu
 
-    const sections = ['Plot', 'Synopsis', 'Regie', 'Produzenten', 'Entstehung', 'Cast', 'Stabsliste'];
+    const sections = ['Plot', 'Synopsis', 'Produzenten', 'Entstehung', 'Cast', 'Stabsliste'];
 
     // Open the modal for trailer
     const handleOpen = () => setOpen(true);
