@@ -153,39 +153,57 @@ function App() {
 const QuoteText: React.FC = () => {
     // Text lines to display
     const lines: string[] = [
-        "“... wir wollten eigentlich",
+        "... wir wollten eigentlich",
         "nur ein paar Szenen",
         "für Roberts Showreel",
         "drehen; wir konnten ja",
         "nicht wissen, dass daraus",
-        "ein Spielfilm wird ...”" // Quotation marks added
+        "ein Spielfilm wird ..."
     ];
 
     return (
         <div className="outer-quote">
-        <div className="quote-text-container">
-            {lines.map((line, index) => {
-                // Calculate stagger effect based on index
-                const delay = index * 0.1; // Delay for staggered effect
+            <div className="quote-text-container">
+                {/* Flexbox container with the start quote and text */}
+                <motion.img
+                    src="/public/assets/up.png" // Replace with your start-quote image path
+                    alt="Start quote"
+                    className="quote-mark start-quote"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                />
 
-                return (
-                    <motion.p
-                        key={index}
-                        initial={{ opacity: 0, y: 20 }} // Start invisible and slightly lower
-                        whileInView={{ opacity: 1, y: 0 }} // Fade in and slide up
-                        transition={{ duration: 0.5, delay }} // Animation duration with staggered delay
-                        className="quote-text"
-                    >
-                        {line}
-                    </motion.p>
-                );
-            })}
-        </div>
+                {/* Wrapping the text content */}
+                <div className="quote-text-wrapper">
+                    {lines.map((line, index) => {
+                        const delay = index * 0.1; // Delay for staggered effect
+                        return (
+                            <motion.p
+                                key={index}
+                                initial={{ opacity: 0, y: 20 }} // Start invisible and slightly lower
+                                whileInView={{ opacity: 1, y: 0 }} // Fade in and slide up
+                                transition={{ duration: 0.5, delay }} // Animation duration with staggered delay
+                                className="quote-text"
+                            >
+                                {line}
+                            </motion.p>
+                        );
+                    })}
+                </div>
+
+                {/* End quote mark on the right side of the last line */}
+                <motion.img
+                    src="/public/assets/down.png" // Replace with your end-quote image path
+                    alt="End quote"
+                    className="quote-mark end-quote"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: lines.length * 0.1 }}
+                />
+            </div>
         </div>
     );
 };
-
-
-
 
 export default App;

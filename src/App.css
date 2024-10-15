@@ -73,6 +73,7 @@
     }
 }
 
+/* Arrow container */
 .arrow-container {
     display: flex;
     justify-content: center; /* Center the arrow */
@@ -84,29 +85,93 @@
     transition: transform 0.2s; /* Optional: smooth transition */
 }
 
+/* Quote text container */
 .quote-text-container {
     display: flex;
-    flex-direction: column; /* Stack lines vertically */
-    justify-content: center; /* Center the container */
-    align-items: center; /* Center content horizontally */
-    margin: 60px auto; /* Center the container horizontally with margin auto */
-    max-width: 640px; /* Limit max width */
-    width: 100%; /* Responsive width */
+    align-items: flex-start;
+    justify-content: space-between; /* Space between the quote marks and the text */
+    margin-top: 60px;
+    margin-bottom: 60px;
+    max-width: 640px;
+    width: 100%;
+    position: relative; /* For better positioning control */
 }
 
+/* Wrapper for the quote text */
+.quote-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px; /* Space between the start quote and text */
+    flex-grow: 1; /* Ensure it grows to take up available space */
+}
+
+/* Individual quote text lines */
 .quote-text {
-    font-family: 'Crimson Pro', serif; /* Set Crimson Pro as the font family */
-    font-size: 2.2rem; /* Adjust font size */
-    line-height: 1.5; /* Improve readability */
-    align-items: flex-start; /* Left-align the text */
-    width: 100%; /* Ensure the text takes up full width of the container */
-    margin: 0; /* Reset default margins */
-    color: #FF56FF; /* Set text color */
+    font-family: 'Crimson Pro', serif;
+    font-size: 2.2rem; /* Base size for larger screens */
+    color: #FF56FF;
+    text-align: left;
+    margin: 1px; /* Remove default margin */
+    padding: 1px; /* Remove padding */
+    line-height: 1; /* Tighten line spacing */
 }
 
+/* Quote mark styling */
+.quote-mark {
+    width: 80px; /* Adjust the size as necessary */
+    height: auto;
+}
+
+/* Start quote alignment */
+.start-quote {
+    align-self: flex-start; /* Align the start quote at the top */
+    margin-top: -50px;
+}
+
+/* End quote alignment */
+.end-quote {
+    align-self: flex-end; /* Align the end quote at the bottom */
+    margin-left: 5px; /* Add a bit of space between the text and the end quote */
+    margin-bottom: -50px;
+}
+
+/* Outer quote container to center everything */
 .outer-quote {
     display: flex;
     justify-content: center;
+    padding-bottom: 50px;
+    padding-top: 50px;
 }
 
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .quote-text-container {
+        max-width: 90%; /* Allow more width on smaller screens */
+    }
 
+    .quote-text {
+        font-size: 1.8rem; /* Smaller font size for tablets */
+        line-height: 1; /* Keep tight spacing */
+    }
+
+    .quote-mark {
+        width: 30px; /* Smaller quote marks for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .quote-text-container {
+        max-width: 100%; /* Full width on mobile */
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    .quote-text {
+        font-size: 1.5rem; /* Further reduce font size for mobile */
+        line-height: 1.5; /* Keep tight spacing */
+    }
+
+    .quote-mark {
+        width: 25px; /* Smaller quote marks for mobile */
+    }
+}
