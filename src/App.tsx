@@ -7,6 +7,9 @@ import PlotSection from "./components/sections/PlotSection.tsx";
 import { motion, useScroll, useTransform } from 'framer-motion';
 import SynopsisSection from "./components/sections/SynopsisSection.tsx";
 import ProduzentenSection from "./components/sections/ProduzentenSection.tsx";
+import EnstehungSection from "./components/sections/EnstehungSection.tsx";
+import PhotoCollage from "./components/parallax/PhotoCollage.tsx";
+import CastSection from "./components/sections/CastSection.tsx";
 
 function App() {
     const [activeSection, setActiveSection] = useState('what');
@@ -106,6 +109,8 @@ function App() {
                     <div className="quote-container" style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
                         <QuoteText />
                     </div>
+
+                    <PhotoCollage />
                 </section>
 
                 <PlotSection /> {/* Replace the plot section with the new component */}
@@ -114,15 +119,9 @@ function App() {
 
                 <ProduzentenSection />
 
-                <section id="entstehung" className="section">
-                    <h2>Entstehung Section</h2>
-                    <p>Content about the entstehung...</p>
-                </section>
+                <EnstehungSection />
 
-                <section id="cast" className="section">
-                    <h2>Cast Section</h2>
-                    <p>Content about the cast...</p>
-                </section>
+                <CastSection />
 
                 <section id="stabsliste" className="section">
                     <h2>Stabsliste Section</h2>

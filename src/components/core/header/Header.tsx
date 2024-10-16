@@ -1,9 +1,14 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { AppBar, Toolbar, Button, Box, IconButton, Drawer, List, ListItem, ListItemText } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import TrailerModal from "../../modals/TrailerModal.tsx";
 
-const Header = ({ activeSection, isVisible }) => {
+interface HeaderProps {
+    activeSection: string;
+    isVisible: boolean;
+}
+
+const Header = ({ activeSection, isVisible }: HeaderProps) => {
     const [open, setOpen] = useState(false); // For trailer modal
     const [drawerOpen, setDrawerOpen] = useState(false); // State for burger menu
 
@@ -16,12 +21,12 @@ const Header = ({ activeSection, isVisible }) => {
     const handleClose = () => setOpen(false);
 
     // Toggle the burger menu drawer
-    const toggleDrawer = (open) => (event) => {
+    const toggleDrawer = (open: boolean) => () => {
         setDrawerOpen(open);
     };
 
     // Smooth scroll to section and close the menu
-    const scrollToSection = (sectionId) => {
+    const scrollToSection = (sectionId: string) => {
         const section = document.getElementById(sectionId.toLowerCase());
         if (section) {
             section.scrollIntoView({
@@ -62,13 +67,13 @@ const Header = ({ activeSection, isVisible }) => {
                     {/* Logo: Centered in normal mode, Left in responsive mode */}
                     <Box
                         sx={{
-                            display: { xs: 'none', md: 'flex' }, // Hidden on small screens
+                            display: { xs: 'none', md: 'flex' },
                             justifyContent: 'center',
                             flexGrow: 1,
                         }}
                     >
                         <img
-                            src="/assets/logo.png" // Corrected path
+                            src="/assets/logo.png"
                             alt="Logo"
                             style={{ height: '50px', cursor: 'pointer', marginLeft: '140px' }}
                             onClick={() => scrollToSection('what')} // Scroll to top on logo click
@@ -76,12 +81,12 @@ const Header = ({ activeSection, isVisible }) => {
                     </Box>
 
                     {/* Trailer Button: Shown on larger screens */}
-                    <Box sx={{ display: { xs: 'none', md: 'flex', marginRight: '12px'}, alignItems: 'center' }}>
+                    <Box sx={{ display: { xs: 'none', md: 'flex', marginRight: '12px' }, alignItems: 'center' }}>
                         <Button
                             sx={{
                                 color: '#6b014f', // Updated active color
                                 border: '1px solid #6b014f',
-                                textTransform: 'none', // Ensure text remains as it is
+                                textTransform: 'none',
                                 '&:hover': {
                                     backgroundColor: 'transparent',
                                     color: '#FF56FF',
@@ -90,7 +95,7 @@ const Header = ({ activeSection, isVisible }) => {
                             }}
                             onClick={handleOpen}
                         >
-                            Trailer anschauen {/* Changed to lowercase "a" */}
+                            Trailer anschauen
                         </Button>
                     </Box>
 
@@ -101,7 +106,7 @@ const Header = ({ activeSection, isVisible }) => {
                             color="inherit"
                             aria-label="menu"
                             onClick={toggleDrawer(true)}
-                            sx={{ color: '#FF56FF' }} // Pink for the burger icon
+                            sx={{ color: '#FF56FF' }}
                         >
                             <MenuIcon />
                         </IconButton>
@@ -111,11 +116,11 @@ const Header = ({ activeSection, isVisible }) => {
                 {/* Bottom row: Tabs for Navigation (visible on larger screens) */}
                 <Box
                     sx={{
-                        display: { xs: 'none', md: 'flex' }, // Hidden on small screens
+                        display: { xs: 'none', md: 'flex' },
                         position: 'relative',
                         alignItems: 'center',
                         width: '100%',
-                        justifyContent: 'flex-start', // Left-aligned tabs
+                        justifyContent: 'flex-start',
                         maxWidth: '1200px',
                         margin: '0 auto',
                         paddingLeft: '24px',
@@ -127,14 +132,14 @@ const Header = ({ activeSection, isVisible }) => {
                             position: 'absolute',
                             top: '-2px',
                             left: '0',
-                            right: '0', // Added to make it stretch across the container
-                            width: '96%', // Set the width to a smaller percentage
+                            right: '0',
+                            width: '96%',
                             height: '1px',
                             backgroundColor: '#6b014f',
-                            zIndex: 0, // Place the line behind the buttons
-                            margin: '0 auto', // Center the line horizontally
-                            marginLeft: 'auto', // Add auto margin to both sides to center
-                            marginRight: 'auto', // This will ensure it's centered
+                            zIndex: 0,
+                            margin: '0 auto',
+                            marginLeft: 'auto',
+                            marginRight: 'auto',
                         }}
                     />
 
@@ -143,7 +148,7 @@ const Header = ({ activeSection, isVisible }) => {
                         return (
                             <Box
                                 key={section}
-                                sx={{ textAlign: 'center', position: 'relative', zIndex: 1, marginRight: index !== sections.length - 1 ? 0.5 : 0 }} // Decreased margin between sections
+                                sx={{ textAlign: 'center', position: 'relative', zIndex: 1, marginRight: index !== sections.length - 1 ? 0.5 : 0 }}
                             >
                                 {activeSection === section.toLowerCase() && (
                                     <Box
@@ -153,24 +158,24 @@ const Header = ({ activeSection, isVisible }) => {
                                             left: 0,
                                             right: 0,
                                             height: '1px',
-                                            backgroundColor: '#FF56FF', // Updated active color
+                                            backgroundColor: '#FF56FF',
                                             transition: 'background-color 0.3s ease',
                                         }}
                                     />
                                 )}
                                 <Button
                                     sx={{
-                                        color: activeSection === section.toLowerCase() ? '#FF56FF' : '#6b014f', // Updated inactive color to a lighter gray
-                                        fontSize: '1rem', // Increased font size for sections
+                                        color: activeSection === section.toLowerCase() ? '#FF56FF' : '#6b014f',
+                                        fontSize: '1rem',
                                         fontFamily: 'Crimson Pro, serif',
-                                        textTransform: 'none', // Ensure text remains as it is
+                                        textTransform: 'none',
                                         '&:hover': {
                                             backgroundColor: 'transparent',
                                         }
                                     }}
                                     onClick={() => scrollToSection(section)}
                                 >
-                                    {displaySection} {/* Use formatted section name */}
+                                    {displaySection}
                                 </Button>
                             </Box>
                         );
@@ -180,15 +185,15 @@ const Header = ({ activeSection, isVisible }) => {
 
             {/* Burger menu drawer (opens from top) */}
             <Drawer
-                anchor="top" // Drawer opens from the top
+                anchor="top"
                 open={drawerOpen}
                 onClose={toggleDrawer(false)}
             >
                 <Box
                     sx={{
                         width: '100%',
-                        maxWidth: '500px', // Center the drawer with a max width
-                        margin: '0 auto', // Center the drawer horizontally
+                        maxWidth: '500px',
+                        margin: '0 auto',
                         backgroundColor: 'black',
                         color: 'white',
                         padding: '16px',
@@ -197,19 +202,34 @@ const Header = ({ activeSection, isVisible }) => {
                     <List>
                         {sections.map((section) => (
                             <ListItem
-                                button
+                                component="button" // Specify that this should be rendered as a button
                                 key={section}
                                 onClick={() => scrollToSection(section)}
+                                sx={{
+                                    padding: '10px 16px',
+                                    cursor: 'pointer',
+                                    '&:hover': {
+                                        backgroundColor: 'rgba(255, 255, 255, 0.1)', // Add hover effect if needed
+                                    }
+                                }}
                             >
                                 <ListItemText primary={section.charAt(0).toUpperCase() + section.slice(1).toLowerCase()} sx={{ color: '#FF56FF', textTransform: 'none' }} />
                             </ListItem>
                         ))}
                         <ListItem
-                            button
-                            onClick={handleOpen} // Add action for trailer button
+                            component="button" // Specify button behavior
+                            onClick={handleOpen}
+                            sx={{
+                                padding: '10px 16px',
+                                cursor: 'pointer',
+                                '&:hover': {
+                                    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                                }
+                            }}
                         >
                             <ListItemText primary="Trailer anschauen" sx={{ color: '#FF56FF', textTransform: 'none' }} />
                         </ListItem>
+
                     </List>
                 </Box>
             </Drawer>

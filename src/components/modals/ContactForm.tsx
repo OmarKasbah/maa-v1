@@ -28,10 +28,10 @@ const ContactSection: React.FC = () => {
             formData,                     // Send formData as the email content
             'u5FGLsjYZLeVLfuD2'           // Replace with your EmailJS User ID
         )
-            .then((result) => {
+            .then(() => {
                 setStatusMessage('Message sent successfully!');
                 setFormData({ name: '', email: '', message: '' }); // Clear the form after submission
-            }, (error) => {
+            }, () => {
                 setStatusMessage('Failed to send the message. Please try again.');
             });
     };
