@@ -109,8 +109,6 @@ function App() {
                     <div className="quote-container" style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
                         <QuoteText />
                     </div>
-
-                    <PhotoCollage />
                 </section>
 
                 <PlotSection /> {/* Replace the plot section with the new component */}
