@@ -26,16 +26,28 @@
 
 /* Cast container */
 .cast-section .cast-container {
-    display: flex; /* Keep flex for larger screens */
-    flex-direction: column; /* Stack elements vertically */
+    display: flex; /* Side-by-side layout */
     max-width: 1200px;
     width: 100%;
     margin-top: 20px;
 }
 
-/* Cast image (Mike's image) */
+/* Cast member container */
+.cast-section .cast-member {
+    display: flex;
+    flex-direction: column; /* Stack image and text vertically */
+    align-items: center; /* Center align items */
+    width: 50%; /* Each member takes half of the width */
+}
+
+/* Cast image */
 .cast-section .cast-image {
     width: 550px;
+}
+
+/* Robert's image positioning */
+.cast-section .robert-member {
+    margin-top: 350px; /* Adjust this value to lower Robert's image */
 }
 
 /* Text container (for actor and character names) */
@@ -46,7 +58,6 @@
     align-items: center; /* Center align items vertically */
     line-height: 1.0;
     margin-top: -30px;
-
 }
 
 /* Actor name */
@@ -81,9 +92,12 @@
         margin-bottom: 10px; /* Space between image and names */
     }
 
+    .cast-section .robert-member {
+        margin-top: 10px; /* Reset top positioning for small screens */
+    }
+
     .cast-section .text-container {
         width: 100%; /* Limit width for names */
         justify-content: space-between; /* Center names */
-
     }
 }
