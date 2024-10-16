@@ -8,7 +8,6 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import SynopsisSection from "./components/sections/SynopsisSection.tsx";
 import ProduzentenSection from "./components/sections/ProduzentenSection.tsx";
 import EnstehungSection from "./components/sections/EnstehungSection.tsx";
-import PhotoCollage from "./components/parallax/PhotoCollage.tsx";
 import CastSection from "./components/sections/CastSection.tsx";
 
 function App() {
@@ -49,26 +48,26 @@ function App() {
                     <div className="video-container">
                         {/* Video background with centered logo */}
                         <video autoPlay muted loop className="background-video">
-                            <source src="/public/assets/sample.mp4" type="video/mp4" />
+                            <source src="./assets/sample.mp4" type="video/mp4" />
                             Your browser does not support the video tag.
                         </video>
                         <div className="overlay">
-                            <img src="/public/assets/logo.png" alt="Logo" className="logo" />
+                            <img src="./assets/logo.png" alt="Logo" className="logo" />
                         </div>
                     </div>
 
                     {/* Logo container for logos under the video */}
                     <div className="logo-container">
                         <div className="logo-row">
-                            <img src="/public/assets/logo1.png" alt="Logo 1" className="small-logo" />
-                            <img src="/public/assets/logo2.png" alt="Logo 2" className="small-logo" />
-                            <img src="/public/assets/logo3.png" alt="Logo 3" className="small-logo" />
-                            <img src="/public/assets/logo4.png" alt="Logo 4" className="small-logo" />
+                            <img src="./assets/logo1.PNG" alt="Logo 1" className="small-logo" />
+                            <img src="./assets/logo2.png" alt="Logo 2" className="small-logo" />
+                            <img src="./assets/logo3.png" alt="Logo 3" className="small-logo" />
+                            <img src="./assets/logo4.png" alt="Logo 4" className="small-logo" />
                         </div>
                         <div className="logo-row">
-                            <img src="/public/assets/logo5.png" alt="Logo 5" className="small-logo" />
-                            <img src="/public/assets/logo6.png" alt="Logo 6" className="small-logo" />
-                            <img src="/public/assets/logo7.png" alt="Logo 7" className="small-logo" />
+                            <img src="./assets/logo5.png" alt="Logo 5" className="small-logo" />
+                            <img src="./assets/logo6.png" alt="Logo 6" className="small-logo" />
+                            <img src="./assets/logo7.png" alt="Logo 7" className="small-logo" />
                         </div>
                     </div>
 
@@ -95,7 +94,7 @@ function App() {
                     {/* Centered Image */}
                     <div className="image-container" style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
                         <img
-                            src="/public/assets/zitat.png"
+                            src="./assets/zitat.png"
                             alt="Centered"
                             style={{
                                 width: '60%', // Make it responsive
@@ -126,6 +125,10 @@ function App() {
                     <p>Content about the stabsliste...</p>
                 </section>
 
+                <section id="nächstes projekt" className="section">
+                    <h2>Projekt Section</h2>
+                </section>
+
                 {/* Contact Form Section */}
                 <section id="contact" className="section">
                     <ContactForm />
@@ -153,7 +156,7 @@ const QuoteText: React.FC = () => {
             <div className="quote-text-container">
                 {/* Flexbox container with the start quote and text */}
                 <motion.img
-                    src="/public/assets/up.png" // Replace with your start-quote image path
+                    src="./assets/up.png" // Replace with your start-quote image path
                     alt="Start quote"
                     className="quote-mark start-quote"
                     initial={{ opacity: 0, y: 20 }}
@@ -181,7 +184,7 @@ const QuoteText: React.FC = () => {
 
                 {/* End quote mark on the right side of the last line */}
                 <motion.img
-                    src="/public/assets/down.png" // Replace with your end-quote image path
+                    src="./assets/down.png" // Replace with your end-quote image path
                     alt="End quote"
                     className="quote-mark end-quote"
                     initial={{ opacity: 0, y: 20 }}

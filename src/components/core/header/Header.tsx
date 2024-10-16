@@ -12,7 +12,7 @@ const Header = ({ activeSection, isVisible }: HeaderProps) => {
     const [open, setOpen] = useState(false); // For trailer modal
     const [drawerOpen, setDrawerOpen] = useState(false); // State for burger menu
 
-    const sections = ['Plot', 'Synopsis', 'Produzenten', 'Entstehung', 'Cast', 'Stabsliste'];
+    const sections = ['Plot', 'Synopsis', 'Produzenten', 'Entstehung', 'Cast', 'Stabsliste', 'Nächstes Projekt'];
 
     // Open the modal for trailer
     const handleOpen = () => setOpen(true);
@@ -59,7 +59,7 @@ const Header = ({ activeSection, isVisible }: HeaderProps) => {
                         justifyContent: 'space-between',
                         alignItems: 'center',
                         width: '100%',
-                        maxWidth: '1200px',
+                        maxWidth: '1400px',
                         padding: '0 24px',
                         margin: '0 auto',
                     }}
@@ -73,7 +73,7 @@ const Header = ({ activeSection, isVisible }: HeaderProps) => {
                         }}
                     >
                         <img
-                            src="/assets/logo.png"
+                            src="./assets/logo.png"
                             alt="Logo"
                             style={{ height: '50px', cursor: 'pointer', marginLeft: '140px' }}
                             onClick={() => scrollToSection('what')} // Scroll to top on logo click
@@ -119,11 +119,11 @@ const Header = ({ activeSection, isVisible }: HeaderProps) => {
                         display: { xs: 'none', md: 'flex' },
                         position: 'relative',
                         alignItems: 'center',
-                        width: '100%',
+                        width: '1400px',
                         justifyContent: 'flex-start',
-                        maxWidth: '1200px',
                         margin: '0 auto',
                         paddingLeft: '24px',
+                        paddingRight: '24px',
                     }}
                 >
                     {/* Connected line above the tabs */}
@@ -133,7 +133,7 @@ const Header = ({ activeSection, isVisible }: HeaderProps) => {
                             top: '-2px',
                             left: '0',
                             right: '0',
-                            width: '96%',
+                            width: '1400px',
                             height: '1px',
                             backgroundColor: '#6b014f',
                             zIndex: 0,

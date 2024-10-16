@@ -21,7 +21,7 @@ const EntstehungSection: React.FC = () => {
             <div className="image-text-container">
                 {/* Left-side upright image */}
                 <motion.img
-                    src="/public/assets/hoch.png" // Replace with your actual image path
+                    src="./assets/hoch.png" // Replace with your actual image path
                     alt="Upright Image"
                     className="upright-image"
                     initial={{ opacity: 0, x: 100, scale: 0.8 }} // Animate from the right
@@ -45,7 +45,7 @@ const EntstehungSection: React.FC = () => {
             {/* Container for the landscape image and its text */}
             <div className="landscape-container">
                 <motion.img
-                    src="/public/assets/quer.png" // Replace with your actual image path
+                    src="./assets/quer.png" // Replace with your actual image path
                     alt="Landscape Image"
                     className="landscape-image"
                     initial={{ opacity: 0, x: -100, scale: 0.8 }} // Animate from the left

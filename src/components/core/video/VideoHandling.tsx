@@ -3,7 +3,7 @@ import React from 'react';
 const VideoHandling: React.FC<{ autoplay?: boolean; sx?: any }> = ({ autoplay, sx }) => {
     return (
         <video
-            src="/public/assets/sample.mp4"
+            src="./assets/sample.mp4"
             autoPlay={autoplay}
             controls
             style={{

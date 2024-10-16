@@ -22,7 +22,7 @@ const CastSection: React.FC = () => {
                 {/* Left-side container for Mike */}
                 <div className="cast-member mike-member">
                     <motion.img
-                        src="/public/assets/mike.png" // Use your actual path to the Mike image
+                        src="./assets/mike.png" // Use your actual path to the Mike image
                         alt="Mike"
                         className="cast-image"
                         initial={{ opacity: 0, y: -20, scale: 0.8 }} // Slide in from above
@@ -37,7 +37,7 @@ const CastSection: React.FC = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: 'easeInOut' }}
                         >
-                            Mike Actor
+                            Mike Adler
                         </motion.h2>
                         <motion.p
                             className="character-name"
@@ -45,7 +45,38 @@ const CastSection: React.FC = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: 'easeInOut' }}
                         >
-                            Character Name
+                            Samuel Abendroth
+                        </motion.p>
+                    </div>
+                </div>
+
+                {/* New member container for Maximilian */}
+                <div className="cast-member maximilian-member">
+                    <motion.img
+                        src="./assets/maximilian.png" // Use your actual path to the Maximilian image
+                        alt="Maximilian"
+                        className="cast-image"
+                        initial={{ opacity: 0, y: -20, scale: 0.8 }} // Slide in from above
+                        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                        transition={{ duration: 0.8, ease: 'easeInOut' }}
+                    />
+                    {/* Text container for Maximilian */}
+                    <div className="text-container">
+                        <motion.h2
+                            className="actor-name"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, ease: 'easeInOut' }}
+                        >
+                            Maximilian Pekrul
+                        </motion.h2>
+                        <motion.p
+                            className="character-name"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, ease: 'easeInOut' }}
+                        >
+                            Thomáz
                         </motion.p>
                     </div>
                 </div>
@@ -53,7 +84,7 @@ const CastSection: React.FC = () => {
                 {/* Right-side container for Robert */}
                 <div className="cast-member robert-member">
                     <motion.img
-                        src="/public/assets/robert.png" // Use your actual path to the Robert image
+                        src="./assets/robert.png" // Use your actual path to the Robert image
                         alt="Robert"
                         className="cast-image"
                         initial={{ opacity: 0, y: -20, scale: 0.8 }} // Slide in from above
@@ -68,7 +99,7 @@ const CastSection: React.FC = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: 'easeInOut' }}
                         >
-                            Robert Actor
+                            Robert Gulyás
                         </motion.h2>
                         <motion.p
                             className="character-name"
@@ -76,7 +107,7 @@ const CastSection: React.FC = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: 'easeInOut' }}
                         >
-                            Character Name
+                            Matze
                         </motion.p>
                     </div>
                 </div>

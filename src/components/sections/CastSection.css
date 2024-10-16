@@ -27,6 +27,7 @@
 /* Cast container */
 .cast-section .cast-container {
     display: flex; /* Side-by-side layout */
+    flex-direction: column; /* Stack members vertically */
     max-width: 1200px;
     width: 100%;
     margin-top: 20px;
@@ -37,12 +38,13 @@
     display: flex;
     flex-direction: column; /* Stack image and text vertically */
     align-items: center; /* Center align items */
-    width: 50%; /* Each member takes half of the width */
+    width: 100%; /* Each member takes full width when stacked */
+    margin-bottom: 30px; /* Space between cast members */
 }
 
 /* Cast image */
 .cast-section .cast-image {
-    width: 550px;
+    width: 550px; /* Set a fixed width for images */
 }
 
 /* Robert's image positioning */
@@ -77,27 +79,53 @@
 }
 
 /* Responsive design */
-@media (max-width: 768px) {
+@media (max-width: 1160px) {
     .cast-section .cast-title {
-        font-size: 5.5rem;
+        font-size: 5.5rem; /* Reduce title size for smaller screens */
     }
 
     .cast-section .cast-container {
-        flex-direction: column; /* Ensure stacking on smaller screens */
+        flex-direction: column; /* Ensure members stack vertically on smaller screens */
+    }
+
+    .cast-section .cast-member {
+        width: 100%; /* Full width for each member when stacked */
+        align-items: center; /* Center align images and text */
     }
 
     .cast-section .cast-image {
-        width: 100%; /* Full width on smaller screens */
-        margin-right: 0; /* Remove margin */
-        margin-bottom: 10px; /* Space between image and names */
+        width: 80%; /* Responsive image size */
+        max-width: 550px; /* Maintain max width for larger screens */
     }
 
     .cast-section .robert-member {
         margin-top: 10px; /* Reset top positioning for small screens */
     }
+}
+
+@media (max-width: 768px) {
+    .cast-section .cast-title {
+        font-size: 4rem; /* Further reduce title size for smaller screens */
+    }
 
     .cast-section .text-container {
-        width: 100%; /* Limit width for names */
+        width: 80%; /* Limit width for names */
         justify-content: space-between; /* Center names */
+    }
+
+    /* Actor name */
+    .cast-section .actor-name {
+        font-family: 'Crimson Pro', serif;
+        color: #FF56FF;
+        font-size: 2.8rem;
+        text-align: left;
+    }
+
+    /* Character name */
+    .cast-section .character-name {
+        font-family: 'Noto Sans', sans-serif;
+        font-size: 1.0rem;
+        color: white;
+        text-align: right;
     }
 }

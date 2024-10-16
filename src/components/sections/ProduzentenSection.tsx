@@ -12,7 +12,7 @@ const ProduzentenSection: React.FC = () => {
     ];
 
     const robertInfo: string[] = [
-        "Robert Gulyas spielt die Hauptrolle in Pink Puzzle und ist unter anderem auch als Co-Produzent tätig.",
+        "Robert Gulyás spielt die Hauptrolle in Pink Puzzle und ist unter anderem auch als Co-Produzent tätig.",
         "Robert Gulyás ist 1983 in Finow geboren und lebte von seinem 1. Lebensjahr – 12. Lebensjahr in Ungarn (Budapest und Szigetszentmiklos). 1995 zog er mit seiner Familie nach Berlin und lebt seit dem dort. Schon seit Kindheit an, war er ein begeisterter Fan vom Medium Film und TV, schlug jedoch zuerst den Berufsweg ein.",
         "Er machte von 2001 – 2003 eine kaufmännische Ausbildung. Ab 2007 absolvierte er dann eine private Schauspielausbildung in dem AcUng Studio Cologne und ab 2009 – 2011 bei „Martz & Walker Meisner AcUng Berlin“.",
         "Es folgten verschiedene Engagements für Abschluss-, Kunst- und Independentfilme. Seit dem Januar 2018 ist er mit dem Projekt Pink Puzzle als Co-Produzent für die Eagle Eye Production GmbH mit tätig und sammelt seit dem viele Erfahrungen auch hinter der Kamera."
@@ -34,7 +34,7 @@ const ProduzentenSection: React.FC = () => {
             {/* Mike Adler Section */}
             <div className="content-container" style={{ marginBottom: '80px' }}> {/* Increased margin for more space */}
                 <motion.img
-                    src="/public/assets/mike.png" // Updated image path
+                    src="./assets/mike.png" // Updated image path
                     alt="Mike Adler"
                     initial={{ opacity: 0, x: -100, scale: 0.8 }} // Start off-screen to the left and small
                     whileInView={{ opacity: 1, x: 0, scale: 1 }} // Move into view and grow to full size
@@ -88,7 +88,7 @@ const ProduzentenSection: React.FC = () => {
                     ))}
                 </div>
                 <motion.img
-                    src="/public/assets/robert.png" // Updated image path
+                    src="./assets/robert.png" // Updated image path
                     alt="Robert Gulyas"
                     initial={{ opacity: 0, x: 100, scale: 0.8 }} // Start off-screen to the right and small
                     whileInView={{ opacity: 1, x: 0, scale: 1 }} // Move into view and grow to full size

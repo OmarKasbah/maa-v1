@@ -5,6 +5,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 20px;
 }
 
 /* Title styling */
@@ -50,16 +51,20 @@
 .entstehung-section .landscape-container {
     position: relative;
     width: 100%;
-    margin-top: -280px; /* Overlap the upright image */
+    max-width: 1200px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    margin-top: -280px; /* Overlap the upright image */
 }
 
 /* Landscape image styling */
 .entstehung-section .landscape-image {
     margin-left: 300px;
     z-index: 1;
+    max-width: 600px; /* Prevent the image from getting too large */
+    width: 100%; /* Allow the image to resize based on screen size */
+    height: auto;
 }
 
 /* Text block for landscape image */
@@ -90,6 +95,26 @@
 }
 
 /* Responsive design */
+@media (max-width: 1024px) {
+    .entstehung-section .upright-image {
+        max-width: 45%; /* Adjust image width on medium screens */
+        margin-right: 20px; /* Reduce margin */
+    }
+
+    .entstehung-section .text-block {
+        max-width: 45%; /* Adjust text width */
+    }
+
+    .entstehung-section .landscape-container {
+        margin-top: -200px; /* Adjust overlap on medium screens */
+    }
+
+    .entstehung-section .landscape-image {
+        margin-left: 200px; /* Reduce left margin */
+        max-width: 500px; /* Adjust image width on medium screens */
+    }
+}
+
 @media (max-width: 768px) {
     .entstehung-section .entstehung-title {
         font-size: 3rem;
@@ -106,6 +131,11 @@
         margin-bottom: 20px;
     }
 
+    .entstehung-section .text-block {
+        width: 100%;
+        max-width: 100%;
+    }
+
     .entstehung-section .landscape-container {
         flex-direction: column;
         margin-top: -50px; /* Adjust for smaller screens */
@@ -113,17 +143,13 @@
 
     .entstehung-section .landscape-image {
         width: 90%;
+        margin-left: 0;
     }
 
     .entstehung-section .landscape-text {
         right: 0;
-        bottom: 10px;
         max-width: 100%;
         text-align: center;
-    }
-
-    .entstehung-section .text-block {
-        width: 90%;
     }
 }
 

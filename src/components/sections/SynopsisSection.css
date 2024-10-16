@@ -2,11 +2,11 @@
 .synopsis-section {
     position: relative;
     background-image: url('/public/assets/synopsis.png'); /* Add your background image */
-    background-size: 95%; /* Make sure the background covers most of the section */
+    background-size: 1400px; /* Make sure the background covers most of the section */
     background-repeat: no-repeat; /* Prevent the image from repeating */
     background-position: center bottom; /* Position the image at the bottom of the section */
     padding-top: 100px; /* Add space at the top for the text */
-    padding-bottom: 480px; /* Increase padding at the bottom to push the image down */
+    padding-bottom: 420px; /* Increase padding at the bottom to push the image down */
     color: white; /* Text color for the content */
 }
 
@@ -28,8 +28,8 @@
 }
 
 /* Text container to hold the paragraph content */
-.text-container {
-    max-width: 1000px; /* Limit the width of the content */
+.synopsis-section .text-container {
+    max-width: 850px; /* Limit the width of the content */
     margin: 0 auto; /* Center the text container */
     text-align: center; /* Center-align the text */
 }
@@ -37,10 +37,12 @@
 /* Individual text lines */
 .synopsis-text {
     font-family: 'Noto Sans', sans-serif; /* Font family for text */
-    font-size: 1.8rem;
-    margin: 10px 0; /* Adjust margin between the text lines */
+    font-size: 1.9rem;
+    margin: 35px 0; /* Adjust margin between the text lines */
     line-height: 1.4; /* Adjust line height */
-    text-align: left;
+    text-align: justify;
+    color: white;
+    text-shadow: black 1px 0 10px;
 }
 
 /* Responsive design */

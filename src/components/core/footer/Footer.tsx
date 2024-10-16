@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
         >
             {/* Logo on the left */}
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                <img src="/public/assets/logo.png" alt="Logo" style={{ height: '50px', marginRight: '20px' }} />
+                <img src="./assets/logo.png" alt="Logo" style={{ height: '50px', marginRight: '20px' }} />
                 <Typography variant="h6">Your Company Name</Typography>
             </Box>
 

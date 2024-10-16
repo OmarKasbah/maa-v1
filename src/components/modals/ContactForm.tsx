@@ -41,7 +41,7 @@ const ContactSection: React.FC = () => {
             sx={{
                 padding: '20px',          // Padding inside the content area
                 marginX: 'auto',          // Center the content horizontally
-                maxWidth: '90%',          // Constrain the content width (similar to header behavior)
+                width: '1400px',
                 backgroundColor: 'black',
                 color: 'white',
                 position: 'relative',     // Ensure proper positioning for lines
@@ -52,8 +52,7 @@ const ContactSection: React.FC = () => {
                 sx={{
                     position: 'absolute',
                     top: 0,
-                    left: '0%',            // Adds inset to match the header
-                    right: '0%',           // Adds inset to match the header
+                    width: '1400px',
                     height: '1px',         // Thickness of the line
                     backgroundColor: 'white',
                     zIndex: 1,             // Ensure the line is above the content
@@ -65,8 +64,7 @@ const ContactSection: React.FC = () => {
                 sx={{
                     position: 'absolute',
                     bottom: 0,
-                    left: '0%',            // Adds inset to match the header
-                    right: '0%',           // Adds inset to match the header
+                    width: '1400px',
                     height: '1px',         // Thickness of the line
                     backgroundColor: 'white',
                     zIndex: 1,             // Ensure the line is above the content
