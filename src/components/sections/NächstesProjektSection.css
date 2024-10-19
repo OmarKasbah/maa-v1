@@ -1,0 +1,120 @@
+.naechstes-projekt-section {
+    display: flex;
+    flex-direction: column; /* Default to column for mobile */
+    align-items: center;
+    padding: 80px 20px;
+    background-color: #000; /* Background color */
+    color: #fff; /* Text color */
+    max-width: 1400px; /* Set max width for the section */
+    margin: 0 auto; /* Center the section */
+}
+
+.title-container {
+    margin-bottom: 40px;
+}
+
+.naechstes-projekt-title {
+    font-family: 'Display Fair', serif; /* Title font */
+    color: #fff; /* Title color */
+    font-size: 4rem; /* Title size */
+    text-align: center; /* Centered title */
+}
+
+.content-container {
+    display: flex;
+    flex-direction: row; /* Default layout */
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 100%; /* Full width of the section */
+    flex-wrap: nowrap; /* Prevent wrapping by default */
+}
+
+.image-container {
+    position: relative;
+    width: 50%; /* Default width for images */
+    display: flex;
+    justify-content: center; /* Center image */
+    align-items: center; /* Center vertically */
+    min-width: 300px; /* Minimum width for images */
+}
+
+.project-image {
+    width: 100%; /* Full width of the container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional: Add rounding to the image */
+    transition: opacity 0.5s; /* Smooth fade transition */
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for exact center */
+    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent background for buttons */
+    border: none; /* Remove border */
+    padding: 10px; /* Space around the button */
+    cursor: pointer; /* Pointer cursor */
+    z-index: 10; /* Ensure buttons are on top */
+    font-size: 2rem; /* Button size */
+    color: #000; /* Button text color */
+}
+
+.carousel-button.left {
+    left: 10px; /* Space from the left edge */
+}
+
+.carousel-button.right {
+    right: 10px; /* Space from the right edge */
+}
+
+.text-container {
+    width: 50%; /* Default width for text */
+    padding-left: 20px; /* Space between image and text */
+    min-width: 300px; /* Minimum width for text */
+}
+
+.project-name {
+    font-family: 'Display Fair', serif; /* Title font for the project */
+    font-size: 3rem; /* Size for the project name */
+    margin-bottom: 20px; /* Space below the project name */
+}
+
+.project-description {
+    font-family: 'Noto Sans', sans-serif; /* Description font */
+    font-size: 1.2rem; /* Size for project description */
+    margin-bottom: 15px; /* Space between paragraphs */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column; /* Stack images and text */
+        align-items: center; /* Center content */
+    }
+    .image-container, .text-container {
+        width: 100%; /* Full width on small screens */
+        padding-left: 0; /* Remove left padding */
+        padding-bottom: 20px; /* Add space below the image container */
+    }
+    .carousel-button {
+        font-size: 1.5rem; /* Smaller button size */
+        padding: 5px; /* Smaller padding */
+    }
+    .naechstes-projekt-title {
+        font-size: 2.5rem; /* Smaller title size */
+    }
+    .project-name {
+        font-size: 2rem; /* Smaller project name size */
+    }
+    .project-description {
+        font-size: 1rem; /* Smaller description size */
+    }
+}
+
+@media (max-width: 480px) {
+    .naechstes-projekt-title {
+        font-size: 2rem; /* Further reduce title size */
+    }
+    .project-name {
+        font-size: 1.5rem; /* Further reduce project name size */
+    }
+}

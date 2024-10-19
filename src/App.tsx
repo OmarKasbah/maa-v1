@@ -9,6 +9,8 @@ import SynopsisSection from "./components/sections/SynopsisSection.tsx";
 import ProduzentenSection from "./components/sections/ProduzentenSection.tsx";
 import EnstehungSection from "./components/sections/EnstehungSection.tsx";
 import CastSection from "./components/sections/CastSection.tsx";
+import StabslisteSection from "./components/sections/StabslisteSection.tsx";
+import NächstesProjektSection from "./components/sections/NächstesProjektSection.tsx";
 
 function App() {
     const [activeSection, setActiveSection] = useState('what');
@@ -121,15 +123,8 @@ function App() {
                 <ProduzentenSection />
                 <EnstehungSection />
                 <CastSection />
-
-                <section id="stabsliste" className="section">
-                    <h2>Stabsliste Section</h2>
-                    <p>Content about the stabsliste...</p>
-                </section>
-
-                <section id="nächstes projekt" className="section">
-                    <h2>Projekt Section</h2>
-                </section>
+                <StabslisteSection />
+                <NächstesProjektSection />
 
                 {/* Contact Form Section */}
                 <section id="contact" className="section">
