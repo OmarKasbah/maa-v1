@@ -12,11 +12,11 @@ import CastSection from "./components/sections/CastSection.tsx";
 
 function App() {
     const [activeSection, setActiveSection] = useState('what');
-    const [isHeaderVisible, setHeaderVisible] = useState(false); // State for header visibility
+    const [isHeaderVisible, setHeaderVisible] = useState(false);
 
     // Get scrollY progress for the arrow animation
     const { scrollY } = useScroll();
-    const arrowScale = useTransform(scrollY, [700, 900], [1, 0.1]); // Scale down from 1 to 0.1
+    const arrowScale = useTransform(scrollY, [700, 900], [1, 0.1]);
 
     const handleScroll = () => {
         const sections = document.querySelectorAll('section');
@@ -27,7 +27,6 @@ function App() {
             }
         });
 
-        // Check if scrolled down to show the header
         if (window.scrollY > 0) {
             setHeaderVisible(true);
         } else {
@@ -47,7 +46,14 @@ function App() {
                 <section id="video" className="section">
                     <div className="video-container">
                         {/* Video background with centered logo */}
-                        <video autoPlay muted loop className="background-video">
+                        <video
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                            className="background-video"
+                            preload="auto"
+                        >
                             <source src="./assets/sample.mp4" type="video/mp4" />
                             Your browser does not support the video tag.
                         </video>
@@ -73,7 +79,7 @@ function App() {
 
                     {/* Downward arrow icon */}
                     <motion.div
-                        style={{ scale: arrowScale }} // Use transformed scale for the arrow
+                        style={{ scale: arrowScale }}
                         className="arrow-container"
                     >
                         <svg
@@ -81,10 +87,10 @@ function App() {
                             viewBox="0 0 24 24"
                             fill="none"
                             stroke="#FF56FF"
-                            strokeWidth="1" // Very thin line
+                            strokeWidth="1"
                             strokeLinecap="round"
                             strokeLinejoin="round"
-                            style={{ width: '16px', height: 'auto', transform: 'scaleY(8)', marginBottom: '20px', marginTop: '10px'}} // Extremely tall
+                            style={{ width: '16px', height: 'auto', transform: 'scaleY(8)', marginBottom: '20px', marginTop: '10px' }}
                         >
                             <line x1="12" y1="2" x2="12" y2="24"></line>
                             <polyline points="8 15 12 20 16 15"></polyline>
@@ -97,9 +103,9 @@ function App() {
                             src="./assets/zitat.png"
                             alt="Centered"
                             style={{
-                                width: '60%', // Make it responsive
-                                maxWidth: '640px', // Limit max width
-                                height: 'auto', // Maintain aspect ratio
+                                width: '60%',
+                                maxWidth: '640px',
+                                height: 'auto',
                             }}
                         />
                     </div>
@@ -110,14 +116,10 @@ function App() {
                     </div>
                 </section>
 
-                <PlotSection /> {/* Replace the plot section with the new component */}
-
+                <PlotSection />
                 <SynopsisSection />
-
                 <ProduzentenSection />
-
                 <EnstehungSection />
-
                 <CastSection />
 
                 <section id="stabsliste" className="section">
@@ -141,7 +143,6 @@ function App() {
 }
 
 const QuoteText: React.FC = () => {
-    // Text lines to display
     const lines: string[] = [
         "... wir wollten eigentlich",
         "nur ein paar Szenen",
@@ -156,7 +157,7 @@ const QuoteText: React.FC = () => {
             <div className="quote-text-container">
                 {/* Flexbox container with the start quote and text */}
                 <motion.img
-                    src="./assets/up.png" // Replace with your start-quote image path
+                    src="./assets/up.png"
                     alt="Start quote"
                     className="quote-mark start-quote"
                     initial={{ opacity: 0, y: 20 }}
@@ -164,16 +165,15 @@ const QuoteText: React.FC = () => {
                     transition={{ duration: 0.5 }}
                 />
 
-                {/* Wrapping the text content */}
                 <div className="quote-text-wrapper">
                     {lines.map((line, index) => {
-                        const delay = index * 0.1; // Delay for staggered effect
+                        const delay = index * 0.1;
                         return (
                             <motion.p
                                 key={index}
-                                initial={{ opacity: 0, y: 20 }} // Start invisible and slightly lower
-                                whileInView={{ opacity: 1, y: 0 }} // Fade in and slide up
-                                transition={{ duration: 0.5, delay }} // Animation duration with staggered delay
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.5, delay }}
                                 className="quote-text"
                             >
                                 {line}
@@ -182,9 +182,9 @@ const QuoteText: React.FC = () => {
                     })}
                 </div>
 
-                {/* End quote mark on the right side of the last line */}
+                {/* End quote mark */}
                 <motion.img
-                    src="./assets/down.png" // Replace with your end-quote image path
+                    src="./assets/down.png"
                     alt="End quote"
                     className="quote-mark end-quote"
                     initial={{ opacity: 0, y: 20 }}
