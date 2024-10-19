@@ -1,0 +1,103 @@
+.stabsliste-section {
+    position: relative;
+    background-color: black; /* Black background */
+    padding-bottom: 80px;
+    color: white;
+    text-align: center;
+    max-height: 1000px; /* Max height for the section */
+    overflow: hidden; /* Hide overflow to create a clean scrolling effect */
+}
+
+.title-container-stabs {
+    display: flex;
+    justify-content: center;
+}
+
+.stabsliste-title {
+    font-family: 'Crimson Pro', serif;
+    font-size: 5rem;
+    color: #FF56FF; /* Title color */
+    text-align: center;
+}
+
+/* Container for text */
+.text-container-stabs {
+    max-width: 650px; /* Set container width */
+    margin: 0 auto;
+    text-align: center;
+    height: 500px; /* Set a fixed height for the scrolling list */
+    overflow: hidden; /* Hide overflow to create a clean scrolling effect */
+}
+
+/* Styling for the crew list container */
+.crew-list {
+    display: inline-block; /* Allows for upward movement */
+    animation: scroll 30s linear infinite; /* Adjust the duration for speed */
+}
+
+/* Keyframe animation for scrolling */
+@keyframes scroll {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100%); /* Moves the entire list up */
+    }
+}
+
+/* Styling for each crew item (position and names) */
+.crew-item {
+    display: flex;
+    justify-content: space-between; /* Align position and names with space between */
+    margin-bottom: 15px; /* Space between each item */
+    font-family: 'Display Fair', serif;
+    flex-wrap: wrap; /* Allow names to wrap under position */
+}
+
+/* Position text styling */
+.position-text {
+    font-size: 1.4rem; /* Smaller font size */
+    font-weight: bold;
+    color: white;
+    min-width: 150px; /* Ensure the position has enough space */
+    text-align: left;
+}
+
+/* Names container (to stack names under one another) */
+.names-container {
+    display: flex;
+    flex-direction: column; /* Stack names vertically */
+    text-align: right;
+}
+
+/* Name text styling */
+.name-text {
+    font-size: 1.2rem; /* Same font size as position */
+    color: white;
+}
+
+/* Responsive design for smaller devices */
+@media (max-width: 768px) {
+    .stabsliste-title {
+        font-size: 4.5rem; /* Smaller title on tablets */
+    }
+
+    .position-text, .name-text {
+        font-size: 1rem; /* Smaller text size for positions and names on tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .stabsliste-title {
+        font-size: 3.0rem; /* Even smaller title on mobile */
+    }
+
+    .text-container-stabs {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .position-text, .name-text {
+        font-size: 0.9rem; /* Smaller text size on mobile */
+    }
+}
