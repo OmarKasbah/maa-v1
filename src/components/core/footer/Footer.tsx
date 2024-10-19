@@ -1,8 +1,5 @@
 import React from 'react';
 import { Box, Typography, IconButton } from '@mui/material';
-import InstagramIcon from '@mui/icons-material/Instagram'; // If using Material Icons
-import FacebookIcon from '@mui/icons-material/Facebook'; // If using Material Icons
-import YouTubeIcon from '@mui/icons-material/YouTube'; // If using Material Icons
 
 const Footer: React.FC = () => {
     const handleSocialClick = (url: string) => {
@@ -17,26 +14,58 @@ const Footer: React.FC = () => {
                 alignItems: 'center',
                 backgroundColor: 'black',
                 color: 'white',
-                padding: '20px',
-                marginTop: '20px',
+                maxWidth: '1400px',
+                paddingTop: '20px',
+                paddingBottom: '20px',
+                width: '100%',
+                margin: '0 auto',  // Ensures footer stays centered
+                flexDirection: { xs: 'column', md: 'row' }, // Responsive stacking on small screens
+                textAlign: { xs: 'center', md: 'left' } // Center text on smaller screens
             }}
         >
-            {/* Logo on the left */}
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            {/* Logo and Text on the left */}
+            <Box sx={{ display: 'flex', alignItems: 'center', flexDirection: { xs: 'column', md: 'row' } }}>
                 <img src="./assets/logo.png" alt="Logo" style={{ height: '50px', marginRight: '20px' }} />
-                <Typography variant="h6">Your Company Name</Typography>
+
+                {/* Registered symbol and text */}
+                <Box sx={{ display: 'flex', alignItems: 'center', flexDirection: { xs: 'column', md: 'row' }, marginBottom: { xs: '10px', md: '0' } }}>
+                    <Typography
+                        variant="h6" // Larger font size for the registered symbol
+                        sx={{ fontFamily: 'Crimson Pro, serif', marginRight: '8px', fontSize: '1.5rem' }}
+                    >
+                        ®
+                    </Typography>
+                    <Typography
+                        variant="body1"
+                        sx={{ fontFamily: 'Crimson Pro, serif' }}
+                    >
+                        Alle Rechte vorbehalten
+                    </Typography>
+                </Box>
             </Box>
 
             {/* Social media icons on the right */}
-            <Box>
-                <IconButton onClick={() => handleSocialClick('https://instagram.com')}>
-                    <InstagramIcon sx={{ color: 'white' }} />
+            <Box sx={{ display: 'flex', gap: '10px', marginTop: { xs: '10px', md: '0' } }}>
+                <IconButton onClick={() => handleSocialClick('https://www.instagram.com/pinkpuzzle_official/')}>
+                    <img
+                        src="./assets/insta.png"
+                        alt="Instagram"
+                        style={{ width: '40px', height: '40px' }}
+                    />
                 </IconButton>
-                <IconButton onClick={() => handleSocialClick('https://facebook.com')}>
-                    <FacebookIcon sx={{ color: 'white' }} />
+                <IconButton onClick={() => handleSocialClick('https://www.facebook.com/PinkPuzzleFilm/?locale=de_DE')}>
+                    <img
+                        src="./assets/face.png"
+                        alt="Facebook"
+                        style={{ width: '40px', height: '40px' }}
+                    />
                 </IconButton>
-                <IconButton onClick={() => handleSocialClick('https://youtube.com')}>
-                    <YouTubeIcon sx={{ color: 'white' }} />
+                <IconButton onClick={() => handleSocialClick('https://www.youtube.com/watch?v=cpXcCMnKsew')}>
+                    <img
+                        src="./assets/you.png"
+                        alt="YouTube"
+                        style={{ width: '40px', height: '40px' }}
+                    />
                 </IconButton>
             </Box>
         </Box>
