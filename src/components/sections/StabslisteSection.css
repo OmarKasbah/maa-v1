@@ -22,7 +22,7 @@
 
 /* Container for text */
 .text-container-stabs {
-    max-width: 650px; /* Set container width */
+    max-width: 800px; /* Set container width */
     margin: 0 auto;
     text-align: center;
     height: 500px; /* Set a fixed height for the scrolling list */
