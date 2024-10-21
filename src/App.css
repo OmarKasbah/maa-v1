@@ -9,6 +9,7 @@
     align-items: center;
     overflow: hidden;
     margin-bottom: 40px;
+    min-height: 900px;
 }
 
 /* Background video styling */
@@ -44,7 +45,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: -100px;
 }
 
 /* Row for logos */

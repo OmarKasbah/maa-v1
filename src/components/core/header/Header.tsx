@@ -67,7 +67,7 @@ const Header = ({ activeSection, isVisible }: HeaderProps) => {
                     {/* Logo: Centered in normal mode, Left in responsive mode */}
                     <Box
                         sx={{
-                            display: { xs: 'none', md: 'flex' },
+                            display: { xs: 'none', sm: 'flex', md: 'flex' },
                             justifyContent: 'center',
                             flexGrow: 1,
                         }}
@@ -76,21 +76,22 @@ const Header = ({ activeSection, isVisible }: HeaderProps) => {
                             src="./assets/logo.png"
                             alt="Logo"
                             style={{ height: '50px', cursor: 'pointer', marginLeft: '140px' }}
-                            onClick={() => scrollToSection('what')} // Scroll to top on logo click
+                            onClick={() => scrollToSection('video')} // Scroll to top on logo click
                         />
                     </Box>
 
                     {/* Trailer Button: Shown on larger screens */}
-                    <Box sx={{ display: { xs: 'none', md: 'flex', marginRight: '12px' }, alignItems: 'center' }}>
+                    <Box sx={{ display: { xs: 'none', sm: 'flex', md: 'flex' }, alignItems: 'center' }}>
                         <Button
                             sx={{
-                                color: '#6b014f', // Updated active color
-                                border: '1px solid #6b014f',
+                                color: '#FF56FF', // Updated active color
+                                border: '1px solid #FF56FF',
                                 textTransform: 'none',
+                                marginRight: { xs: '0', sm: '40px', md: '40px' }, // Add margin right for medium screens (900px and below)
                                 '&:hover': {
                                     backgroundColor: 'transparent',
-                                    color: '#FF56FF',
-                                    borderColor: '#FF56FF',
+                                    color: 'white',
+                                    borderColor: 'white',
                                 }
                             }}
                             onClick={handleOpen}
@@ -99,8 +100,9 @@ const Header = ({ activeSection, isVisible }: HeaderProps) => {
                         </Button>
                     </Box>
 
+
                     {/* Burger Menu: Shown on small screens */}
-                    <Box sx={{ display: { xs: 'flex', md: 'none' }, alignItems: 'center' }}>
+                    <Box sx={{ display: { xs: 'flex', sm: 'none', md: 'none' }, alignItems: 'space-between' }}>
                         <IconButton
                             edge="end"
                             color="inherit"
@@ -116,26 +118,27 @@ const Header = ({ activeSection, isVisible }: HeaderProps) => {
                 {/* Bottom row: Tabs for Navigation (visible on larger screens) */}
                 <Box
                     sx={{
-                        display: { xs: 'none', md: 'flex' },
+                        display: { xs: 'none', sm: 'flex', md: 'flex' },
                         position: 'relative',
                         alignItems: 'center',
-                        width: '1400px',
+                        width: '100%',
+                        maxWidth: '1400px',
                         justifyContent: 'flex-start',
                         margin: '0 auto',
                         paddingLeft: '24px',
                         paddingRight: '24px',
                     }}
                 >
-                    {/* Connected line above the tabs */}
                     <Box
                         sx={{
+                            display: { xs: 'none', sm: 'flex', md: 'flex' },
                             position: 'absolute',
                             top: '-2px',
-                            left: '0',
-                            right: '0',
+                            left: '-5%',
+                            right: '-5%',
                             width: '1400px',
                             height: '1px',
-                            backgroundColor: '#6b014f',
+                            backgroundColor: '#FF56FF',
                             zIndex: 0,
                             margin: '0 auto',
                             marginLeft: 'auto',
@@ -158,15 +161,15 @@ const Header = ({ activeSection, isVisible }: HeaderProps) => {
                                             left: 0,
                                             right: 0,
                                             height: '1px',
-                                            backgroundColor: '#FF56FF',
+                                            backgroundColor: 'white',
                                             transition: 'background-color 0.3s ease',
                                         }}
                                     />
                                 )}
                                 <Button
                                     sx={{
-                                        color: activeSection === section.toLowerCase() ? '#FF56FF' : '#6b014f',
-                                        fontSize: '1rem',
+                                        color: activeSection === section.toLowerCase() ? 'white' : '#FF56FF',
+                                        fontSize: '1.1rem',
                                         fontFamily: 'Crimson Pro, serif',
                                         textTransform: 'none',
                                         '&:hover': {
@@ -195,7 +198,6 @@ const Header = ({ activeSection, isVisible }: HeaderProps) => {
                         maxWidth: '500px',
                         margin: '0 auto',
                         backgroundColor: 'black',
-                        color: 'white',
                         padding: '16px',
                     }}
                 >
@@ -206,11 +208,8 @@ const Header = ({ activeSection, isVisible }: HeaderProps) => {
                                 key={section}
                                 onClick={() => scrollToSection(section)}
                                 sx={{
-                                    padding: '10px 16px',
+                                    alignItems: 'center',
                                     cursor: 'pointer',
-                                    '&:hover': {
-                                        backgroundColor: 'rgba(255, 255, 255, 0.1)', // Add hover effect if needed
-                                    }
                                 }}
                             >
                                 <ListItemText primary={section.charAt(0).toUpperCase() + section.slice(1).toLowerCase()} sx={{ color: '#FF56FF', textTransform: 'none' }} />

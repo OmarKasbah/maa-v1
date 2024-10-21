@@ -41,7 +41,8 @@ const ContactSection: React.FC = () => {
             sx={{
                 padding: '20px',          // Padding inside the content area
                 marginX: 'auto',          // Center the content horizontally
-                width: '1400px',
+                width: '100%',
+                maxWidth: '1400px',
                 backgroundColor: 'black',
                 color: 'white',
                 position: 'relative',     // Ensure proper positioning for lines
@@ -51,11 +52,14 @@ const ContactSection: React.FC = () => {
             <Box
                 sx={{
                     position: 'absolute',
-                    top: 0,
-                    width: '1400px',
-                    height: '1px',         // Thickness of the line
+                    top: 0,                      // Add top for vertical positioning
+                    left: '50%',                 // Center horizontally
+                    transform: 'translateX(-50%)', // Center the line
+                    width: '100%',
+                    maxWidth: '1400px',
+                    height: '1px',
                     backgroundColor: 'white',
-                    zIndex: 1,             // Ensure the line is above the content
+                    zIndex: 1,
                 }}
             />
 
@@ -63,11 +67,14 @@ const ContactSection: React.FC = () => {
             <Box
                 sx={{
                     position: 'absolute',
-                    bottom: 0,
-                    width: '1400px',
-                    height: '1px',         // Thickness of the line
+                    bottom: 0,                   // Add bottom for vertical positioning
+                    left: '50%',                 // Center horizontally
+                    transform: 'translateX(-50%)', // Center the line
+                    width: '100%',
+                    maxWidth: '1400px',
+                    height: '1px',
                     backgroundColor: 'white',
-                    zIndex: 1,             // Ensure the line is above the content
+                    zIndex: 1,
                 }}
             />
 
@@ -76,12 +83,11 @@ const ContactSection: React.FC = () => {
                 <Grid item xs={12} md={6}>
                     <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: '50px' }}>
                         {/* Information Section */}
-                        <Box sx={{ color: 'white', textAlign: 'left' }}>
-                            <Typography variant="h6" gutterBottom sx={{ color: 'white', fontWeight: 'bold', paddingLeft: '20px',         // Apply the Crimson Pro font
-                            }}>
+                        <Box sx={{ color: 'white', textAlign: 'left', paddingLeft: '32px' }}>
+                            <Typography variant="h6" gutterBottom sx={{ color: 'white', fontWeight: 'bold'}}>
                                 Information
                             </Typography>
-                            <Typography variant="body1" sx={{ color: 'white', paddingLeft: '20px', fontFamily: 'Crimson Pro, serif', // Apply the Crimson Pro font
+                            <Typography variant="body1" sx={{ color: 'white', fontFamily: 'Crimson Pro, serif', lineHeight: '1.1'
                             }}>
                                 Plot,<br />
                                 Synopsis,<br />
@@ -89,20 +95,24 @@ const ContactSection: React.FC = () => {
                                 Produzenten,<br />
                                 Entstehung,<br />
                                 Cast,<br />
-                                Stabsliste
+                                Stabsliste<br/>
+                                Nächstes Projekt
                             </Typography>
                         </Box>
 
                         {/* Imprint Section */}
-                        <Box sx={{ color: 'white', textAlign: 'left' }}>
-                            <Typography variant="h6" gutterBottom sx={{ color: 'white', fontWeight: 'bold', paddingLeft: '20px', fontFamily: 'Crimson Pro, serif' }}>
+                        <Box sx={{ color: 'white', textAlign: 'left', paddingLeft: '32px' }}>
+                            <Typography variant="h6" gutterBottom sx={{ color: 'white', fontWeight: 'bold', fontFamily: 'Crimson Pro, serif' }}>
                                 Imprint
                             </Typography>
-                            <Typography variant="body1" sx={{ color: 'white', paddingLeft: '20px', fontFamily: 'Crimson Pro, serif' }}>
-                                Example Company <br />
-                                Address: 1234 Fictional St, Berlin, DE <br />
-                                Email: contact@example.com <br />
-                                Phone: +49 123 456 789
+                            <Typography variant="body1" sx={{ color: 'white', fontFamily: 'Crimson Pro, serif', lineHeight: '1.1' }}>
+                                Eagel Eye Production GmbH <br />
+                                Grellstraße 36 <br />
+                                10409 Berlin <br /><br />
+                            </Typography>
+                            <Typography variant="body1" sx={{ color: 'white', fontFamily: 'Crimson Pro, serif', lineHeight: '1.1' }}>
+                                Geschäftsführung: <br />
+                                Mike Reinhard Peter Adler <br />
                             </Typography>
                         </Box>
 
@@ -116,6 +126,7 @@ const ContactSection: React.FC = () => {
                             padding: '20px',
                             backgroundColor: 'black',
                             color: 'white',
+                            paddingRight: '32px',
                             borderRadius: '8px', // Rounded corners
                         }}
                     >

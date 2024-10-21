@@ -2,21 +2,21 @@
     display: flex;
     flex-direction: column; /* Default to column for mobile */
     align-items: center;
-    padding: 80px 20px;
+    padding: 40px 40px;
     background-color: #000; /* Background color */
     color: #fff; /* Text color */
     max-width: 1400px; /* Set max width for the section */
     margin: 0 auto; /* Center the section */
 }
 
-.title-container {
-    margin-bottom: 40px;
+.title-container-next {
+    font-size: 8rem;
 }
 
 .naechstes-projekt-title {
     font-family: 'Display Fair', serif; /* Title font */
     color: #fff; /* Title color */
-    font-size: 4rem; /* Title size */
+    font-size: 6rem; /* Title size */
     text-align: center; /* Centered title */
 }
 
@@ -39,9 +39,8 @@
 }
 
 .project-image {
-    width: 100%; /* Full width of the container */
+    width: 80%; /* Full width of the container */
     height: auto; /* Maintain aspect ratio */
-    border-radius: 10px; /* Optional: Add rounding to the image */
     transition: opacity 0.5s; /* Smooth fade transition */
 }
 
@@ -49,13 +48,12 @@
     position: absolute;
     top: 50%; /* Center vertically */
     transform: translateY(-50%); /* Adjust for exact center */
-    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent background for buttons */
     border: none; /* Remove border */
-    padding: 10px; /* Space around the button */
+    padding: 4px; /* Space around the button */
     cursor: pointer; /* Pointer cursor */
     z-index: 10; /* Ensure buttons are on top */
     font-size: 2rem; /* Button size */
-    color: #000; /* Button text color */
+    color: #FF56FF; /* Button text color */
 }
 
 .carousel-button.left {
@@ -70,6 +68,9 @@
     width: 50%; /* Default width for text */
     padding-left: 20px; /* Space between image and text */
     min-width: 300px; /* Minimum width for text */
+    margin-top: -40px;
+    text-align: justify;
+    font-size: 2rem;
 }
 
 .project-name {
@@ -85,7 +86,7 @@
 }
 
 /* Responsive Styles */
-@media (max-width: 768px) {
+@media (max-width: 908px) {
     .content-container {
         flex-direction: column; /* Stack images and text */
         align-items: center; /* Center content */
@@ -100,7 +101,7 @@
         padding: 5px; /* Smaller padding */
     }
     .naechstes-projekt-title {
-        font-size: 2.5rem; /* Smaller title size */
+        font-size: 4.5rem; /* Smaller title size */
     }
     .project-name {
         font-size: 2rem; /* Smaller project name size */
@@ -112,7 +113,7 @@
 
 @media (max-width: 480px) {
     .naechstes-projekt-title {
-        font-size: 2rem; /* Further reduce title size */
+        font-size: 3rem; /* Further reduce title size */
     }
     .project-name {
         font-size: 1.5rem; /* Further reduce project name size */

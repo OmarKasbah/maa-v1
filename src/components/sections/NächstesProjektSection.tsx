@@ -33,14 +33,14 @@ const NächstesProjektSection: React.FC = () => {
 
     return (
         <section id="nächstes projekt" className="naechstes-projekt-section">
-            <div className="title-container">
+            <div className="title-container-next">
                 <motion.h1
                     initial={{ scale: 0.5, y: 100, opacity: 0 }}
                     whileInView={{ scale: 1, y: 0, opacity: 1 }}
                     transition={{ duration: 0.8, ease: 'easeOut' }}
                     className="naechstes-projekt-title"
                 >
-                    —Nächstes Projekt—
+                    Nächstes Projekt
                 </motion.h1>
             </div>
             <div className="content-container">
