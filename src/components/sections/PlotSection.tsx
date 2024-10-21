@@ -18,7 +18,7 @@ const PlotSection: React.FC = () => {
 
     return (
         <section id="plot" className="plot-section">
-            <div className="title-container">
+            <div className="plot-title-container">
                 <motion.h1
                     initial={{ scale: 0.8, opacity: 0 }} // Start with smaller size and invisible
                     whileInView={{ scale: 1, opacity: 1 }} // Animate to full size and visible

@@ -58,6 +58,10 @@
     .synopsis-section {
         padding-bottom: 400px; /* Increase padding at the bottom to push the image down */
     }
+
+    .synopsis-section .text-container {
+        width: 80%;
+    }
 }
 
 @media (max-width: 480px) {

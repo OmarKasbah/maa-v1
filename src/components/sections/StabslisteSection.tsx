@@ -41,9 +41,9 @@ const StabslisteSection: React.FC = () => {
         <section id="stabsliste" className="stabsliste-section">
             <div className="title-container-stabs">
                 <motion.h1
-                    initial={{ scale: 0.5, y: 100, opacity: 0 }} // Start small and off-screen
-                    whileInView={{ scale: 1, y: 0, opacity: 1 }} // Animate to normal size and position
-                    transition={{ duration: 0.8, ease: "easeOut" }} // Control speed and easing
+                    initial={{ scale: 0.5, y: 100, opacity: 0 }}
+                    whileInView={{ scale: 1, y: 0, opacity: 1 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
                     className="stabsliste-title"
                 >
                     —Stabsliste—

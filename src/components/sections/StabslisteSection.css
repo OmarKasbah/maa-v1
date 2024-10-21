@@ -1,7 +1,6 @@
 .stabsliste-section {
     position: relative;
     background-color: black; /* Black background */
-    padding-bottom: 80px;
     color: white;
     text-align: center;
     max-height: 1000px; /* Max height for the section */
@@ -48,31 +47,29 @@
 /* Styling for each crew item (position and names) */
 .crew-item {
     display: flex;
-    justify-content: space-between; /* Align position and names with space between */
+    flex-direction: column; /* Stack position and names vertically */
     margin-bottom: 15px; /* Space between each item */
     font-family: 'Display Fair', serif;
-    flex-wrap: wrap; /* Allow names to wrap under position */
+    text-align: center; /* Center-align the text */
 }
 
 /* Position text styling */
 .position-text {
-    font-size: 1.4rem; /* Smaller font size */
+    font-size: 1.8rem; /* Larger font size for positions */
     font-weight: bold;
-    color: white;
-    min-width: 150px; /* Ensure the position has enough space */
-    text-align: left;
+    color: #FF56FF; /* Bright pink color for positions */
+    margin-bottom: 5px; /* Space between position and names */
 }
 
-/* Names container (to stack names under one another) */
+/* Names container */
 .names-container {
     display: flex;
     flex-direction: column; /* Stack names vertically */
-    text-align: right;
 }
 
 /* Name text styling */
 .name-text {
-    font-size: 1.2rem; /* Same font size as position */
+    font-size: 1.2rem; /* Font size for names */
     color: white;
 }
 
@@ -82,8 +79,12 @@
         font-size: 4.5rem; /* Smaller title on tablets */
     }
 
-    .position-text, .name-text {
-        font-size: 1rem; /* Smaller text size for positions and names on tablets */
+    .position-text {
+        font-size: 1.5rem; /* Smaller position text size on tablets */
+    }
+
+    .name-text {
+        font-size: 1rem; /* Smaller name text size on tablets */
     }
 }
 
@@ -97,7 +98,11 @@
         padding-right: 40px;
     }
 
-    .position-text, .name-text {
-        font-size: 0.9rem; /* Smaller text size on mobile */
+    .position-text {
+        font-size: 1.2rem; /* Smaller position text size on mobile */
+    }
+
+    .name-text {
+        font-size: 0.9rem; /* Smaller name text size on mobile */
     }
 }

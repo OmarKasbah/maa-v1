@@ -1,7 +1,7 @@
 /* Produzenten section styling */
 .produzenten-section {
     position: relative;
-    padding: 100px 20px;
+    padding: 60px 20px;
     color: white; /* Text color */
     background-color: #000; /* Black background */
 }
@@ -19,7 +19,6 @@
     font-size: 6rem;
     color: #FF56FF; /* Same color as the synopsis title */
     text-align: center;
-    margin-top: -5px;
 }
 
 /* Content container to hold the image and text */
@@ -81,15 +80,16 @@
     }
 
     .produzenten-section .text-container {
-        max-width: 90%; /* Allow more width on smaller screens */
+        max-width: 80%; /* Allow more width on smaller screens */
         margin-top: 0; /* Remove top margin for better alignment */
         order: 1; /* Ensure text comes first in the stacking order */
+        margin-right: unset;
     }
 }
 
 @media (max-width: 480px) {
     .produzenten-section .produzenten-title {
-        font-size: 3rem; /* Further adjust title size on mobile */
+        font-size: 2.8rem; /* Further adjust title size on mobile */
     }
 
     .produzenten-section .producer-text {
@@ -98,5 +98,9 @@
 
     .produzenten-section .producer-name {
         font-size: 2rem; /* Adjust name size for mobile */
+    }
+
+    .produzenten-section .text-container {
+        margin-right: unset;
     }
 }

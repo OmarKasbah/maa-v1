@@ -100,7 +100,7 @@ function App() {
                     </motion.div>
 
                     {/* Centered Image */}
-                    <div className="image-container" style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
+                    <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
                         <img
                             src="./assets/zitat.png"
                             alt="Centered"
