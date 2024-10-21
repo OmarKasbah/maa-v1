@@ -103,6 +103,22 @@
     .cast-section .cast-image {
         width: 80%; /* Responsive image size */
     }
+
+    .robert-member {
+        margin-top: unset;
+    }
+
+    .maximilian-member {
+        margin-top: unset;
+    }
+
+    .jean-member {
+        margin-top: unset;
+    }
+
+    .selam-member {
+        margin-top: unset;
+    }
 }
 
 @media (max-width: 768px) {
