@@ -4,6 +4,7 @@
     padding: 60px 20px;
     color: white; /* Text color */
     background-color: #000; /* Black background */
+    max-width: 1400px;
 }
 
 /* Title container for the section */
@@ -25,7 +26,7 @@
 .produzenten-section .content-container {
     display: flex;
     align-items: flex-start; /* Align items to start */
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     margin-bottom: 80px; /* Increased space between sections */
 }
@@ -64,9 +65,9 @@
 }
 
 /* Responsive design */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .produzenten-section .produzenten-title {
-        font-size: 2.5rem; /* Adjust title size on smaller screens */
+        font-size: 3.5rem; /* Adjust title size on smaller screens */
     }
 
     .produzenten-section .content-container {
@@ -82,7 +83,6 @@
     .produzenten-section .text-container {
         max-width: 80%; /* Allow more width on smaller screens */
         margin-top: 0; /* Remove top margin for better alignment */
-        order: 1; /* Ensure text comes first in the stacking order */
         margin-right: unset;
     }
 }

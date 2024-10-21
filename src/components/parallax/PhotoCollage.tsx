@@ -1,79 +1,37 @@
-import React, { useEffect, useState } from 'react';
-import './PhotoCollage.css'; // Ensure this path is correct
+import React from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import './PhotoCollage.css';
 
-// Image details with dimensions
-const imageSources = [
-    {
-        src: 'https://assets.website-files.com/63af52b71504f950bae436f8/63b5c3920959c33645a79743_Group%2093.jpg',
-        width: 269,
-        height: 298,
-    },
-    {
-        src: 'https://assets.website-files.com/63af52b71504f950bae436f8/image2.jpg', // Replace with the actual image URL
-        width: 399,
-        height: 449,
-    },
-    {
-        src: 'https://assets.website-files.com/63af52b71504f950bae436f8/image3.jpg', // Replace with the actual image URL
-        width: 624,
-        height: 416,
-    },
-    {
-        src: 'https://assets.website-files.com/63af52b71504f950bae436f8/image4.jpg', // Replace with the actual image URL
-        width: 725,
-        height: 339,
-    },
-    {
-        src: 'https://assets.website-files.com/63af52b71504f950bae436f8/image5.jpg', // Replace with the actual image URL
-        width: 579,
-        height: 393,
-    },
-    {
-        src: 'https://assets.website-files.com/63af52b71504f950bae436f8/image6.jpg', // Replace with the actual image URL
-        width: 546,
-        height: 189,
-    },
-    {
-        src: 'https://assets.website-files.com/63af52b71504f950bae436f8/image7.jpg', // Replace with the actual image URL
-        width: 387,
-        height: 290,
-    },
+const images = [
+    './assets/collage1.png',
+    './assets/collage2.png',
+    './assets/collage3.png',
+    './assets/collage4.png',
+    './assets/collage5.png',
+    './assets/collage6.png',
+    './assets/collage7.png',
 ];
 
 const PhotoCollage: React.FC = () => {
-    const [scrollY, setScrollY] = useState(0);
+    const { scrollY } = useScroll();
 
-    const handleScroll = () => {
-        setScrollY(window.scrollY);
-    };
-
-    useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
+    // Define parallax effect
+    const translateYValues = useTransform(scrollY, [0, 1000], [0, -100]); // Moves images up by 100px over 1000px of scroll
 
     return (
-        <div className="collage-container">
-            {/* Left Splatter */}
-            <div className="splatter left" />
-            {imageSources.map((image, index) => (
-                <img
-                    key={index}
-                    src={image.src}
-                    alt={`Image ${index + 1}`}
-                    className="parallax-img"
-                    style={{
-                        width: `${image.width}px`,
-                        height: `${image.height}px`,
-                        transform: `translate3d(0, ${scrollY * (0.1 * (index + 1))}px, 0)`,
-                    }}
-                />
-            ))}
-            {/* Right Splatter */}
-            <div className="splatter right" />
-        </div>
+        <section className="photo-collage-section">
+            <div className="collage-container">
+                {images.map((image, index) => (
+                    <motion.div
+                        key={index}
+                        className="collage-item"
+                        style={{ translateY: translateYValues }} // Apply the same parallax to all images
+                    >
+                        <img src={image} alt={`Collage ${index + 1}`} className="collage-image" />
+                    </motion.div>
+                ))}
+            </div>
+        </section>
     );
 };
 

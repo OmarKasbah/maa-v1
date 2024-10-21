@@ -27,8 +27,9 @@
 /* Cast container */
 .cast-section .cast-container {
     display: flex; /* Side-by-side layout */
-    flex-direction: column; /* Stack members vertically */
-    max-width: 1200px;
+    flex-wrap: wrap; /* Allow wrapping for responsive layout */
+    justify-content: flex-start; /* Center the content */
+    max-width: 1400px;
     width: 100%;
     margin-top: 20px;
 }
@@ -38,35 +39,30 @@
     display: flex;
     flex-direction: column; /* Stack image and text vertically */
     align-items: center; /* Center align items */
-    width: 100%; /* Each member takes full width when stacked */
-    margin-bottom: 30px; /* Space between cast members */
+    width: 50%; /* Each member takes half the width when side by side */
+    padding: 20px; /* Add padding around each member */
+    box-sizing: border-box; /* Ensure padding is included in width */
 }
 
 /* Cast image */
 .cast-section .cast-image {
-    width: 550px; /* Set a fixed width for images */
-}
-
-/* Robert's image positioning */
-.cast-section .robert-member {
-    margin-top: 350px; /* Adjust this value to lower Robert's image */
+    width: 80%; /* Set a responsive width for images */
 }
 
 /* Text container (for actor and character names) */
-.cast-section .text-container {
+.cast-section .text-container-cast {
     display: flex; /* Use flexbox to align names vertically */
-    width: 550px;
+    width: 80%; /* Use full width */
     justify-content: space-between;
     align-items: center; /* Center align items vertically */
     line-height: 1.0;
-    margin-top: -30px;
 }
 
 /* Actor name */
 .cast-section .actor-name {
     font-family: 'Crimson Pro', serif;
     color: #FF56FF;
-    font-size: 3.2rem;
+    font-size: 3.0rem;
     text-align: left;
 }
 
@@ -78,28 +74,34 @@
     text-align: right;
 }
 
+.robert-member {
+    margin-top: 300px;
+}
+
+.maximilian-member {
+    margin-top: -260px;
+}
+
+.jean-member {
+    margin-top: -220px;
+}
+
+.selam-member {
+    margin-top: -180px;
+}
+
 /* Responsive design */
-@media (max-width: 1160px) {
+@media (max-width: 800px) {
     .cast-section .cast-title {
         font-size: 5.5rem; /* Reduce title size for smaller screens */
     }
 
-    .cast-section .cast-container {
-        flex-direction: column; /* Ensure members stack vertically on smaller screens */
-    }
-
     .cast-section .cast-member {
         width: 100%; /* Full width for each member when stacked */
-        align-items: center; /* Center align images and text */
     }
 
     .cast-section .cast-image {
         width: 80%; /* Responsive image size */
-        max-width: 550px; /* Maintain max width for larger screens */
-    }
-
-    .cast-section .robert-member {
-        margin-top: 10px; /* Reset top positioning for small screens */
     }
 }
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import './NächstesProjektSection.css';
 
@@ -22,6 +22,15 @@ const projectDescription = [
 
 const NächstesProjektSection: React.FC = () => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+    // Auto-slide function to change the image after every 3 seconds
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+        }, 5000); // Change image every 3 seconds
+
+        return () => clearInterval(interval); // Cleanup on component unmount
+    }, []);
 
     const handleNext = () => {
         setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -48,12 +57,13 @@ const NächstesProjektSection: React.FC = () => {
                 <div className="image-container">
                     <button onClick={handlePrev} className="carousel-button left">←</button>
                     <motion.img
+                        key={currentImageIndex} // Ensure smooth transition with key prop
                         src={images[currentImageIndex]}
                         alt="Projekt"
                         className="project-image"
                         initial={{ opacity: 0 }} // Fade out initial
                         animate={{ opacity: 1 }} // Fade in
-                        transition={{ duration: 0.5 }} // Animation duration
+                        transition={{ duration: 2, ease: 'easeInOut' }} // Smooth and slower transition
                     />
                     <button onClick={handleNext} className="carousel-button right">→</button>
                 </div>
