@@ -6,6 +6,7 @@
     flex-direction: column;
     align-items: center;
     padding: 20px;
+    max-width: 1400px;
 }
 
 /* Title styling */
@@ -29,7 +30,7 @@
     align-items: flex-start;
     position: relative;
     margin-bottom: 80px; /* Add margin for space below */
-    max-width: 1200px;
+    max-width: 1300px;
 }
 
 /* Upright image styling */
@@ -51,7 +52,7 @@
 .entstehung-section .landscape-container {
     position: relative;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1300px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -60,17 +61,15 @@
 
 /* Landscape image styling */
 .entstehung-section .landscape-image {
-    margin-left: 300px;
+    margin-left: 280px;
     z-index: 1;
     max-width: 600px; /* Prevent the image from getting too large */
-    width: 100%; /* Allow the image to resize based on screen size */
     height: auto;
 }
 
 /* Text block for landscape image */
 .entstehung-section .landscape-text {
     position: relative;
-    max-width: 300px;
     color: white;
     font-size: 1.6rem;
     font-family: 'Noto Sans', sans-serif;
@@ -82,8 +81,7 @@
 /* Final text under the images */
 .entstehung-section .final-text-container {
     display: flex;
-    padding-right: 180px;
-    padding-left: 180px;
+    max-width: 1300px;
 }
 
 .entstehung-section .final-text {
@@ -102,22 +100,36 @@
     }
 
     .entstehung-section .text-block {
-        max-width: 45%; /* Adjust text width */
     }
 
     .entstehung-section .landscape-container {
         margin-top: -200px; /* Adjust overlap on medium screens */
     }
 
+    .entstehung-section .landscape-text {
+        margin: unset;
+        margin-top: 30px;
+    }
+
     .entstehung-section .landscape-image {
-        margin-left: 200px; /* Reduce left margin */
-        max-width: 500px; /* Adjust image width on medium screens */
+        margin-left: unset; /* Reduce left margin */
+        max-width: 600px; /* Adjust image width on medium screens */
+    }
+
+    .entstehung-section .image-text-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .entstehung-section .landscape-container {
+        flex-direction: column;
+        margin-top: -50px; /* Adjust for smaller screens */
     }
 }
 
 @media (max-width: 768px) {
     .entstehung-section .entstehung-title {
-        font-size: 3rem;
+        font-size: 4rem;
     }
 
     .entstehung-section .image-text-container {
@@ -132,7 +144,7 @@
     }
 
     .entstehung-section .text-block {
-        width: 100%;
+        width: 80%;
         max-width: 100%;
     }
 
@@ -148,8 +160,13 @@
 
     .entstehung-section .landscape-text {
         right: 0;
-        max-width: 100%;
-        text-align: center;
+        max-width: 80%;
+        text-align: justify;
+        margin: unset;
+    }
+
+    .entstehung-section .final-text-container {
+        max-width: 80%;
     }
 }
 
@@ -159,15 +176,15 @@
     }
 
     .entstehung-section .entstehung-text,
-    .entstehung-section .final-text {
+    .entstehung-section .final-text,
+    .entstehung-section .landscape-text {
         font-size: 1.2rem;
-        padding-left: 40px;
-        padding-right: 40px;
+        margin-top: 20px;
     }
 
     .entstehung-section .upright-image,
     .entstehung-section .landscape-image {
-        width: 100%;
+        width: 80%;
     }
 
     .entstehung-section .content-container {
