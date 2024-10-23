@@ -6,6 +6,8 @@
     flex-direction: column;
     align-items: center;
     padding: 50px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 /* Title styling */
@@ -13,6 +15,59 @@
     display: flex;
     justify-content: center;
     margin-bottom: 40px;
+}
+
+.weiterer-cast-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.erste-reihe {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    width: 900px; /* Adjust as needed */
+}
+
+.zweite-reihe {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    width: 700px; /* Adjust as needed */
+}
+
+.dritte-reihe {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-evenly;
+    text-align: center;
+    width: 600px;
+}
+
+
+.weiterer-cast-title {
+    font-family: 'Crimson Pro', serif;
+    font-size: 4.5rem;
+    color: #FF56FF;
+    text-align: center;
+    margin-top: -5px;
+}
+
+/* Actor name */
+.cast-section .actor-name2 {
+    font-family: 'Crimson Pro', serif;
+    color: #FF56FF;
+    font-size: 2.2rem;
+    text-align: left;
+}
+
+/* Character name */
+.cast-section .character-name2 {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 1.4rem;
+    color: white;
+    text-align: right;
 }
 
 .cast-section .cast-title {

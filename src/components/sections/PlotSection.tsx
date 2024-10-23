@@ -28,7 +28,7 @@ const PlotSection: React.FC = () => {
                     —Plot—
                 </motion.h1>
             </div>
-            <div className="text-container">
+            <div className="plot-text-container">
                 {lines.map((line, index) => {
                     const delay = index * 0.1; // Delay for staggered effect
 

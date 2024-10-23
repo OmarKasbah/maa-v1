@@ -5,11 +5,15 @@
     align-items: center; /* Center the container */
     justify-content: center;
     background-image: url('/public/assets/plot.png'); /* Background image */
-    background-size: 100%; /* Resize the background image to 90% */
+    background-size: 100%;
+    max-width: 1400px;
     background-repeat: no-repeat; /* Prevent the image from repeating */
     background-position: center; /* Center the image */
-    height: 100vh; /* Full height of the viewport */
     padding: 20px; /* Add padding */
+    height: 100%;
+    max-height: 1400px;
+    min-height: 1200px;
+    margin: 0 auto;
 }
 
 .plot-title-container {
@@ -18,31 +22,31 @@
 
 .plot-title {
     font-family: 'Playfair Display', serif; /* Font family for title */
-    font-size: 6.4vw; /* Font size for the title */
+    font-size: 6.4rem; /* Font size for the title */
     text-align: center; /* Center title text */
     color: white; /* Title color */
-    width: 100%; /* Ensure title takes full width */
     font-weight: lighter;
     margin: 0;
 }
 
-.plot-section .text-container {
+.plot-section .plot-text-container {
     display: flex;
     flex-direction: column;
-    width: 60%; /* Set width of the text container */
-    max-width: 800px; /* Maximum width for larger screens */
+    width: 100%; /* Set width of the text container */
+    max-width: 1200px; /* Maximum width for larger screens */
+    align-items: center;
 }
 
 .plot-text {
     font-family: 'Noto Sans', sans-serif; /* Font family for text */
-    font-size: 2.0vw; /* Responsive font size */
+    font-size: 1.6rem; /* Responsive font size */
     text-align: justify; /* Align text to the left */
     color: white;
     margin: 0 0 0 0;
 }
 
 /* Media queries for further responsiveness */
-@media (max-width: 768px) {
+@media (max-width: 1068px) {
     .plot-title-container {
         padding-bottom: 80px;
     }
@@ -63,7 +67,7 @@
 
 @media (max-width: 480px) {
     .plot-title-container {
-        padding-bottom: 60px;
+        padding-bottom: 20px;
     }
 
     .plot-title {
@@ -71,7 +75,7 @@
     }
 
     .plot-text {
-        font-size: 2.4vw; /* Larger text size for extra small screens */
+        font-size: 2.2vw; /* Larger text size for extra small screens */
     }
 
     .plot-section {

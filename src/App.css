@@ -10,6 +10,7 @@
     overflow: hidden;
     margin-bottom: 40px;
     min-height: 900px;
+    margin: 0 auto;
 }
 
 /* Background video styling */
@@ -18,7 +19,6 @@
     top: 50%;
     left: 50%;
     width: 78%;
-    height: 60%;
     object-fit: cover;
     transform: translate(-50%, -50%);
     z-index: 0;

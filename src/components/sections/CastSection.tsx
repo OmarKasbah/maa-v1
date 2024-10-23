@@ -236,6 +236,125 @@ const CastSection: React.FC = () => {
                         </motion.p>
                     </div>
                 </div>
+            </div>
+
+            <div className="weiterer-cast-container">
+                <motion.h1
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.8, ease: 'easeInOut' }}
+                    className="weiterer-cast-title"
+                >
+                    Weiterer Cast:
+                </motion.h1>
+
+                <div className="erste-reihe">
+                        <motion.h2
+                            className="actor-name2"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, ease: 'easeInOut' }}
+                        >
+                            Hugo Grim
+                        </motion.h2>
+                        <motion.p
+                            className="character-name2"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, ease: 'easeInOut' }}
+                        >
+                            Nico
+                        </motion.p>
+
+                    <motion.h2
+                        className="actor-name2"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, ease: 'easeInOut' }}
+                    >
+                        Axel Hartwig
+                    </motion.h2>
+                    <motion.p
+                        className="character-name2"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, ease: 'easeInOut' }}
+                    >
+                        Röttkers
+                    </motion.p>
+
+                    <motion.h2
+                        className="actor-name2"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, ease: 'easeInOut' }}
+                    >
+                        Derbe
+                    </motion.h2>
+                    <motion.p
+                        className="character-name2"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, ease: 'easeInOut' }}
+                    >
+                        Derbe
+                    </motion.p>
+                    </div>
+
+                    <div className="zweite-reihe">
+                            <motion.h2
+                                className="actor-name2"
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.8, ease: 'easeInOut' }}
+                            >
+                                Amanda Höldtke
+                            </motion.h2>
+                            <motion.p
+                                className="character-name2"
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.8, ease: 'easeInOut' }}
+                            >
+                                Merima
+                            </motion.p>
+
+                        <motion.h2
+                            className="actor-name2"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, ease: 'easeInOut' }}
+                        >
+                            Michél Stantschew
+                        </motion.h2>
+                        <motion.p
+                            className="character-name2"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, ease: 'easeInOut' }}
+                        >
+                            Ari
+                        </motion.p>
+                    </div>
+
+                <div className="dritte-reihe">
+                    <motion.h2
+                        className="actor-name2"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, ease: 'easeInOut' }}
+                    >
+                        Paul Maas
+                    </motion.h2>
+                    <motion.p
+                        className="character-name2"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, ease: 'easeInOut' }}
+                    >
+                        Komissar Schmitz
+                    </motion.p>
+                </div>
 
             </div>
         </section>

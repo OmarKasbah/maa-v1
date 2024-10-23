@@ -5,6 +5,7 @@
     color: white; /* Text color */
     background-color: #000; /* Black background */
     max-width: 1400px;
+    margin: 0 auto;
 }
 
 /* Title container for the section */
