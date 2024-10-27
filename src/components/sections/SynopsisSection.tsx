@@ -4,7 +4,7 @@ import './SynopsisSection.css';
 import {useTranslation} from "react-i18next"; // Ensure this points to your CSS file
 
 const SynopsisSection: React.FC = () => {
-    const { t, i18n } = useTranslation();
+    const { t} = useTranslation();
     const lines: string[] = [
         t('synopsis.line1'),
         t('synopsis.line2'),

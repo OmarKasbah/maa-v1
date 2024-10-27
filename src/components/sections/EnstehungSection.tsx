@@ -4,7 +4,7 @@ import './EntstehungSection.css';
 import {useTranslation} from "react-i18next"; // Link to your CSS file
 
 const EntstehungSection: React.FC = () => {
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
     return (
         <section id={t('creation.title').toLowerCase()} className="entstehung-section">
             {/* Title */}

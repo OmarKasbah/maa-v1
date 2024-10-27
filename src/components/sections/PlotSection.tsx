@@ -4,7 +4,7 @@ import './PlotSection.css';
 import {useTranslation} from "react-i18next"; // Ensure this points to your CSS file
 
 const PlotSection: React.FC = () => {
-    const { t, i18n } = useTranslation();
+    const { t} = useTranslation();
     const lines: (string | null)[] = [
         t('film_description.line1'),
         t('film_description.line2'),

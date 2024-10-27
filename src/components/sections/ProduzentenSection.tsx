@@ -4,7 +4,7 @@ import './ProduzentenSection.css';
 import {useTranslation} from "react-i18next"; // Ensure this points to your CSS file
 
 const ProduzentenSection: React.FC = () => {
-    const { t, i18n } = useTranslation();
+    const { t} = useTranslation();
     const producerInfo: string[] = [
         t('producers.mike1'),
         t('producers.mike2'),

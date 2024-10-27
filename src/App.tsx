@@ -11,11 +11,9 @@ import EnstehungSection from "./components/sections/EnstehungSection.tsx";
 import CastSection from "./components/sections/CastSection.tsx";
 import StabslisteSection from "./components/sections/StabslisteSection.tsx";
 import NächstesProjektSection from "./components/sections/NächstesProjektSection.tsx";
-import PhotoCollage from "./components/parallax/PhotoCollage.tsx";
 import { useTranslation } from 'react-i18next';
 
 function App() {
-    const { t, i18n } = useTranslation();
     const [activeSection, setActiveSection] = useState('what');
     const [isHeaderVisible, setHeaderVisible] = useState(false);
 
@@ -132,7 +130,7 @@ function App() {
 }
 
 const QuoteText: React.FC = () => {
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
     const lines: string[] = [
         t('quote.text1'),
         t('quote.text2'),

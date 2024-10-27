@@ -3,7 +3,7 @@ import { Box, Typography, IconButton } from '@mui/material';
 import {useTranslation} from "react-i18next";
 
 const Footer: React.FC = () => {
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
     const handleSocialClick = (url: string) => {
         window.open(url, '_blank'); // Open social links in a new tab
     };
