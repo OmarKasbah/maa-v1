@@ -1,5 +1,18 @@
-import { useState } from 'react';
-import { AppBar, Toolbar, Button, Box, IconButton, Drawer, List, ListItem, ListItemText, MenuItem, Select } from '@mui/material';
+import { useState, useEffect } from 'react';
+import {
+    AppBar,
+    Toolbar,
+    Button,
+    Box,
+    IconButton,
+    Drawer,
+    List,
+    ListItem,
+    ListItemText,
+    MenuItem,
+    Select,
+    SelectChangeEvent,
+} from '@mui/material'; // Import SelectChangeEvent here
 import MenuIcon from '@mui/icons-material/Menu';
 import TrailerModal from "../../modals/TrailerModal.tsx";
 import { useTranslation } from 'react-i18next';
@@ -13,7 +26,14 @@ const Header = ({ activeSection, isVisible }: HeaderProps) => {
     const { t, i18n } = useTranslation();
     const [open, setOpen] = useState(false); // For trailer modal
     const [drawerOpen, setDrawerOpen] = useState(false); // State for burger menu
-    const [language, setLanguage] = useState(i18n.language); // State for language selection
+
+    // Load language from localStorage or default to 'en'
+    const savedLanguage = localStorage.getItem('language') || 'en';
+    const [language, setLanguage] = useState(savedLanguage);
+
+    useEffect(() => {
+        i18n.changeLanguage(language); // Set the language on component mount
+    }, [language, i18n]);
 
     const sections = [
         t('header.sections.plot'),
@@ -48,11 +68,12 @@ const Header = ({ activeSection, isVisible }: HeaderProps) => {
         setDrawerOpen(false); // Close drawer after selecting an item
     };
 
-    // Change language
-    const handleLanguageChange = (event: React.ChangeEvent<{ value: unknown }>) => {
-        const newLanguage = event.target.value as string;
+    // Change language and save to localStorage
+    const handleLanguageChange = (event: SelectChangeEvent<string>) => {
+        const newLanguage = event.target.value;
         i18n.changeLanguage(newLanguage);
         setLanguage(newLanguage);
+        localStorage.setItem('language', newLanguage); // Save selection to localStorage
     };
 
     return (
@@ -101,8 +122,8 @@ const Header = ({ activeSection, isVisible }: HeaderProps) => {
                                 },
                             }}
                         >
-                            <MenuItem sx={{backgroundColor: 'black', color: '#FF56FF'}} value="en">English</MenuItem>
-                            <MenuItem sx={{backgroundColor: 'black', color: '#FF56FF'}} value="de">Deutsch</MenuItem>
+                            <MenuItem sx={{ backgroundColor: 'black', color: '#FF56FF' }} value="en">English</MenuItem>
+                            <MenuItem sx={{ backgroundColor: 'black', color: '#FF56FF' }} value="de">Deutsch</MenuItem>
                         </Select>
                     </Box>
 
@@ -117,7 +138,7 @@ const Header = ({ activeSection, isVisible }: HeaderProps) => {
                         <img
                             src="./assets/logo.png"
                             alt="Logo"
-                            style={{ height: '50px', cursor: 'pointer', marginLeft: '140px' }}
+                            style={{ height: '50px', cursor: 'pointer' }}
                             onClick={() => scrollToSection('video')} // Scroll to top on logo click
                         />
                     </Box>
@@ -259,7 +280,7 @@ const Header = ({ activeSection, isVisible }: HeaderProps) => {
                             <Select
                                 value={language}
                                 onChange={handleLanguageChange}
-                                sx={{ color: '#FF56FF', width: '100%'}}
+                                sx={{ color: '#FF56FF', width: '100%' }}
                                 MenuProps={{
                                     PaperProps: {
                                         sx: {
