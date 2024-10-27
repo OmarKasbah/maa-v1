@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { Grid, TextField, Button, Box, Typography } from '@mui/material';
 import emailjs from 'emailjs-com';
+import {useTranslation} from "react-i18next";
 
 const ContactSection: React.FC = () => {
+    const { t, i18n } = useTranslation();
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -58,7 +60,7 @@ const ContactSection: React.FC = () => {
                     width: '100%',
                     maxWidth: '1400px',
                     height: '1px',
-                    backgroundColor: 'white',
+                    backgroundColor: '#FF56FF',
                     zIndex: 1,
                 }}
             />
@@ -73,7 +75,7 @@ const ContactSection: React.FC = () => {
                     width: '100%',
                     maxWidth: '1400px',
                     height: '1px',
-                    backgroundColor: 'white',
+                    backgroundColor: '#FF56FF',
                     zIndex: 1,
                 }}
             />
@@ -85,25 +87,24 @@ const ContactSection: React.FC = () => {
                         {/* Information Section */}
                         <Box sx={{ color: 'white', textAlign: 'left', paddingLeft: '32px' }}>
                             <Typography variant="h6" gutterBottom sx={{ color: 'white', fontWeight: 'bold'}}>
-                                Information
+                                {t('footer.information')}
                             </Typography>
                             <Typography variant="body1" sx={{ color: 'white', fontFamily: 'Crimson Pro, serif', lineHeight: '1.1'
                             }}>
                                 Plot,<br />
                                 Synopsis,<br />
-                                Regie,<br />
-                                Produzenten,<br />
-                                Entstehung,<br />
+                                {t('header.sections.producers')},<br />
+                                {t('header.sections.creation')},<br />
                                 Cast,<br />
-                                Stabsliste<br/>
-                                Nächstes Projekt
+                                {t('header.sections.crew')},<br/>
+                                {t('header.sections.nextProject')}
                             </Typography>
                         </Box>
 
                         {/* Imprint Section */}
                         <Box sx={{ color: 'white', textAlign: 'left', paddingLeft: '32px' }}>
                             <Typography variant="h6" gutterBottom sx={{ color: 'white', fontWeight: 'bold', fontFamily: 'Crimson Pro, serif' }}>
-                                Imprint
+                                {t('footer.imprint')}
                             </Typography>
                             <Typography variant="body1" sx={{ color: 'white', fontFamily: 'Crimson Pro, serif', lineHeight: '1.1' }}>
                                 Eagel Eye Production GmbH <br />
@@ -111,7 +112,7 @@ const ContactSection: React.FC = () => {
                                 10409 Berlin <br /><br />
                             </Typography>
                             <Typography variant="body1" sx={{ color: 'white', fontFamily: 'Crimson Pro, serif', lineHeight: '1.1' }}>
-                                Geschäftsführung: <br />
+                                {t('footer.ceo')}: <br />
                                 Mike Reinhard Peter Adler <br />
                             </Typography>
                         </Box>

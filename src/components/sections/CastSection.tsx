@@ -1,8 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import './CastSection.css'; // Ensure this points to your CSS file
+import './CastSection.css';
+import {useTranslation} from "react-i18next";
 
 const CastSection: React.FC = () => {
+    const { t, } = useTranslation();
     return (
         <section id="cast" className="cast-section">
             {/* Title */}
@@ -245,7 +247,7 @@ const CastSection: React.FC = () => {
                     transition={{ duration: 0.8, ease: 'easeInOut' }}
                     className="weiterer-cast-title"
                 >
-                    Weiterer Cast:
+                    {t('cast.secondTitle')}:
                 </motion.h1>
 
                 <div className="erste-reihe">

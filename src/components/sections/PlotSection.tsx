@@ -1,19 +1,20 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import './PlotSection.css'; // Ensure this points to your CSS file
+import './PlotSection.css';
+import {useTranslation} from "react-i18next"; // Ensure this points to your CSS file
 
 const PlotSection: React.FC = () => {
-    // Text lines to display
+    const { t, i18n } = useTranslation();
     const lines: (string | null)[] = [
-        "Pink Puzzle ist ein Murder-Mystery Film (ca. 75 - 90min) im Neo-Noir-Stil.",
-        "Im Mittelpunkt stehen zwei Freunde (Matze und Nishaat),",
-        "die unter Verdacht stehen, eine Frau (Cateline) vergewaltigt und getötet zu haben.",
+        t('film_description.line1'),
+        t('film_description.line2'),
+        t('film_description.line3'),
         null, // This will create an empty line
-        "Die Themen des Films sind Verrat und Loyalität und das ambivalente Verhältnis",
-        "dieser beiden Begriffe, wenn es ums nackte Überleben geht.",
-        "“Wie stark ist eine langjährige Männerfreundschaft,",
-        "wie stark ist der eigene Überlebenswillen und",
-        "was ist man bereit, dafür zu opfern?”"
+        t('film_description.line4'),
+        t('film_description.line5'),
+        t('film_description.line6'),
+        t('film_description.line7'),
+        t('film_description.line8'),
     ];
 
     return (

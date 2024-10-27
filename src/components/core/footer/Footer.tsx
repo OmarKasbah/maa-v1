@@ -1,7 +1,9 @@
 import React from 'react';
 import { Box, Typography, IconButton } from '@mui/material';
+import {useTranslation} from "react-i18next";
 
 const Footer: React.FC = () => {
+    const { t, i18n } = useTranslation();
     const handleSocialClick = (url: string) => {
         window.open(url, '_blank'); // Open social links in a new tab
     };
@@ -39,7 +41,7 @@ const Footer: React.FC = () => {
                         variant="body1"
                         sx={{ fontFamily: 'Crimson Pro, serif' }}
                     >
-                        Alle Rechte vorbehalten
+                        {t('footer.rights')}
                     </Typography>
                 </Box>
             </Box>

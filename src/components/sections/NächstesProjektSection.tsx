@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import './NächstesProjektSection.css';
+import {useTranslation} from "react-i18next";
 
 // Updated image paths with .png extensions
 const images = [
@@ -12,15 +13,17 @@ const images = [
     './assets/next6.png',
 ];
 
-// Project description lines for animation
-const projectDescription = [
-    `My "Deso Dogg" is intended as a 6-part per season (three Seasons) fictional TV-series with an episode length of 60 minutes. It is a crime/family/social drama that tells the story of Denis Cuspert a.k.a. "Deso Dogg", his best friend "Inan" and his little brother "Jamaine Cuspert."`,
-    `The story revolves around the three protagonists, which begins in Berlin in the 80s and extends through the 90s to the mid-2000s. In this time window, we tell the story of the childhood of the three boys, the criminal descent of the three young people, up to Denis' later radicalization and the collateral damage it causes to family and friends. Our story ends after Denis Cuspert leaves Germany to become a jihadist and the family remains behind in Germany with the social pain.`,
-    `We are working on that project closely with Deso Dogg's (aka Denis Cuspert) little brother Jamaine Cuspert (who was called “little Deso”), Deso’s best friend Inan, and a wide range of associates, which includes other family members, friends, German Rappers, Ex-Gangsters, journalists, police, and convicted and rehabilitated ex-human traffickers, who all crossed paths with Deso. My production company has exclusive rights and personal access to the people and information.`,
-    `We want to place the origins of Denis, Jamaine, and Inan in a larger social perspective context. In this environment, three rascals from the working class develop into serious criminals, while Denis Cuspert goes one step further and becomes radicalized in Salafist circles.`,
-];
 
 const NächstesProjektSection: React.FC = () => {
+    const { t, i18n } = useTranslation();
+
+    const projectDescription = [
+        t('nextProject.line1'),
+        t('nextProject.line2'),
+        t('nextProject.line3'),
+        t('nextProject.line4'),
+    ];
+
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
     // Auto-slide function to change the image after every 3 seconds
@@ -41,7 +44,7 @@ const NächstesProjektSection: React.FC = () => {
     };
 
     return (
-        <section id="nächstes projekt" className="naechstes-projekt-section">
+        <section id={t('nextProject.title').toLowerCase()} className="naechstes-projekt-section">
             <div className="title-container-next">
                 <motion.h1
                     initial={{ scale: 0.5, y: 100, opacity: 0 }}
@@ -49,7 +52,7 @@ const NächstesProjektSection: React.FC = () => {
                     transition={{ duration: 0.8, ease: 'easeOut' }}
                     className="naechstes-projekt-title"
                 >
-                    Nächstes Projekt
+                    {t('nextProject.title')}
                 </motion.h1>
             </div>
             <div className="content-container">

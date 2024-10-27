@@ -1,15 +1,16 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import './SynopsisSection.css'; // Ensure this points to your CSS file
+import './SynopsisSection.css';
+import {useTranslation} from "react-i18next"; // Ensure this points to your CSS file
 
 const SynopsisSection: React.FC = () => {
-    // Text lines for the synopsis
+    const { t, i18n } = useTranslation();
     const lines: string[] = [
-        "Die Handlung ist im Nightlife des heutigen Berlins eingebettet. Heimathafen für Jungunternehmer, Partygänger, Szenemenschen, Künstler und gescheiterte Existenzen.",
-        "Vor diesem Hintergrund treffen sich die beiden Freunde Nishaat und Matze und verbringen eine exzessive Nacht mit der atemberaubenden Modedesignerin Cateline Arreola, eine fast schon amazonenhafte Femme Fatale, die sich von nichts und niemandem kontrollieren lässt.",
-        "Am darauffolgenden Morgen wird Cateline tot in ihrem Loft aufgefunden.",
-        "Nun steht die brennende Frage im Raum: Wer hat Cateline Arreola getötet?",
-        "Kommissare Anderson, Schmitz und Abendroth machen sich an die Aufgabe, den Täter zu ermitteln."
+        t('synopsis.line1'),
+        t('synopsis.line2'),
+        t('synopsis.line3'),
+        t('synopsis.line4'),
+        t('synopsis.line5'),
     ];
 
     return (

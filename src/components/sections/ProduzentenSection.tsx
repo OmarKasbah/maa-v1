@@ -1,25 +1,26 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import './ProduzentenSection.css'; // Ensure this points to your CSS file
+import './ProduzentenSection.css';
+import {useTranslation} from "react-i18next"; // Ensure this points to your CSS file
 
 const ProduzentenSection: React.FC = () => {
-    // Text for the producers
+    const { t, i18n } = useTranslation();
     const producerInfo: string[] = [
-        "Mike Adler ist der Produzent, Drehbuchautor und Regisseur von Pink Puzzle, darüber hinaus spielt er auch eine kleine Rolle als Kommissar Samuel Abendroth im Film.",
-        "Mike Reinhard Peter Adler ist 1978 in West-Berlin geboren und aufgewachsen. Mit Anfang zwanzig war er als Rapper (Mike Fiction) und Bandmitglied der Rap-Koalition „Kaos Loge“ aktiv.",
-        "2001 entschied er sich Schauspieler zu werden, und absolvierte 2003 - 2007 sein Schauspielstudium an der „Konrad Wolf“ Hochschule für Film und Fernsehen in Potsdam Babelsberg. Es folgten verschiedene Theater-, TV- und Filmengagements. Im Januar 2018 schrieb er die erste Drehbuchfassung zu PINK PUZZLE und somit auch sein erstes Drehbuch überhaupt. Noch im selben Monat entschied Mike das Projekt umzusetzen. DIE FRAGE WAR NUR WIE??",
-        "„Lass uns das Projekt nicht totquatschen, lass es uns einfach machen.“"
+        t('producers.mike1'),
+        t('producers.mike2'),
+        t('producers.mike3'),
+        t('producers.mike4'),
     ];
 
     const robertInfo: string[] = [
-        "Robert Gulyás spielt die Hauptrolle in Pink Puzzle und ist unter anderem auch als Co-Produzent tätig.",
-        "Robert Gulyás ist 1983 in Finow geboren und lebte von seinem 1. Lebensjahr – 12. Lebensjahr in Ungarn (Budapest und Szigetszentmiklos). 1995 zog er mit seiner Familie nach Berlin und lebt seit dem dort. Schon seit Kindheit an, war er ein begeisterter Fan vom Medium Film und TV, schlug jedoch zuerst den Berufsweg ein.",
-        "Er machte von 2001 – 2003 eine kaufmännische Ausbildung. Ab 2007 absolvierte er dann eine private Schauspielausbildung in dem AcUng Studio Cologne und ab 2009 – 2011 bei „Martz & Walker Meisner AcUng Berlin“.",
-        "Es folgten verschiedene Engagements für Abschluss-, Kunst- und Independentfilme. Seit dem Januar 2018 ist er mit dem Projekt Pink Puzzle als Co-Produzent für die Eagle Eye Production GmbH mit tätig und sammelt seit dem viele Erfahrungen auch hinter der Kamera."
+        t('producers.robert1'),
+        t('producers.robert2'),
+        t('producers.robert3'),
+        t('producers.robert4'),
     ];
 
     return (
-        <section id="produzenten" className="produzenten-section">
+        <section id={t('producers.title').toLowerCase()} className="produzenten-section">
             <div className="title-container">
                 <motion.h1
                     initial={{ scale: 0.5, y: 100, opacity: 0 }} // Animation: appear small and grow
@@ -27,7 +28,7 @@ const ProduzentenSection: React.FC = () => {
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     className="produzenten-title"
                 >
-                    —Produzenten—
+                    —{t('producers.title')}—
                 </motion.h1>
             </div>
 

@@ -1,0 +1,112 @@
+{
+  "header": {
+    "trailer": "Trailer anschauen",
+    "sections": {
+      "plot": "Plot",
+      "synopsis": "Synopsis",
+      "producers": "Produzenten",
+      "creation": "Entstehung",
+      "cast": "Cast",
+      "crew": "Stabsliste",
+      "nextProject": "Nächstes Projekt"
+    }
+  },
+  "quote": {
+    "text1": "... wir wollten eigentlich",
+    "text2": "nur ein paar Szenen",
+    "text3": "für Roberts Showreel",
+    "text4": "drehen; wir konnten ja",
+    "text5": "nicht wissen, dass daraus",
+    "text6": "ein Spielfilm wird ..."
+  },
+  "film_description": {
+    "line1": "Pink Puzzle ist ein Murder-Mystery Film (ca. 75 - 90min) im Neo-Noir-Stil.",
+    "line2": "Im Mittelpunkt stehen zwei Freunde (Matze und Nishaat),",
+    "line3": "die unter Verdacht stehen, eine Frau (Cateline) vergewaltigt und getötet zu haben.",
+    "line4": "Die Themen des Films sind Verrat und Loyalität und das ambivalente Verhältnis",
+    "line5": "dieser beiden Begriffe, wenn es ums nackte Überleben geht.",
+    "line6": "“Wie stark ist eine langjährige Männerfreundschaft,",
+    "line7": "wie stark ist der eigene Überlebenswillen und",
+    "line8": "was ist man bereit, dafür zu opfern?”"
+  },
+  "synopsis": {
+    "line1": "Die Handlung ist im Nightlife des heutigen Berlins eingebettet. Heimathafen für Jungunternehmer, Partygänger, Szenemenschen, Künstler und gescheiterte Existenzen.",
+    "line2": "Vor diesem Hintergrund treffen sich die beiden Freunde Nishaat und Matze und verbringen eine exzessive Nacht mit der atemberaubenden Modedesignerin Cateline Arreola, eine fast schon amazonenhafte Femme Fatale, die sich von nichts und niemandem kontrollieren lässt.",
+    "line3": "Am darauffolgenden Morgen wird Cateline tot in ihrem Loft aufgefunden.",
+    "line4": "Nun steht die brennende Frage im Raum: Wer hat Cateline Arreola getötet?",
+    "line5": "Kommissare Anderson, Schmitz und Abendroth machen sich an die Aufgabe, den Täter zu ermitteln."
+  },
+  "producers": {
+    "title": "Produzenten",
+    "mike1": "Mike Adler ist der Produzent, Drehbuchautor und Regisseur von Pink Puzzle, darüber hinaus spielt er auch eine kleine Rolle als Kommissar Samuel Abendroth im Film.",
+    "mike2": "Mike Reinhard Peter Adler ist 1978 in West-Berlin geboren und aufgewachsen. Mit Anfang zwanzig war er als Rapper (Mike Fiction) und Bandmitglied der Rap-Koalition „Kaos Loge“ aktiv.",
+    "mike3": "2001 entschied er sich Schauspieler zu werden, und absolvierte 2003 - 2007 sein Schauspielstudium an der „Konrad Wolf“ Hochschule für Film und Fernsehen in Potsdam Babelsberg. Es folgten verschiedene Theater-, TV- und Filmengagements. Im Januar 2018 schrieb er die erste Drehbuchfassung zu PINK PUZZLE und somit auch sein erstes Drehbuch überhaupt. Noch im selben Monat entschied Mike das Projekt umzusetzen. DIE FRAGE WAR NUR WIE?",
+    "mike4": "„Lass uns das Projekt nicht totquatschen, lass es uns einfach machen.“",
+    "robert1": "Robert Gulyás spielt die Hauptrolle in Pink Puzzle und ist unter anderem auch als Co-Produzent tätig.",
+    "robert2": "Robert Gulyás ist 1983 in Finow geboren und lebte von seinem 1. Lebensjahr – 12. Lebensjahr in Ungarn (Budapest und Szigetszentmiklos). 1995 zog er mit seiner Familie nach Berlin und lebt seit dem dort. Schon seit Kindheit an, war er ein begeisterter Fan vom Medium Film und TV, schlug jedoch zuerst den Berufsweg ein.",
+    "robert3": "Er machte von 2001 – 2003 eine kaufmännische Ausbildung. Ab 2007 absolvierte er dann eine private Schauspielausbildung in dem AcUng Studio Cologne und ab 2009 – 2011 bei „Martz & Walker Meisner AcUng Berlin“.",
+    "robert4": "Es folgten verschiedene Engagements für Abschluss-, Kunst- und Independentfilme. Seit dem Januar 2018 ist er mit dem Projekt Pink Puzzle als Co-Produzent für die Eagle Eye Production GmbH mit tätig und sammelt seit dem viele Erfahrungen auch hinter der Kamera."
+  },
+  "creation": {
+    "title": "Entstehung",
+    "line1": "Dezember 2017: Der ursprüngliche Gedanke war, vier Szenen für Robert Gulyas neues Showreel zu drehen. Nachdem Mike ihm zugesagt hatte, die Regie zu übernehmen, hat er die schon fertig geschriebenen Szenen verworfen und angefangen komplett neues Material zu schreiben. Entstanden ist eine 20-seitige Drehbuchfassung für einen etwa zehnminütigen Kurzfilm. Im Verlauf der nächsten sieben Wochen hat Mike seine erste Fassung regelmäßig überarbeitet und gemerkt, dass das Buch mehr Potenzial hat als anfangs erwartet.",
+    "line2": "Er begann eine Welt um die drei Protagonisten zu kreieren, aus den Charaktersilhouetten dreidimensionale Figuren zu schaffen, deren Verhältnis zueinander und deren Konflikte zu etablieren. Als Mike gefragt wurde, wie das Buch entstanden ist, antwortete er:",
+    "line3": "„Wir sind selbst ein bisschen überrascht, wir wollten eigentlich nur ein paar Szenen für Roberts Showreel drehen; wir konnten ja nicht wissen, dass daraus ein Spielfilm wird …“."
+  },
+  "cast": {
+    "secondTitle": "Weiterer Cast"
+  },
+  "staff": {
+    "title": "Stabsliste",
+    "ceo": "Geschäftsführer",
+    "producer": "Produzent",
+    "coProducer": "Co-Produzent",
+    "productionManagement": "Herstellungsleitung",
+    "productionHead": "Produktionsleitung",
+    "productionAssistant": "Produktionsassistent",
+    "filmManagement": "Filmgeschäftsführung",
+    "personalAssistant": "Personal Assistant",
+    "contractManagement": "Vertragsmanagement",
+    "scriptWriter": "Drehbuchautor",
+    "casting": "Casting",
+    "direction": "Regie",
+    "directorAssistant": "Regieassistent/-in",
+    "cinematographer": "Kameramann",
+    "cameraAssistant": "Kameraassistent",
+    "recordingManagement": "Aufnahmeleitung",
+    "dit": "DIT",
+    "seniorLightingTechnician": "Oberbeleuchter",
+    "lightingTechnician": "Beleuchter",
+    "cameraStaging": "Kamerabühne",
+    "cameraStagingAssistant": "Assistent Kamerabühne",
+    "costumes": "Kostüm",
+    "equipment": "Ausstattung",
+    "ost": "Original Soundtrack",
+    "soundEngineer": "Tonmeister",
+    "soundEngineerAssistant": "Tonassistent",
+    "setPhotographer": "Set-Fotograf",
+    "makeUpArtist": "Make Up Artist",
+    "setDriver": "Setfahrer",
+    "setAssistant": "Set Assistent",
+    "catering": "Catering",
+    "first": "1.",
+    "second": "2.",
+    "third": "3.",
+    "fourth": "4.",
+    "fifth": "5.",
+    "movieBlock": "Drehblock"
+  },
+  "nextProject": {
+    "title": "Nächstes Projekt",
+    "line1": "Mein „Deso Dogg“ ist als 6-teilige fiktionale Fernsehserie mit einer Episodenlänge von 60 Minuten pro Staffel (drei Seasons) geplant. Es ist ein Kriminal-/Familien-/Sozialdrama, das die Geschichte von Denis Cuspert alias „Deso Dogg“, seinem besten Freund „Inan“ und seinem kleinen Bruder „Jamaine Cuspert“ erzählt.",
+    "line2": "Um die drei Protagonisten dreht sich die Geschichte, die im Berlin der 80er Jahre beginnt und sich über die 90er bis Mitte der 2000er Jahre erstreckt. In diesem Zeitfenster erzählen wir von der Kindheit der drei Jungen, dem kriminellen Abstieg der drei Jugendlichen bis hin zu Denis' späterer Radikalisierung und den Kollateralschäden, die sie bei Familie und Freunden verursacht. Unsere Geschichte endet, nachdem Denis Cuspert Deutschland verlässt, um Dschihadist zu werden, und die Familie mit dem sozialen Schmerz in Deutschland zurückbleibt.",
+    "line3": "Wir arbeiten an diesem Projekt eng mit Deso Doggs (alias Denis Cuspert) kleinem Bruder Jamaine Cuspert (der „kleiner Deso“ genannt wurde), Desos bestem Freund Inan und einem breiten Spektrum an Partnern, darunter andere Familienmitglieder, Freunde, deutsche Rapper, Ex-Gangster, Journalisten, Polizisten und verurteilte und rehabilitierte Ex-Menschenhändler, die alle mit Deso zusammengekommen sind. Meine Produktionsfirma hat die Exklusivrechte und persönlichen Zugang zu den Menschen und Informationen.",
+    "line4": "Wir wollen die Ursprünge von Denis, Jamaine und Inan in einen größeren gesellschaftlichen Zusammenhang stellen. In diesem Umfeld entwickeln sich drei Gauner aus der Arbeiterklasse zu Schwerverbrechern, während Denis Cuspert einen Schritt weiter geht und sich in salafistischen Kreisen radikalisiert."
+  },
+  "footer": {
+    "information": "Informationen",
+    "imprint": "Impressum",
+    "rights": "Alle Rechte vorbehalten",
+    "ceo": "Geschäftsführung"
+  }
+}

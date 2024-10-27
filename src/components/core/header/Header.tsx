@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { AppBar, Toolbar, Button, Box, IconButton, Drawer, List, ListItem, ListItemText } from '@mui/material';
+import { AppBar, Toolbar, Button, Box, IconButton, Drawer, List, ListItem, ListItemText, MenuItem, Select } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import TrailerModal from "../../modals/TrailerModal.tsx";
+import { useTranslation } from 'react-i18next';
 
 interface HeaderProps {
     activeSection: string;
@@ -9,10 +10,20 @@ interface HeaderProps {
 }
 
 const Header = ({ activeSection, isVisible }: HeaderProps) => {
+    const { t, i18n } = useTranslation();
     const [open, setOpen] = useState(false); // For trailer modal
     const [drawerOpen, setDrawerOpen] = useState(false); // State for burger menu
+    const [language, setLanguage] = useState(i18n.language); // State for language selection
 
-    const sections = ['Plot', 'Synopsis', 'Produzenten', 'Entstehung', 'Cast', 'Stabsliste', 'Nächstes Projekt'];
+    const sections = [
+        t('header.sections.plot'),
+        t('header.sections.synopsis'),
+        t('header.sections.producers'),
+        t('header.sections.creation'),
+        t('header.sections.cast'),
+        t('header.sections.crew'),
+        t('header.sections.nextProject'),
+    ];
 
     // Open the modal for trailer
     const handleOpen = () => setOpen(true);
@@ -37,9 +48,16 @@ const Header = ({ activeSection, isVisible }: HeaderProps) => {
         setDrawerOpen(false); // Close drawer after selecting an item
     };
 
+    // Change language
+    const handleLanguageChange = (event: React.ChangeEvent<{ value: unknown }>) => {
+        const newLanguage = event.target.value as string;
+        i18n.changeLanguage(newLanguage);
+        setLanguage(newLanguage);
+    };
+
     return (
         <>
-            {/* Header: Logo and Trailer Button */}
+            {/* Header: Logo, Language Select, and Trailer Button */}
             <AppBar
                 sx={{
                     backgroundColor: 'black',
@@ -64,7 +82,31 @@ const Header = ({ activeSection, isVisible }: HeaderProps) => {
                         margin: '0 auto',
                     }}
                 >
-                    {/* Logo: Centered in normal mode, Left in responsive mode */}
+                    {/* Language Dropdown: Shown on larger screens */}
+                    <Box sx={{ display: { xs: 'none', sm: 'flex' }, alignItems: 'center' }}>
+                        <Select
+                            value={language}
+                            onChange={handleLanguageChange}
+                            sx={{
+                                color: '#FF56FF',
+                                '& .MuiSelect-icon': { color: '#FF56FF' },
+                                backgroundColor: 'black'
+                            }}
+                            MenuProps={{
+                                PaperProps: {
+                                    sx: {
+                                        backgroundColor: 'black', // Set dropdown background color to black
+                                        color: '#FF56FF', // Set dropdown text color
+                                    },
+                                },
+                            }}
+                        >
+                            <MenuItem sx={{backgroundColor: 'black', color: '#FF56FF'}} value="en">English</MenuItem>
+                            <MenuItem sx={{backgroundColor: 'black', color: '#FF56FF'}} value="de">Deutsch</MenuItem>
+                        </Select>
+                    </Box>
+
+                    {/* Logo */}
                     <Box
                         sx={{
                             display: { xs: 'none', sm: 'flex', md: 'flex' },
@@ -84,10 +126,10 @@ const Header = ({ activeSection, isVisible }: HeaderProps) => {
                     <Box sx={{ display: { xs: 'none', sm: 'flex', md: 'flex' }, alignItems: 'center' }}>
                         <Button
                             sx={{
-                                color: '#FF56FF', // Updated active color
+                                color: '#FF56FF',
                                 border: '1px solid #FF56FF',
                                 textTransform: 'none',
-                                marginRight: { xs: '0', sm: '40px', md: '40px' }, // Add margin right for medium screens (900px and below)
+                                marginRight: { xs: '0', sm: '40px', md: '40px' },
                                 '&:hover': {
                                     backgroundColor: 'transparent',
                                     color: 'white',
@@ -96,10 +138,9 @@ const Header = ({ activeSection, isVisible }: HeaderProps) => {
                             }}
                             onClick={handleOpen}
                         >
-                            Trailer anschauen
+                            {t('header.trailer')}
                         </Button>
                     </Box>
-
 
                     {/* Burger Menu: Shown on small screens */}
                     <Box sx={{ display: { xs: 'flex', sm: 'none', md: 'none' }, alignItems: 'space-between' }}>
@@ -146,43 +187,27 @@ const Header = ({ activeSection, isVisible }: HeaderProps) => {
                         }}
                     />
 
-                    {sections.map((section, index) => {
-                        const displaySection = section.charAt(0).toUpperCase() + section.slice(1).toLowerCase(); // Format section name
-                        return (
-                            <Box
-                                key={section}
-                                sx={{ textAlign: 'center', position: 'relative', zIndex: 1, marginRight: index !== sections.length - 1 ? 0.5 : 0 }}
+                    {sections.map((section, index) => (
+                        <Box
+                            key={section}
+                            sx={{ textAlign: 'center', position: 'relative', zIndex: 1, marginRight: index !== sections.length - 1 ? 0.5 : 0 }}
+                        >
+                            <Button
+                                sx={{
+                                    color: activeSection === section.toLowerCase() ? 'white' : '#FF56FF',
+                                    fontSize: '1.1rem',
+                                    fontFamily: 'Crimson Pro, serif',
+                                    textTransform: 'none',
+                                    '&:hover': {
+                                        backgroundColor: 'transparent',
+                                    }
+                                }}
+                                onClick={() => scrollToSection(section)}
                             >
-                                {activeSection === section.toLowerCase() && (
-                                    <Box
-                                        sx={{
-                                            position: 'absolute',
-                                            top: '-2px',
-                                            left: 0,
-                                            right: 0,
-                                            height: '1px',
-                                            backgroundColor: 'white',
-                                            transition: 'background-color 0.3s ease',
-                                        }}
-                                    />
-                                )}
-                                <Button
-                                    sx={{
-                                        color: activeSection === section.toLowerCase() ? 'white' : '#FF56FF',
-                                        fontSize: '1.1rem',
-                                        fontFamily: 'Crimson Pro, serif',
-                                        textTransform: 'none',
-                                        '&:hover': {
-                                            backgroundColor: 'transparent',
-                                        }
-                                    }}
-                                    onClick={() => scrollToSection(section)}
-                                >
-                                    {displaySection}
-                                </Button>
-                            </Box>
-                        );
-                    })}
+                                {section}
+                            </Button>
+                        </Box>
+                    ))}
                 </Box>
             </AppBar>
 
@@ -204,7 +229,7 @@ const Header = ({ activeSection, isVisible }: HeaderProps) => {
                     <List>
                         {sections.map((section) => (
                             <ListItem
-                                component="button" // Specify that this should be rendered as a button
+                                component="button"
                                 key={section}
                                 onClick={() => scrollToSection(section)}
                                 sx={{
@@ -212,11 +237,11 @@ const Header = ({ activeSection, isVisible }: HeaderProps) => {
                                     cursor: 'pointer',
                                 }}
                             >
-                                <ListItemText primary={section.charAt(0).toUpperCase() + section.slice(1).toLowerCase()} sx={{ color: '#FF56FF', textTransform: 'none' }} />
+                                <ListItemText primary={section} sx={{ color: '#FF56FF', textTransform: 'none' }} />
                             </ListItem>
                         ))}
                         <ListItem
-                            component="button" // Specify button behavior
+                            component="button"
                             onClick={handleOpen}
                             sx={{
                                 padding: '10px 16px',
@@ -226,9 +251,28 @@ const Header = ({ activeSection, isVisible }: HeaderProps) => {
                                 }
                             }}
                         >
-                            <ListItemText primary="Trailer anschauen" sx={{ color: '#FF56FF', textTransform: 'none' }} />
+                            <ListItemText primary={t('header.trailer')} sx={{ color: '#FF56FF', textTransform: 'none' }} />
                         </ListItem>
 
+                        {/* Language Selector in Burger Menu */}
+                        <ListItem>
+                            <Select
+                                value={language}
+                                onChange={handleLanguageChange}
+                                sx={{ color: '#FF56FF', width: '100%'}}
+                                MenuProps={{
+                                    PaperProps: {
+                                        sx: {
+                                            backgroundColor: 'black', // Set dropdown background color to black
+                                            color: '#FF56FF', // Set dropdown text color
+                                        },
+                                    },
+                                }}
+                            >
+                                <MenuItem value="en">English</MenuItem>
+                                <MenuItem value="de">Deutsch</MenuItem>
+                            </Select>
+                        </ListItem>
                     </List>
                 </Box>
             </Drawer>

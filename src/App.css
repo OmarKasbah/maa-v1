@@ -11,6 +11,7 @@
     margin-bottom: 40px;
     min-height: 900px;
     margin: 0 auto;
+    scroll-behavior: smooth;
 }
 
 /* Background video styling */

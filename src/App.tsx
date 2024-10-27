@@ -12,12 +12,13 @@ import CastSection from "./components/sections/CastSection.tsx";
 import StabslisteSection from "./components/sections/StabslisteSection.tsx";
 import NächstesProjektSection from "./components/sections/NächstesProjektSection.tsx";
 import PhotoCollage from "./components/parallax/PhotoCollage.tsx";
+import { useTranslation } from 'react-i18next';
 
 function App() {
+    const { t, i18n } = useTranslation();
     const [activeSection, setActiveSection] = useState('what');
     const [isHeaderVisible, setHeaderVisible] = useState(false);
 
-    // Get scrollY progress for the arrow animation
     const { scrollY } = useScroll();
     const arrowScale = useTransform(scrollY, [700, 900], [1, 0.1]);
 
@@ -48,7 +49,6 @@ function App() {
             <main>
                 <section id="video" className="section">
                     <div className="video-container">
-                        {/* Video background with centered logo */}
                         <video
                             autoPlay
                             muted
@@ -65,7 +65,6 @@ function App() {
                         </div>
                     </div>
 
-                    {/* Logo container for logos under the video */}
                     <div className="logo-container">
                         <div className="logo-row">
                             <img src="./assets/logo1.PNG" alt="Logo 1" className="small-logo" />
@@ -80,11 +79,7 @@ function App() {
                         </div>
                     </div>
 
-                    {/* Downward arrow icon */}
-                    <motion.div
-                        style={{ scale: arrowScale }}
-                        className="arrow-container"
-                    >
+                    <motion.div style={{ scale: arrowScale }} className="arrow-container">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 24 24"
@@ -100,7 +95,6 @@ function App() {
                         </svg>
                     </motion.div>
 
-                    {/* Centered Image */}
                     <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
                         <img
                             src="./assets/zitat.png"
@@ -113,12 +107,10 @@ function App() {
                         />
                     </div>
 
-                    {/* Animated Quote Text */}
                     <div className="quote-container" style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
                         <QuoteText />
                     </div>
 
-                    <PhotoCollage />
                 </section>
 
                 <PlotSection />
@@ -129,7 +121,6 @@ function App() {
                 <StabslisteSection />
                 <NächstesProjektSection />
 
-                {/* Contact Form Section */}
                 <section id="contact" className="section">
                     <ContactForm />
                 </section>
@@ -141,19 +132,19 @@ function App() {
 }
 
 const QuoteText: React.FC = () => {
+    const { t, i18n } = useTranslation();
     const lines: string[] = [
-        "... wir wollten eigentlich",
-        "nur ein paar Szenen",
-        "für Roberts Showreel",
-        "drehen; wir konnten ja",
-        "nicht wissen, dass daraus",
-        "ein Spielfilm wird ..."
+        t('quote.text1'),
+        t('quote.text2'),
+        t('quote.text3'),
+        t('quote.text4'),
+        t('quote.text5'),
+        t('quote.text6'),
     ];
 
     return (
         <div className="outer-quote">
             <div className="quote-text-container">
-                {/* Flexbox container with the start quote and text */}
                 <motion.img
                     src="./assets/up.png"
                     alt="Start quote"
@@ -180,7 +171,6 @@ const QuoteText: React.FC = () => {
                     })}
                 </div>
 
-                {/* End quote mark */}
                 <motion.img
                     src="./assets/down.png"
                     alt="End quote"
@@ -193,5 +183,6 @@ const QuoteText: React.FC = () => {
         </div>
     );
 };
+
 
 export default App;

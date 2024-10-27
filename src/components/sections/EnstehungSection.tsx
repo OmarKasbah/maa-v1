@@ -1,10 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import './EntstehungSection.css'; // Link to your CSS file
+import './EntstehungSection.css';
+import {useTranslation} from "react-i18next"; // Link to your CSS file
 
 const EntstehungSection: React.FC = () => {
+    const { t, i18n } = useTranslation();
     return (
-        <section id="entstehung" className="entstehung-section">
+        <section id={t('creation.title').toLowerCase()} className="entstehung-section">
             {/* Title */}
             <div className="title-container">
                 <motion.h1
@@ -13,7 +15,7 @@ const EntstehungSection: React.FC = () => {
                     transition={{ duration: 0.8, ease: 'easeInOut' }}
                     className="entstehung-title"
                 >
-                    —Entstehung—
+                    —{t('creation.title')}—
                 </motion.h1>
             </div>
 
@@ -37,7 +39,7 @@ const EntstehungSection: React.FC = () => {
                         transition={{ duration: 0.8, ease: 'easeInOut' }}
                         className="entstehung-text"
                     >
-                        Dezember 2017: Der ursprüngliche Gedanke war, vier Szenen für Robert Gulyas neues Showreel zu drehen. Nachdem Mike ihm zugesagt hatte, die Regie zu übernehmen, hat er die schon fertig geschriebenen Szenen verworfen und angefangen komplett neues Material zu schreiben. Entstanden ist eine 20-seitige Drehbuchfassung für einen etwa zehnminütigen Kurzfilm. Im Verlauf der nächsten sieben Wochen hat Mike seine erste Fassung regelmäßig überarbeitet und gemerkt, dass das Buch mehr Potenzial hat als anfangs erwartet.
+                        {t('creation.line1')}
                     </motion.p>
                 </div>
             </div>
@@ -60,7 +62,7 @@ const EntstehungSection: React.FC = () => {
                     transition={{ duration: 0.8, ease: 'easeInOut' }}
                     className="landscape-text"
                 >
-                    Er begann eine Welt um die drei Protagonisten zu kreieren, aus den Charaktersilhouetten dreidimensionale Figuren zu schaffen, deren Verhältnis zueinander und deren Konflikte zu etablieren. Als Mike gefragt wurde, wie das Buch entstanden ist, antwortete er:
+                    {t('creation.line2')}
                 </motion.p>
             </div>
 
@@ -72,7 +74,7 @@ const EntstehungSection: React.FC = () => {
                     transition={{ duration: 0.8, ease: 'easeInOut' }}
                     className="final-text"
                 >
-                    „Wir sind selbst ein bisschen überrascht, wir wollten eigentlich nur ein paar Szenen für Roberts Showreel drehen; wir konnten ja nicht wissen, dass daraus ein Spielfilm wird …“.
+                    {t('creation.line3')}
                 </motion.p>
             </div>
         </section>
