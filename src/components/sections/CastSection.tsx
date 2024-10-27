@@ -251,7 +251,9 @@ const CastSection: React.FC = () => {
                 </motion.h1>
 
                 <div className="erste-reihe">
-                        <motion.h2
+                    <div className="weiterer-cast-member">
+
+                    <motion.h2
                             className="actor-name2"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -267,7 +269,9 @@ const CastSection: React.FC = () => {
                         >
                             Nico
                         </motion.p>
+                    </div>
 
+                    <div className="weiterer-cast-member">
                     <motion.h2
                         className="actor-name2"
                         initial={{ opacity: 0, y: 20 }}
@@ -284,7 +288,9 @@ const CastSection: React.FC = () => {
                     >
                         Röttkers
                     </motion.p>
+                    </div>
 
+                    <div className="weiterer-cast-member">
                     <motion.h2
                         className="actor-name2"
                         initial={{ opacity: 0, y: 20 }}
@@ -302,9 +308,12 @@ const CastSection: React.FC = () => {
                         Derbe
                     </motion.p>
                     </div>
+                    </div>
 
                     <div className="zweite-reihe">
-                            <motion.h2
+                        <div className="weiterer-cast-member">
+
+                        <motion.h2
                                 className="actor-name2"
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
@@ -320,6 +329,9 @@ const CastSection: React.FC = () => {
                             >
                                 Merima
                             </motion.p>
+                        </div>
+
+                        <div className="weiterer-cast-member">
 
                         <motion.h2
                             className="actor-name2"
@@ -337,9 +349,12 @@ const CastSection: React.FC = () => {
                         >
                             Ari
                         </motion.p>
+                        </div>
                     </div>
 
                 <div className="dritte-reihe">
+                    <div className="weiterer-cast-member">
+
                     <motion.h2
                         className="actor-name2"
                         initial={{ opacity: 0, y: 20 }}
@@ -356,6 +371,7 @@ const CastSection: React.FC = () => {
                     >
                         Komissar Schmitz
                     </motion.p>
+                    </div>
                 </div>
 
             </div>

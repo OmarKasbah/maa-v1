@@ -27,14 +27,14 @@
     display: flex;
     align-items: baseline;
     justify-content: space-between;
-    width: 900px; /* Adjust as needed */
+    width: 1000px; /* Adjust as needed */
 }
 
 .zweite-reihe {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
-    width: 700px; /* Adjust as needed */
+    width: 800px; /* Adjust as needed */
 }
 
 .dritte-reihe {
@@ -60,6 +60,7 @@
     color: #FF56FF;
     font-size: 2.2rem;
     text-align: left;
+    padding-right: 30px;
 }
 
 /* Character name */
@@ -145,10 +146,51 @@
     margin-top: -180px;
 }
 
-/* Responsive design */
+.weiterer-cast-member {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+/* For screens narrower than 1000px */
+@media (max-width: 1000px) {
+    .erste-reihe {
+        flex-direction: column;
+        width: unset;
+        align-items: center;
+    }
+
+    .zweite-reihe {
+        flex-direction: column;
+        width: unset;
+        align-items: center;
+    }
+
+    .dritte-reihe {
+        flex-direction: column;
+        width: unset;
+        align-items: center;
+    }
+
+    .weiterer-cast-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Stack each name vertically */
+    .weiterer-cast-member {
+        text-align: center;
+    }
+}
+
 @media (max-width: 800px) {
     .cast-section .cast-title {
         font-size: 5.5rem; /* Reduce title size for smaller screens */
+    }
+
+    .weiterer-cast-title {
+        font-size: 4.0rem;
     }
 
     .cast-section .cast-member {
@@ -181,6 +223,10 @@
         font-size: 4rem; /* Further reduce title size for smaller screens */
     }
 
+    .weiterer-cast-title {
+        font-size: 3.5rem;
+    }
+
     .cast-section .text-container {
         width: 80%; /* Limit width for names */
         justify-content: space-between; /* Center names */
@@ -196,6 +242,21 @@
 
     /* Character name */
     .cast-section .character-name {
+        font-family: 'Noto Sans', sans-serif;
+        font-size: 1.0rem;
+        color: white;
+        text-align: right;
+    }
+
+    .cast-section .actor-name2 {
+        font-family: 'Crimson Pro', serif;
+        color: #FF56FF;
+        font-size: 2.0rem;
+        text-align: left;
+    }
+
+    /* Character name */
+    .cast-section .character-name2 {
         font-family: 'Noto Sans', sans-serif;
         font-size: 1.0rem;
         color: white;
