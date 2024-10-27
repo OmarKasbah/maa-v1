@@ -1,0 +1,6 @@
+.custom-drawer-paper {
+    background-color: black !important; /* Unset background color */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

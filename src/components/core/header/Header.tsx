@@ -16,6 +16,7 @@ import {
 import MenuIcon from '@mui/icons-material/Menu';
 import TrailerModal from "../../modals/TrailerModal.tsx";
 import { useTranslation } from 'react-i18next';
+import './Header.css'; // Add a CSS file for custom styling
 
 interface HeaderProps {
     activeSection: string;
@@ -78,7 +79,6 @@ const Header = ({ activeSection, isVisible }: HeaderProps) => {
 
     return (
         <>
-            {/* Header: Logo, Language Select, and Trailer Button */}
             <AppBar
                 sx={{
                     backgroundColor: 'black',
@@ -104,7 +104,7 @@ const Header = ({ activeSection, isVisible }: HeaderProps) => {
                     }}
                 >
                     {/* Language Dropdown: Shown on larger screens */}
-                    <Box sx={{ display: { xs: 'none', sm: 'flex' }, alignItems: 'center' }}>
+                    <Box sx={{ display: { xs: 'none', sm: 'flex' }, alignItems: 'center', paddingLeft: '30px' }}>
                         <Select
                             value={language}
                             onChange={handleLanguageChange}
@@ -237,17 +237,27 @@ const Header = ({ activeSection, isVisible }: HeaderProps) => {
                 anchor="top"
                 open={drawerOpen}
                 onClose={toggleDrawer(false)}
+                classes={{ paper: 'custom-drawer-paper' }} // Apply custom CSS class
             >
                 <Box
                     sx={{
-                        width: '100%',
-                        maxWidth: '500px',
-                        margin: '0 auto',
-                        backgroundColor: 'black',
-                        padding: '16px',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center', // Center align
                     }}
                 >
-                    <List>
+                    <List
+                        sx={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center', // Center align items
+                            width: '100%',
+                            maxWidth: '500px',
+                            margin: '0 auto',
+                            backgroundColor: 'black',
+                            padding: '16px',
+                        }}
+                    >
                         {sections.map((section) => (
                             <ListItem
                                 component="button"
@@ -256,9 +266,10 @@ const Header = ({ activeSection, isVisible }: HeaderProps) => {
                                 sx={{
                                     alignItems: 'center',
                                     cursor: 'pointer',
+                                    backgroundColor: 'black'
                                 }}
                             >
-                                <ListItemText primary={section} sx={{ color: '#FF56FF', textTransform: 'none' }} />
+                                <ListItemText primary={section} sx={{ color: '#FF56FF', textTransform: 'none', backgroundColor: 'black', textAlign: 'center' }} />
                             </ListItem>
                         ))}
                         <ListItem
@@ -272,15 +283,16 @@ const Header = ({ activeSection, isVisible }: HeaderProps) => {
                                 }
                             }}
                         >
-                            <ListItemText primary={t('header.trailer')} sx={{ color: '#FF56FF', textTransform: 'none' }} />
+                            <ListItemText primary={t('header.trailer')} sx={{ color: '#FF56FF', textTransform: 'none', textAlign: 'center' }} />
                         </ListItem>
 
                         {/* Language Selector in Burger Menu */}
-                        <ListItem>
+                        <ListItem sx={{ justifyContent: 'center', width: '100%' }}>
                             <Select
                                 value={language}
                                 onChange={handleLanguageChange}
-                                sx={{ color: '#FF56FF', width: '100%' }}
+                                sx={{ color: '#FF56FF', width: '100%', textAlign: 'center' }}
+                                IconComponent={() => <div style={{ color: '#FF56FF' }}>▼</div>} // Customize dropdown arrow
                                 MenuProps={{
                                     PaperProps: {
                                         sx: {
@@ -290,8 +302,8 @@ const Header = ({ activeSection, isVisible }: HeaderProps) => {
                                     },
                                 }}
                             >
-                                <MenuItem value="en">English</MenuItem>
-                                <MenuItem value="de">Deutsch</MenuItem>
+                                <MenuItem sx={{ textAlign: 'center' }} value="en">English</MenuItem>
+                                <MenuItem sx={{ textAlign: 'center' }} value="de">Deutsch</MenuItem>
                             </Select>
                         </ListItem>
                     </List>
