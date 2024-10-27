@@ -1,0 +1,112 @@
+{
+  "header": {
+    "trailer": "Watch Trailer",
+    "sections": {
+      "plot": "Plot",
+      "synopsis": "Synopsis",
+      "producers": "Producers",
+      "creation": "Creation",
+      "cast": "Cast",
+      "crew": "Staff",
+      "nextProject": "Next Project"
+    }
+  },
+  "quote": {
+    "text1": "… we actually just",
+    "text2": "wanted to create a few ",
+    "text3": "scenes for Roberts",
+    "text4": "showreel; we had no clue",
+    "text5": "that it would turn",
+    "text6": "into a feature film…"
+  },
+  "film_description": {
+    "line1": "Pink Puzzle is a murder-mystery movie (approx. 75 - 90min) in neo-noir style.",
+    "line2": "It centers on two friends (Matze and Nishaat)",
+    "line3": "who are suspected of having raped and killed a woman (Cateline).",
+    "line4": "The themes of the film are betrayal and loyalty and the ambivalent relationship",
+    "line5": "between these two concepts when it comes to bare survival.",
+    "line6": "“How strong is a long-standing male friendship,",
+    "line7": "how strong is your own will to survive and",
+    "line8": "what are you prepared to sacrifice for it?”"
+  },
+  "synopsis": {
+    "line1": "The plot is embedded in the nightlife of today's Berlin. A home port for young entrepreneurs, partygoers, scene people, artists and failed existences.",
+    "line2": "Against this backdrop, the two friends Nishaat and Matze meet and spend an excessive night with the breathtaking fashion designer Cateline Arreola, an almost Amazonian femme fatale who lets nothing and no one control her.",
+    "line3": "The following morning, Cateline is found dead in her loft.",
+    "line4": "Now the burning question is: who killed Cateline Arreola?",
+    "line5": "Detectives Anderson, Schmitz and Abendroth set about the task of finding the culprit."
+  },
+  "producers": {
+    "title": "Producers",
+    "mike1": "Mike Adler is the producer, screenwriter and director of Pink Puzzle, and also plays a small role in the film as Inspector Samuel Abendroth.",
+    "mike2": "Mike Reinhard Peter Adler was born and raised in West-Berlin in 1978. In his early twenties, he was active as a rapper (Mike Fiction) and band member of the rap coalition “Kaos Loge”.",
+    "mike3": "In 2001 he decided to become an actor and studied acting at the “Konrad Wolf” Academy for Film and Television in Potsdam Babelsberg from 2003 to 2007. This was followed by various theater, TV and film engagements. In January 2018, he wrote the first version of the screenplay for PINK PUZZLE, his first screenplay ever. In the same month, Mike decided to realize the project. THE ONLY QUESTION WAS HOW?",
+    "mike4": "“Let's not talk the project to death, let's just do it.”",
+    "robert1": "Robert Gulyás plays the lead role in Pink Puzzle and is also a co-producer.",
+    "robert2": "Robert Gulyás was born in Finow in 1983 and lived in Hungary (Budapest and Szigetszentmiklos) from the age of 1 to 12. He moved to Berlin with his family in 1995 and has lived there ever since. He has been an enthusiastic fan of film and TV since he was a child, but chose a career path first.",
+    "robert3": "He completed a commercial apprenticeship from 2001 - 2003. From 2007, he then completed private acting training at the AcUng Studio Cologne and from 2009 - 2011 at “Martz & Walker Meisner AcUng Berlin”.",
+    "robert4": "This was followed by various engagements for graduation, art and independent films. Since January 2018, he has been working as a co-producer for Eagle Eye Production GmbH with the Pink Puzzle project and has been gaining a lot of experience behind the camera."
+  },
+  "creation": {
+    "title": "Creation",
+    "line1": "December 2017: The original idea was to shoot four scenes for Robert Gulya's new showreel. After Mike agreed to direct him, he scrapped the scenes he had already written and started writing completely new material. The result was a 20-page script for a ten-minute short film. Over the course of the next seven weeks, Mike regularly revised his first draft and realized that the book had more potential than initially expected.",
+    "line2": "He began to create a world around the three protagonists, creating three-dimensional figures from the character silhouettes, establishing their relationship to each other and their conflicts. When Mike was asked how the book came about, he replied:",
+    "line3": "“We're a bit surprised ourselves, we really only wanted to shoot a few scenes for Robert's showreel; we had no way of knowing it would turn into a feature film ...”."
+  },
+  "cast": {
+    "secondTitle": "Further Cast"
+  },
+  "staff": {
+    "title": "Staff List",
+    "ceo": "CEO",
+    "producer": "Producer",
+    "coProducer": "Co-Producer",
+    "productionManagement": "Production Management",
+    "productionHead": "Head of Production",
+    "productionAssistant": "Production Assistant",
+    "filmManagement": "Film Management",
+    "personalAssistant": "Personal Assistant",
+    "contractManagement": "Contract Management",
+    "scriptWriter": "Scriptwriter",
+    "casting": "Casting",
+    "direction": "Direction",
+    "directorAssistant": "Director Assistant",
+    "cinematographer": "Cinematographer",
+    "cameraAssistant": "Camera Assistant",
+    "recordingManagement": "Recording Management",
+    "dit": "DIT",
+    "seniorLightingTechnician": "Senior Lighting Technician",
+    "lightingTechnician": "Lighting Technician",
+    "cameraStaging": "Camera Staging",
+    "cameraStagingAssistant": "Camera Staging Assistant",
+    "costumes": "Costumes",
+    "equipment": "Equipment",
+    "ost": "Original Soundtrack",
+    "soundEngineer": "Sound Engineer",
+    "soundEngineerAssistant": "Sound Engineer Assistant",
+    "setPhotographer": "Set Photographer",
+    "makeUpArtist": "Make Up Artist",
+    "setDriver": "Set Driver",
+    "setAssistant": "Set Assistant",
+    "catering": "Catering",
+    "first": "1st",
+    "second": "2nd",
+    "third": "3rd",
+    "fourth": "4th",
+    "fifth": "5th",
+    "movieBlock": "movie block"
+  },
+  "nextProject": {
+    "title": "Next Project",
+    "line1": "My \"Deso Dogg\" is intended as a 6-part per season (three Seasons) fictional TV-series with an episode length of 60 minutes. It is a crime/family/social drama that tells the story of Denis Cuspert a.k.a. \"Deso Dogg\", his best friend \"Inan\" and his little brother \"Jamaine Cuspert.\"",
+    "line2": "The story revolves around the three protagonists, which begins in Berlin in the 80s and extends through the 90s to the mid-2000s. In this time window, we tell the story of the childhood of the three boys, the criminal descent of the three young people, up to Denis' later radicalization and the collateral damage it causes to family and friends. Our story ends after Denis Cuspert leaves Germany to become a jihadist and the family remains behind in Germany with the social pain.",
+    "line3": "We are working on that project closely with Deso Dogg's (aka Denis Cuspert) little brother Jamaine Cuspert (who was called “little Deso”), Deso’s best friend Inan, and a wide range of associates, which includes other family members, friends, German Rappers, Ex-Gangsters, journalists, police, and convicted and rehabilitated ex-human traffickers, who all crossed paths with Deso. My production company has exclusive rights and personal access to the people and information.",
+    "line4": "We want to place the origins of Denis, Jamaine, and Inan in a larger social perspective context. In this environment, three rascals from the working class develop into serious criminals, while Denis Cuspert goes one step further and becomes radicalized in Salafist circles."
+  },
+  "footer": {
+    "information": "Information",
+    "imprint": "Imprint",
+    "rights": "All rights reserved",
+    "ceo": "CEO"
+  }
+}
