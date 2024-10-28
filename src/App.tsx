@@ -12,6 +12,7 @@ import CastSection from "./components/sections/CastSection.tsx";
 import StabslisteSection from "./components/sections/StabslisteSection.tsx";
 import NächstesProjektSection from "./components/sections/NächstesProjektSection.tsx";
 import { useTranslation } from 'react-i18next';
+import PhotoCollage from "./components/parallax/PhotoCollage.tsx";
 
 function App() {
     const [activeSection, setActiveSection] = useState('what');
@@ -108,6 +109,8 @@ function App() {
                     <div className="quote-container" style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
                         <QuoteText />
                     </div>
+
+                    <PhotoCollage />
 
                 </section>
 

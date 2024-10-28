@@ -1,30 +1,87 @@
 .photo-collage-section {
     position: relative;
     max-width: 1400px;
-    height: 1000px; /* Fixed height for the section */
+    height: 1600px; /* Fixed height for the section */
+    max-height: 2000px;
     overflow: hidden; /* Hide overflow */
     margin: 0 auto; /* Center the section */
 }
 
 .collage-container {
-    position: relative;
     width: 100%;
     height: 100%;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Adjust to desired layout */
-    gap: 10px; /* Space between images */
 }
 
-.collage-item {
-    width: 100%;
-    height: 100%; /* Ensure each item fills its grid cell */
-    position: relative;
-    overflow: hidden; /* Hide overflow for individual images */
+.collage-image1 {
+    width: 20%;
+    padding-left: 80px;
+    padding-top: 40px;
 }
 
-.collage-image {
-    width: 100%;
-    height: auto; /* Maintain aspect ratio */
-    object-fit: cover; /* Cover the area, maintaining aspect ratio */
-    display: block; /* Avoid inline spacing issues */
+.collage-image2 {
+    position: absolute;
+    padding-top: 380px;
+    padding-left: 400px;
+    z-index: 1;
+}
+
+.collage-image3 {
+    position: absolute;
+    padding-top: 1000px;
+    margin-left: -160px;
+}
+
+.collage-image4 {
+    position: absolute;
+    padding-top: 620px;
+    z-index: 2;
+    margin-left: -260px;
+}
+
+.collage-image5 {
+    position: absolute;
+    padding-top: 20px;
+    padding-left: 80px;
+}
+
+.collage-image6 {
+    position: absolute;
+    margin-left: -360px;
+    padding-top: 380px;
+    z-index: 1;
+}
+
+.collage-image7 {
+    position: absolute;
+    padding-top: 860px;
+    padding-left: 510px;
+}
+
+.collage-splatter1 {
+    position: absolute;
+    z-index: -2;
+    rotate: 170deg;
+    margin-left: -400px;
+}
+
+.collage-splatter2 {
+    position: absolute;
+    padding-left: 600px;
+    padding-top: 170px;
+    z-index: -2;
+}
+
+.collage-splatter3 {
+    position: absolute;
+    rotate: 180deg;
+    margin-left: -400px;
+    padding-bottom: 1300px;
+    z-index: -2;
+}
+
+.collage-splatter4 {
+    position: absolute;
+    padding-top: 1100px;
+    padding-left: 400px;
+    z-index: -2;
 }

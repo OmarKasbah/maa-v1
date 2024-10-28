@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
 import './PhotoCollage.css';
 
 const images = [
@@ -12,23 +11,24 @@ const images = [
     './assets/collage7.png',
 ];
 
-const PhotoCollage: React.FC = () => {
-    const { scrollY } = useScroll();
+const splatter = [
+    './assets/splatter1.png',
+    './assets/splatter2.png',
+    './assets/splatter3.png',
+    './assets/splatter4.png',
+]
 
-    // Define parallax effect
-    const translateYValues = useTransform(scrollY, [0, 1000], [0, -100]); // Moves images up by 100px over 1000px of scroll
+const PhotoCollage: React.FC = () => {
 
     return (
         <section className="photo-collage-section">
             <div className="collage-container">
                 {images.map((image, index) => (
-                    <motion.div
-                        key={index}
-                        className="collage-item"
-                        style={{ translateY: translateYValues }} // Apply the same parallax to all images
-                    >
-                        <img src={image} alt={`Collage ${index + 1}`} className="collage-image" />
-                    </motion.div>
+                    <img src={image} alt={`Collage ${index + 1}`} className={`collage-image${index + 1}`} />
+                ))}
+
+                {splatter.map((image, index) => (
+                    <img src={image} alt={`Splatter ${index + 1}`} className={`collage-splatter${index + 1}`} />
                 ))}
             </div>
         </section>
