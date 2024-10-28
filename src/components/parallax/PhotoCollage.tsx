@@ -30,7 +30,7 @@ const PhotoCollage: React.FC = () => {
                         alt={`Collage ${index + 1}`}
                         className={`collage-image${index + 1}`}
                         initial={{ y: 0 }}
-                        whileScroll={{ y: index % 2 === 0 ? [-50, 50] : [50, -50] }} // Increased movement
+                        whileScroll={{ y: index % 2 === 0 ? [-500, 500] : [500, -500] }} // Increased movement
                         transition={{ duration: 0.5, ease: "easeInOut" }} // Adjust easing for smoother motion
                     />
                 ))}
@@ -42,7 +42,7 @@ const PhotoCollage: React.FC = () => {
                         alt={`Splatter ${index + 1}`}
                         className={`collage-splatter${index + 1}`}
                         initial={{ y: 0 }}
-                        whileScroll={{ y: index % 2 === 0 ? [-40, 40] : [40, -40] }} // Increased movement for splatters
+                        whileScroll={{ y: index % 2 === 0 ? [-4000, 4000] : [4000, -4000] }} // Increased movement for splatters
                         transition={{ duration: 0.5, ease: "easeInOut" }} // Adjust easing for smoother motion
                     />
                 ))}
