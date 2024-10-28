@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import './PhotoCollage.css';
 
 const images = [
@@ -20,32 +20,45 @@ const splatter = [
 ];
 
 const PhotoCollage: React.FC = () => {
+    // Get the scroll position
+    const { scrollY } = useScroll();
+
     return (
         <section className="photo-collage-section">
             <div className="collage-container">
-                {images.map((image, index) => (
-                    <motion.img
-                        key={index}
-                        src={image}
-                        alt={`Collage ${index + 1}`}
-                        className={`collage-image${index + 1}`}
-                        initial={{ y: 0 }}
-                        whileScroll={{ y: index % 2 === 0 ? [-500, 500] : [500, -500] }} // Increased movement
-                        transition={{ duration: 0.5, ease: "easeInOut" }} // Adjust easing for smoother motion
-                    />
-                ))}
+                {images.map((image, index) => {
+                    // Transform the scroll position to create a parallax effect
+                    const y = useTransform(scrollY, [0, 1000], index % 2 === 0 ? [-50, 50] : [50, -50]);
 
-                {splatter.map((image, index) => (
-                    <motion.img
-                        key={index}
-                        src={image}
-                        alt={`Splatter ${index + 1}`}
-                        className={`collage-splatter${index + 1}`}
-                        initial={{ y: 0 }}
-                        whileScroll={{ y: index % 2 === 0 ? [-4000, 4000] : [4000, -4000] }} // Increased movement for splatters
-                        transition={{ duration: 0.5, ease: "easeInOut" }} // Adjust easing for smoother motion
-                    />
-                ))}
+                    return (
+                        <motion.img
+                            key={index}
+                            src={image}
+                            alt={`Collage ${index + 1}`}
+                            className={`collage-image${index + 1}`}
+                            style={{ y }} // Apply the transform directly
+                            initial={{ y: 0 }}
+                            transition={{ duration: 0.5, ease: "easeInOut" }} // Adjust easing for smoother motion
+                        />
+                    );
+                })}
+
+                {splatter.map((image, index) => {
+                    // Transform the scroll position for splatters
+                    const y = useTransform(scrollY, [0, 1000], index % 2 === 0 ? [-40, 40] : [40, -40]);
+
+                    return (
+                        <motion.img
+                            key={index}
+                            src={image}
+                            alt={`Splatter ${index + 1}`}
+                            className={`collage-splatter${index + 1}`}
+                            style={{ y }} // Apply the transform directly
+                            initial={{ y: 0 }}
+                            transition={{ duration: 0.5, ease: "easeInOut" }} // Adjust easing for smoother motion
+                        />
+                    );
+                })}
             </div>
         </section>
     );
