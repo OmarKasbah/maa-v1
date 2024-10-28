@@ -1,17 +1,28 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, {useRef} from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import './CastSection.css';
-import {useTranslation} from "react-i18next";
+import { useTranslation } from "react-i18next";
 
 const CastSection: React.FC = () => {
-    const { t, } = useTranslation();
+    const { t } = useTranslation();
+    const ref = useRef(null)
+    const { scrollY } = useScroll({
+        target: ref,
+        offset: ["start start", "end start"],
+    });
+
+    // Adjust these values to control the intensity of the parallax effect
+    const imageY = useTransform(scrollY, [0, 1], ["0%", "10%"]); // Adjust for images
+    const textY = useTransform(scrollY, [0, 500], ["0%", "10%"]); // Adjust for text
+
     return (
-        <section id="cast" className="cast-section">
+        <section id="cast" className="cast-section" ref={ref}>
             {/* Title */}
             <div className="title-container">
                 <motion.h1
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
+                    style={{ y: textY }} // Apply the parallax effect here
                     transition={{ duration: 0.8, ease: 'easeInOut' }}
                     className="cast-title"
                 >
@@ -27,24 +38,21 @@ const CastSection: React.FC = () => {
                         src="./assets/mike.png" // Use your actual path to the Mike image
                         alt="Mike"
                         className="cast-image"
-                        initial={{ opacity: 0, y: -20, scale: 0.8 }} // Slide in from above
-                        whileInView={{ opacity: 1, y: 0, scale: 1 }}
                         transition={{ duration: 0.8, ease: 'easeInOut' }}
+                        style={{ y: imageY }} // Apply the parallax effect here
                     />
                     {/* Text container for Mike */}
                     <div className="text-container-cast">
                         <motion.h2
                             className="actor-name"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            style={{ y: textY }} // Apply the parallax effect here
                             transition={{ duration: 0.8, ease: 'easeInOut' }}
                         >
                             Mike Adler
                         </motion.h2>
                         <motion.p
                             className="character-name"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            style={{ y: textY }} // Apply the parallax effect here
                             transition={{ duration: 0.8, ease: 'easeInOut' }}
                         >
                             Samuel Abendroth
@@ -58,24 +66,21 @@ const CastSection: React.FC = () => {
                         src="./assets/robert.png" // Use your actual path to the Robert image
                         alt="Robert"
                         className="cast-image"
-                        initial={{ opacity: 0, y: -20, scale: 0.8 }} // Slide in from above
-                        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                        style={{ y: imageY }} // Apply the parallax effect here
                         transition={{ duration: 0.8, ease: 'easeInOut' }}
                     />
                     {/* Text container for Robert */}
                     <div className="text-container-cast">
                         <motion.h2
                             className="actor-name"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            style={{ y: textY }} // Apply the parallax effect here
                             transition={{ duration: 0.8, ease: 'easeInOut' }}
                         >
                             Robert Gulyás
                         </motion.h2>
                         <motion.p
                             className="character-name"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            style={{ y: textY }} // Apply the parallax effect here
                             transition={{ duration: 0.8, ease: 'easeInOut' }}
                         >
                             Matze
@@ -89,24 +94,21 @@ const CastSection: React.FC = () => {
                         src="./assets/maximilian.png" // Use your actual path to the Maximilian image
                         alt="Maximilian"
                         className="cast-image"
-                        initial={{ opacity: 0, y: -20, scale: 0.8 }} // Slide in from above
-                        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                        style={{ y: imageY }} // Apply the parallax effect here
                         transition={{ duration: 0.8, ease: 'easeInOut' }}
                     />
                     {/* Text container for Maximilian */}
                     <div className="text-container-cast">
                         <motion.h2
                             className="actor-name"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            style={{ y: textY }} // Apply the parallax effect here
                             transition={{ duration: 0.8, ease: 'easeInOut' }}
                         >
                             Maximilian Pekrul
                         </motion.h2>
                         <motion.p
                             className="character-name"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            style={{ y: textY }} // Apply the parallax effect here
                             transition={{ duration: 0.8, ease: 'easeInOut' }}
                         >
                             Thomáz
@@ -114,31 +116,27 @@ const CastSection: React.FC = () => {
                     </div>
                 </div>
 
-
                 {/* New member container for Inessa */}
                 <div className="cast-member inessa-member">
                     <motion.img
-                        src="./assets/inessa.png" // Use your actual path to the Maximilian image
+                        src="./assets/inessa.png" // Use your actual path to the Inessa image
                         alt="Inessa"
                         className="cast-image"
-                        initial={{ opacity: 0, y: -20, scale: 0.8 }} // Slide in from above
-                        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                        style={{ y: imageY }} // Apply the parallax effect here
                         transition={{ duration: 0.8, ease: 'easeInOut' }}
                     />
                     {/* Text container for Inessa */}
                     <div className="text-container-cast">
                         <motion.h2
                             className="actor-name"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            style={{ y: textY }} // Apply the parallax effect here
                             transition={{ duration: 0.8, ease: 'easeInOut' }}
                         >
                             Inessa Bonet
                         </motion.h2>
                         <motion.p
                             className="character-name"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            style={{ y: textY }} // Apply the parallax effect here
                             transition={{ duration: 0.8, ease: 'easeInOut' }}
                         >
                             Cateline Areolla
@@ -149,27 +147,24 @@ const CastSection: React.FC = () => {
                 {/* New member container for Jean */}
                 <div className="cast-member jean-member">
                     <motion.img
-                        src="./assets/jean.png" // Use your actual path to the Maximilian image
+                        src="./assets/jean.png" // Use your actual path to the Jean image
                         alt="Jean"
                         className="cast-image"
-                        initial={{ opacity: 0, y: -20, scale: 0.8 }} // Slide in from above
-                        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                        style={{ y: imageY }} // Apply the parallax effect here
                         transition={{ duration: 0.8, ease: 'easeInOut' }}
                     />
                     {/* Text container for Jean */}
                     <div className="text-container-cast">
                         <motion.h2
                             className="actor-name"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            style={{ y: textY }} // Apply the parallax effect here
                             transition={{ duration: 0.8, ease: 'easeInOut' }}
                         >
                             Jean-Philippe Adabra
                         </motion.h2>
                         <motion.p
                             className="character-name"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            style={{ y: textY }} // Apply the parallax effect here
                             transition={{ duration: 0.8, ease: 'easeInOut' }}
                         >
                             Rodney
@@ -180,27 +175,24 @@ const CastSection: React.FC = () => {
                 {/* New member container for Sohen */}
                 <div className="cast-member sohen-member">
                     <motion.img
-                        src="./assets/sohen.png" // Use your actual path to the Maximilian image
+                        src="./assets/sohen.png" // Use your actual path to the Sohen image
                         alt="Sohen"
                         className="cast-image"
-                        initial={{ opacity: 0, y: -20, scale: 0.8 }} // Slide in from above
-                        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                        style={{ y: imageY }} // Apply the parallax effect here
                         transition={{ duration: 0.8, ease: 'easeInOut' }}
                     />
                     {/* Text container for Sohen */}
                     <div className="text-container-cast">
                         <motion.h2
                             className="actor-name"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            style={{ y: textY }} // Apply the parallax effect here
                             transition={{ duration: 0.8, ease: 'easeInOut' }}
                         >
                             Sohen Altan Gol
                         </motion.h2>
                         <motion.p
                             className="character-name"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            style={{ y: textY }} // Apply the parallax effect here
                             transition={{ duration: 0.8, ease: 'easeInOut' }}
                         >
                             Nishaat
@@ -211,27 +203,24 @@ const CastSection: React.FC = () => {
                 {/* New member container for Selam */}
                 <div className="cast-member selam-member">
                     <motion.img
-                        src="./assets/selam.png" // Use your actual path to the Maximilian image
-                        alt="Sohen"
+                        src="./assets/selam.png" // Use your actual path to the Selam image
+                        alt="Selam"
                         className="cast-image"
-                        initial={{ opacity: 0, y: -20, scale: 0.8 }} // Slide in from above
-                        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                        style={{ y: imageY }} // Apply the parallax effect here
                         transition={{ duration: 0.8, ease: 'easeInOut' }}
                     />
                     {/* Text container for Selam */}
                     <div className="text-container-cast">
                         <motion.h2
                             className="actor-name"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            style={{ y: textY }} // Apply the parallax effect here
                             transition={{ duration: 0.8, ease: 'easeInOut' }}
                         >
                             Selam Tadese
                         </motion.h2>
                         <motion.p
                             className="character-name"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            style={{ y: textY }} // Apply the parallax effect here
                             transition={{ duration: 0.8, ease: 'easeInOut' }}
                         >
                             Komissar Anderson

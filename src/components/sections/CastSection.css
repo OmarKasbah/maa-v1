@@ -28,6 +28,7 @@
     align-items: baseline;
     justify-content: space-between;
     width: 1000px; /* Adjust as needed */
+    margin-bottom: -20px;
 }
 
 .zweite-reihe {
@@ -35,6 +36,7 @@
     align-items: baseline;
     justify-content: space-between;
     width: 800px; /* Adjust as needed */
+    margin-bottom: -20px;
 }
 
 .dritte-reihe {
@@ -45,13 +47,12 @@
     width: 600px;
 }
 
-
 .weiterer-cast-title {
     font-family: 'Crimson Pro', serif;
     font-size: 4.5rem;
     color: #FF56FF;
     text-align: center;
-    margin-top: -5px;
+    margin-bottom: -10px;
 }
 
 /* Actor name */
@@ -112,6 +113,7 @@
     justify-content: space-between;
     align-items: center; /* Center align items vertically */
     line-height: 1.0;
+    margin-top: 40px;
 }
 
 /* Actor name */
