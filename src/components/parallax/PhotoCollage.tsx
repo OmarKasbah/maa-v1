@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import './PhotoCollage.css';
 
 const images = [
@@ -16,19 +17,34 @@ const splatter = [
     './assets/splatter2.png',
     './assets/splatter3.png',
     './assets/splatter4.png',
-]
+];
 
 const PhotoCollage: React.FC = () => {
-
     return (
         <section className="photo-collage-section">
             <div className="collage-container">
                 {images.map((image, index) => (
-                    <img src={image} alt={`Collage ${index + 1}`} className={`collage-image${index + 1}`} />
+                    <motion.img
+                        key={index}
+                        src={image}
+                        alt={`Collage ${index + 1}`}
+                        className={`collage-image${index + 1}`}
+                        initial={{ y: 0 }}
+                        whileScroll={{ y: index % 2 === 0 ? [-50, 50] : [50, -50] }} // Increased movement
+                        transition={{ duration: 0.5, ease: "easeInOut" }} // Adjust easing for smoother motion
+                    />
                 ))}
 
                 {splatter.map((image, index) => (
-                    <img src={image} alt={`Splatter ${index + 1}`} className={`collage-splatter${index + 1}`} />
+                    <motion.img
+                        key={index}
+                        src={image}
+                        alt={`Splatter ${index + 1}`}
+                        className={`collage-splatter${index + 1}`}
+                        initial={{ y: 0 }}
+                        whileScroll={{ y: index % 2 === 0 ? [-40, 40] : [40, -40] }} // Increased movement for splatters
+                        transition={{ duration: 0.5, ease: "easeInOut" }} // Adjust easing for smoother motion
+                    />
                 ))}
             </div>
         </section>

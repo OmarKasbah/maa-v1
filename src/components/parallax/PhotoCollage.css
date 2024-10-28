@@ -7,6 +7,13 @@
     margin: 0 auto; /* Center the section */
 }
 
+/* Hide the section when the screen width is less than 1400px */
+@media (max-width: 1400px) {
+    .photo-collage-section {
+        display: none; /* Hide the section */
+    }
+}
+
 .collage-container {
     width: 100%;
     height: 100%;
