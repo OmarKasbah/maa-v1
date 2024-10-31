@@ -21,6 +21,16 @@ const ContactSection: React.FC = () => {
         }));
     };
 
+    const scrollToSection = (sectionId: string) => {
+        const section = document.getElementById(sectionId.toLowerCase());
+        if (section) {
+            section.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+            });
+        }
+    };
+
     const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
@@ -89,16 +99,37 @@ const ContactSection: React.FC = () => {
                             <Typography variant="h6" gutterBottom sx={{ color: 'white', fontWeight: 'bold'}}>
                                 {t('footer.information')}
                             </Typography>
-                            <Typography variant="body1" sx={{ color: 'white', fontFamily: 'Crimson Pro, serif', lineHeight: '1.1'
-                            }}>
-                                Plot,<br />
-                                Synopsis,<br />
-                                {t('header.sections.producers')},<br />
-                                {t('header.sections.creation')},<br />
-                                Cast,<br />
-                                {t('header.sections.crew')},<br/>
-                                {t('header.sections.nextProject')}
+                            <Typography variant="body1" sx={{ color: 'white', fontFamily: 'Crimson Pro, serif', lineHeight: '1.1' }}>
+    <span style={{ cursor: 'pointer' }} onClick={() => scrollToSection(t('header.sections.plot'))}>
+        Plot,
+    </span>
+                                <br />
+                                <span style={{ cursor: 'pointer' }} onClick={() => scrollToSection(t('header.sections.synopsis'))}>
+                                    Synopsis,
+    </span>
+                                <br />
+                                <span style={{ cursor: 'pointer' }} onClick={() => scrollToSection(        t('header.sections.producers')
+                                )}>{t('header.sections.producers')},
+    </span>
+                                <br />
+                                <span style={{ cursor: 'pointer' }} onClick={() => scrollToSection(        t('header.sections.creation')
+                                )}>
+        {t('header.sections.creation')},
+    </span>
+                                <br />
+                                <span style={{ cursor: 'pointer' }} onClick={() => scrollToSection(        t('header.sections.cast'))}>
+        Cast,
+    </span>
+                                <br />
+                                <span style={{ cursor: 'pointer' }} onClick={() => scrollToSection(        t('header.sections.crew'))}>
+        {t('header.sections.crew')},
+    </span>
+                                <br />
+                                <span style={{ cursor: 'pointer' }} onClick={() => scrollToSection(        t('header.sections.nextProject'))}>
+        {t('header.sections.nextProject')}
+    </span>
                             </Typography>
+
                         </Box>
 
                         {/* Imprint Section */}

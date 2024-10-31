@@ -27,6 +27,7 @@
     color: white; /* Title color */
     font-weight: lighter;
     margin: 0;
+    text-shadow: black 6px 0 10px;
 }
 
 .plot-section .plot-text-container {
@@ -43,6 +44,8 @@
     text-align: justify; /* Align text to the left */
     color: white;
     margin: 0 0 0 0;
+    text-shadow: black 6px 0 10px;
+
 }
 
 /* Media queries for further responsiveness */
