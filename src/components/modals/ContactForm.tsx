@@ -129,7 +129,6 @@ const ContactSection: React.FC = () => {
         {t('header.sections.nextProject')}
     </span>
                             </Typography>
-
                         </Box>
 
                         {/* Imprint Section */}
