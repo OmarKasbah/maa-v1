@@ -9,6 +9,9 @@
       "cast": "Cast",
       "crew": "Staff",
       "nextProject": "Next Project"
+    },
+    "message":{
+      "send": "Send message"
     }
   },
   "quote": {

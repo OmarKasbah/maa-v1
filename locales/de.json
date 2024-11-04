@@ -9,6 +9,9 @@
       "cast": "Cast",
       "crew": "Stabsliste",
       "nextProject": "Nächstes Projekt"
+    },
+    "message":{
+      "send": "Absenden"
     }
   },
   "quote": {
