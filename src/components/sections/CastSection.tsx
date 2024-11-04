@@ -35,7 +35,7 @@ const CastSection: React.FC = () => {
                 {/* Left-side container for Mike */}
                 <div className="cast-member mike-member">
                     <motion.img
-                        src="./assets/mike.png" // Use your actual path to the Mike image
+                        src="./assets/mike2.png" // Use your actual path to the Mike image
                         alt="Mike"
                         className="cast-image"
                         transition={{ duration: 0.8, ease: 'easeInOut' }}
@@ -63,7 +63,7 @@ const CastSection: React.FC = () => {
                 {/* Right-side container for Robert */}
                 <div className="cast-member robert-member">
                     <motion.img
-                        src="./assets/robert.png" // Use your actual path to the Robert image
+                        src="./assets/robert2.png" // Use your actual path to the Robert image
                         alt="Robert"
                         className="cast-image"
                         style={{ y: imageY }} // Apply the parallax effect here
@@ -91,7 +91,7 @@ const CastSection: React.FC = () => {
                 {/* New member container for Maximilian */}
                 <div className="cast-member maximilian-member">
                     <motion.img
-                        src="./assets/maximilian.png" // Use your actual path to the Maximilian image
+                        src="./assets/derbe.png" // Use your actual path to the Maximilian image
                         alt="Maximilian"
                         className="cast-image"
                         style={{ y: imageY }} // Apply the parallax effect here
@@ -104,14 +104,14 @@ const CastSection: React.FC = () => {
                             style={{ y: textY }} // Apply the parallax effect here
                             transition={{ duration: 0.8, ease: 'easeInOut' }}
                         >
-                            Maximilian Pekrul
+                            Derbe
                         </motion.h2>
                         <motion.p
                             className="character-name"
                             style={{ y: textY }} // Apply the parallax effect here
                             transition={{ duration: 0.8, ease: 'easeInOut' }}
                         >
-                            Thomáz
+                            Derbe
                         </motion.p>
                     </div>
                 </div>
@@ -286,7 +286,7 @@ const CastSection: React.FC = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: 'easeInOut' }}
                     >
-                        Derbe
+                        Maximilian Pekrul
                     </motion.h2>
                     <motion.p
                         className="character-name2"
@@ -294,7 +294,7 @@ const CastSection: React.FC = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: 'easeInOut' }}
                     >
-                        Derbe
+                        Thomáz
                     </motion.p>
                     </div>
                     </div>

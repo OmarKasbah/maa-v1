@@ -1,6 +1,6 @@
 {
   "name": "maa-v1",
-  "homepage": "http://pinkpuzzle.de",
+  "homepage": "https://pinkpuzzle.de",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b main -d dist"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@emotion/react": "^11.13.3",
