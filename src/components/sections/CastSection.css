@@ -53,7 +53,7 @@
     color: #FF56FF;
     text-align: center;
     margin-bottom: -10px;
-    text-shadow: #B968FF 6px 0 10px;
+    text-shadow: #7F00FF 6px 0 0;
 }
 
 /* Actor name */
@@ -80,7 +80,7 @@
     text-align: center;
     margin-top: -5px;
     margin-bottom: -5px;
-    text-shadow: #B968FF 6px 0 10px;
+    text-shadow: #7F00FF 6px 0 0;
 }
 
 /* Cast container */

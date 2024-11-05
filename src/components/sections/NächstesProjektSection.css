@@ -18,7 +18,7 @@
     color: #fff; /* Title color */
     font-size: 6rem; /* Title size */
     text-align: center; /* Centered title */
-    text-shadow: #fff 6px 0 10px;
+    text-shadow: #000 6px 0 0;
 }
 
 .content-container {

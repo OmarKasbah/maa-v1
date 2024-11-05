@@ -23,7 +23,7 @@
     color: #FF56FF;
     text-align: center;
     margin-top: -5px;
-    text-shadow: #B968FF 6px 0 10px;
+    text-shadow: #7F00FF 6px 0 0;
 }
 
 /* Image-text container for the upright image */
@@ -97,11 +97,8 @@
 /* Responsive design */
 @media (max-width: 1024px) {
     .entstehung-section .upright-image {
-        max-width: 45%; /* Adjust image width on medium screens */
+        max-width: 80%; /* Adjust image width on medium screens */
         margin-right: 20px; /* Reduce margin */
-    }
-
-    .entstehung-section .text-block {
     }
 
     .entstehung-section .landscape-container {

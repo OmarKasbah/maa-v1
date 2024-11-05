@@ -248,7 +248,7 @@ const CastSection: React.FC = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: 'easeInOut' }}
                         >
-                            Hugo Grim
+                            Hugo Grimm
                         </motion.h2>
                         <motion.p
                             className="character-name2"

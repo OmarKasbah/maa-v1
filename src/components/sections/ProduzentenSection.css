@@ -21,7 +21,7 @@
     font-size: 6rem;
     color: #FF56FF; /* Same color as the synopsis title */
     text-align: center;
-    text-shadow: #B968FF 6px 0 10px;
+    text-shadow: #7F00FF 6px 0 0;
 }
 
 /* Content container to hold the image and text */
@@ -64,7 +64,7 @@
     font-size: 2.5rem; /* Adjust font size as needed */
     color: #FF56FF; /* Same color as the title */
     margin: 20px 0; /* Margin for spacing */
-    text-shadow: #B968FF 6px 0 10px;
+    text-shadow: #7F00FF 4px 0 0;
 }
 
 /* Responsive design */

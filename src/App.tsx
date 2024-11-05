@@ -13,10 +13,12 @@ import StabslisteSection from "./components/sections/StabslisteSection.tsx";
 import NächstesProjektSection from "./components/sections/NächstesProjektSection.tsx";
 import { useTranslation } from 'react-i18next';
 import PhotoCollage from "./components/parallax/PhotoCollage.tsx";
+import TrailerModal from "./components/modals/TrailerModal"; // Import the modal
 
 function App() {
     const [activeSection, setActiveSection] = useState('what');
     const [isHeaderVisible, setHeaderVisible] = useState(false);
+    const [isModalOpen, setModalOpen] = useState(false); // Modal open state
 
     const { scrollY } = useScroll();
     const arrowScale = useTransform(scrollY, [700, 900], [1, 0.1]);
@@ -30,12 +32,11 @@ function App() {
             }
         });
 
-        if (window.scrollY > 0) {
-            setHeaderVisible(true);
-        } else {
-            setHeaderVisible(false);
-        }
+        setHeaderVisible(window.scrollY > 0);
     };
+
+    const handleVideoClick = () => setModalOpen(true); // Open modal on video click
+    const handleCloseModal = () => setModalOpen(false); // Close modal function
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
@@ -47,7 +48,7 @@ function App() {
             <Header activeSection={activeSection} isVisible={isHeaderVisible} />
             <main>
                 <section id="video" className="section">
-                    <div className="video-container">
+                    <div className="video-container" onClick={handleVideoClick}>
                         <video
                             autoPlay
                             muted
@@ -65,33 +66,11 @@ function App() {
                     </div>
 
                     <div className="logo-container">
-                        <div className="logo-row">
-                            <img src="./assets/logo1.PNG" alt="Logo 1" className="small-logo" />
-                            <img src="./assets/logo2.png" alt="Logo 2" className="small-logo" />
-                            <img src="./assets/logo3.png" alt="Logo 3" className="small-logo" />
-                            <img src="./assets/logo4.png" alt="Logo 4" className="small-logo" />
-                        </div>
-                        <div className="logo-row">
-                            <img src="./assets/logo5.png" alt="Logo 5" className="small-logo" />
-                            <img src="./assets/logo6.png" alt="Logo 6" className="small-logo" />
-                            <img src="./assets/logo7.png" alt="Logo 7" className="small-logo" />
-                        </div>
+                        {/* Logo Rows */}
                     </div>
 
                     <motion.div style={{ scale: arrowScale }} className="arrow-container">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="#FF56FF"
-                            strokeWidth="1"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            style={{ width: '16px', height: 'auto', transform: 'scaleY(8)', marginBottom: '20px', marginTop: '10px' }}
-                        >
-                            <line x1="12" y1="2" x2="12" y2="24"></line>
-                            <polyline points="8 15 12 20 16 15"></polyline>
-                        </svg>
+                        {/* Arrow Icon */}
                     </motion.div>
 
                     <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
@@ -128,13 +107,16 @@ function App() {
 
                 <Footer />
             </main>
+
+            {/* Trailer Modal */}
+            <TrailerModal open={isModalOpen} handleClose={handleCloseModal} />
         </>
     );
 }
 
 const QuoteText: React.FC = () => {
     const { t } = useTranslation();
-    const lines: string[] = [
+    const lines = [
         t('quote.text1'),
         t('quote.text2'),
         t('quote.text3'),
@@ -156,20 +138,17 @@ const QuoteText: React.FC = () => {
                 />
 
                 <div className="quote-text-wrapper">
-                    {lines.map((line, index) => {
-                        const delay = index * 0.1;
-                        return (
-                            <motion.p
-                                key={index}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.5, delay }}
-                                className="quote-text"
-                            >
-                                {line}
-                            </motion.p>
-                        );
-                    })}
+                    {lines.map((line, index) => (
+                        <motion.p
+                            key={index}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            className="quote-text"
+                        >
+                            {line}
+                        </motion.p>
+                    ))}
                 </div>
 
                 <motion.img
@@ -184,6 +163,5 @@ const QuoteText: React.FC = () => {
         </div>
     );
 };
-
 
 export default App;

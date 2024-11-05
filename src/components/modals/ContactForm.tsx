@@ -101,28 +101,28 @@ const ContactSection: React.FC = () => {
                             </Typography>
                             <Typography variant="body1" sx={{ color: 'white', fontFamily: 'Crimson Pro, serif', lineHeight: '1.1' }}>
     <span style={{ cursor: 'pointer' }} onClick={() => scrollToSection(t('header.sections.plot'))}>
-        Plot,
+        Plot
     </span>
                                 <br />
                                 <span style={{ cursor: 'pointer' }} onClick={() => scrollToSection(t('header.sections.synopsis'))}>
-                                    Synopsis,
+                                    Synopsis
     </span>
                                 <br />
                                 <span style={{ cursor: 'pointer' }} onClick={() => scrollToSection(        t('header.sections.producers')
-                                )}>{t('header.sections.producers')},
+                                )}>{t('header.sections.producers')}
     </span>
                                 <br />
                                 <span style={{ cursor: 'pointer' }} onClick={() => scrollToSection(        t('header.sections.creation')
                                 )}>
-        {t('header.sections.creation')},
+        {t('header.sections.creation')}
     </span>
                                 <br />
                                 <span style={{ cursor: 'pointer' }} onClick={() => scrollToSection(        t('header.sections.cast'))}>
-        Cast,
+        Cast
     </span>
                                 <br />
                                 <span style={{ cursor: 'pointer' }} onClick={() => scrollToSection(        t('header.sections.crew'))}>
-        {t('header.sections.crew')},
+        {t('header.sections.crew')}
     </span>
                                 <br />
                                 <span style={{ cursor: 'pointer' }} onClick={() => scrollToSection(        t('header.sections.nextProject'))}>
@@ -281,7 +281,7 @@ const ContactSection: React.FC = () => {
                                             marginTop: '8px',  // Adds space from the text area
                                         }}
                                     >
-                                        Send Message
+                                        {t('header.message.send')}
                                     </Button>
                                 </Grid>
                             </Grid>
